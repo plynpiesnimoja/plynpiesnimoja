@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
+$neapoli-color: #fee2bd;
+$dark-grass: #003734;
+
+$white: #fff;
+
+
+$black: #202123;
+$dark-gray: #32373e;
+$gray: #697a90;
+$light-gray: #b4bcc7;
+$very-light-gray: #e7ebed;
+
+$accent-color: $neapoli-color;
+$primary-color: $dark-grass;
+
 :root {
   --font-family-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-family-serif: 'Merriweather', serif;
-  --color-black: #202123;
-  --color-dark-gray: #32373e;
-  --color-gray: #697a90;
-  --color-light-gray: #b4bcc7;
-  --color-very-light-gray: #e7ebed;
-  --color-white: #fff;
-  --color-accent: #156dff;
+  --color-black: $black;
+  --color-dark-gray: $dark-gray;
+  --color-gray: $gray;
+  --color-light-gray: $light-gray;
+  --color-very-light-gray: $very-light-gray;
+  --color-white: $white;
+  --color-accent: $accent-color;
+
 
   /* Typography */
   --unit: 16;
@@ -30,3 +46,7 @@
   --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
   --font-title1-line-height: calc(57 / 49); /* 57px */
 }
+
+
+$fontstack-sans: var(--font-family-sans);
+$fontstack-serif: var(--font-family-serif);

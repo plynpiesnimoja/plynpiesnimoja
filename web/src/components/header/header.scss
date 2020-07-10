@@ -1,0 +1,83 @@
+@import '../../styles/custom-media.scss';
+@import '../../styles/custom-properties.scss';
+
+$hover: $very-light-gray;
+$active: $white;
+
+.Navigation-container {
+  display: flex;
+  height: 100%;
+  &.showNav {
+    display: block;
+    //padding: 2rem 0;
+
+    .Menu-container,
+    .Socialmedia-container {
+      justify-content: center;
+      margin: 3rem 0;
+    }
+    .Menu-container {
+      flex-direction: column;
+      .navLink {
+        height: 3rem;
+      }
+    }
+  }
+}
+
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $fontstack-sans;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  margin: 0.5rem;
+  height: 100%;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    &:hover {
+      color: $hover;
+    }
+  }
+
+  
+  .active {
+    color: $white;
+    position: relative;
+    &:before {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: 0.5rem;
+      //background: currentColor;
+      background: $accent-color;
+    }
+  }
+}
+
+
+.socialMediaLink {
+  margin-left: 0.5rem;
+  &:hover {
+    color: $hover;
+  }
+  &:active {
+    color: $active;
+  }
+}
+
+.socialMediaButton {
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import {getFluidGatsbyImage} from 'gatsby-source-sanity'
+import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import clientConfig from '../../client-config'
 
-import styles from './figure.module.css'
+import styles from './figure.module.scss'
 
 export default ({node}) => {
   if (!node.asset) {

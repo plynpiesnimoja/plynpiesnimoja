@@ -3,7 +3,7 @@ import Header from 'src/components/header'
 
 import Footer from 'src/components/footer'
 
-import '../styles/layout.css'
+import '../styles/layout.scss'
 import styles from './layout.module.scss'
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
@@ -18,5 +18,5 @@ export default Layout
 
 
 const Main = ({ children }) => (
-  <div className={styles.content}>{children}</div>
+  <main className={styles.content}>{children}</main>
 )

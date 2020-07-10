@@ -1,4 +1,4 @@
-@import '../styles/custom-media.css';
+@import '../styles/custom-media.scss';
 
 .root {
   box-sizing: border-box;
@@ -6,7 +6,7 @@
   padding: 1.5em;
   margin: 0 auto;
 
-  @media (--media-min-small) {
+  /* @media (--media-min-small) {
     padding: 2em;
-  }
+  } */
 }

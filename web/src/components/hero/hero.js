@@ -1,8 +1,8 @@
 import React from 'react'
 import Container from '../../components/container'
-import {buildImageObj} from '../../lib/helpers'
-import {imageUrlFor} from '../../lib/image-url'
-import styles from './hero.module.css'
+import { buildImageObj } from '../../lib/helpers'
+import { imageUrlFor } from '../../lib/image-url'
+import styles from './hero.module.scss'
 
 const Hero = ({ children, heroImage }) => {
   // console.log("hiro imidż", heroImage)

@@ -1,0 +1,24 @@
+// @custom-media --media-min-small (min-width: 450px);
+// @custom-media --media-max-small (max-width: 449px);
+// @custom-media --media-min-medium (min-width: 675px);
+// @custom-media --media-min-large (min-width: 900px);
+
+
+
+
+
+$layout-0:  320px;
+$layout-xs: 480px;
+$layout-sm: 768px;
+$layout-md: 1024px;
+$layout-lg: 1280px;
+$layout-xl: 1920px;
+
+
+$breakpoint: $layout-md;
+
+
+$media-min-small: (screen and (min-width: 450px));
+$media-max-small: screen and (max-width: 449px);
+$media-min-medium: screen and (min-width: 675px);
+$media-min-large: screen and (min-width: 900px);

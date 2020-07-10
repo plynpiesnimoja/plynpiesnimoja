@@ -1,0 +1,23 @@
+@import 'variables.scss';
+
+.ppm-Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .five-line-element {
+    fill: currentColor;
+  }
+}
+
+
+.nck-Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  svg {
+    fill: currentColor;
+    height: 4em;
+  }
+}
