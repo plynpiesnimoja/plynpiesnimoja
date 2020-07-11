@@ -1,4 +1,5 @@
 import Anchor from './anchor'
 import Rule from './rule'
+import { Heading, Typo, Quote, Italic } from './typography'
 
-export { Anchor, Rule }
+export { Heading, Typo, Quote, Italic, Anchor, Rule }

@@ -1,12 +1,12 @@
 export const navigation = [
   {
-    page: 'projects',
-    name: 'Projekty'
+    page: 'filmy',
+    name: 'Filmy'
   },
-  // {
-  //   page: 'team',
-  //   name: 'O nas'
-  // },
+  {
+    page: 'o-nas',
+    name: 'O nas'
+  },
   {
     page: 'about',
     name: 'O projekcie'

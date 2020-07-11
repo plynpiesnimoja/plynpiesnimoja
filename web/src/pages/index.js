@@ -12,6 +12,8 @@ import SEO from 'src/components/seo'
 import Layout from 'src/containers/layout'
 import Hero from 'src/components/hero'
 
+import { Heading, Typo, Italic } from 'src/components/typography'
+
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
@@ -112,12 +114,8 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
 
       <Hero heroImage={site.heroImage}>
-        <h1 
-          //hidden
-        >Witajcie w projekcie "{site.title}"</h1>
-        <h2 
-          //hidden
-        >{site.subtitle}</h2>
+        <Heading size="large">Witajcie w projekcie {site.title}"</Heading>
+        <Typo>{site.subtitle}</Typo>
       </Hero>
 
       <Container>
@@ -126,7 +124,7 @@ const IndexPage = props => {
           <ProjectPreviewGrid
             title='Latest projects'
             nodes={projectNodes}
-            browseMoreHref='/archive/'
+            browseMoreHref='/filmy/'
           />
         )}
       </Container>
