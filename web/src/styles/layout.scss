@@ -1,7 +1,7 @@
 @import './custom-properties.scss';
 
 html {
-  font-family: var(--font-family-serif);
+  font-family: $fontstack-grotesk;
   font-weight: 300;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
@@ -9,8 +9,8 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  color: var(--color-white);
-  background: var(--color-black);
+  color: $white;
+  background-color: $black;
   margin: 0;
 }
 

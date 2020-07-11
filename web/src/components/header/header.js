@@ -58,7 +58,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
             {navigation.map(item => <NavItem key={item.page} {...item} />)}
           </ul>
           <ul className="Socialmedia-container">
-            {socialMediaIcons.map(item => <SocialMediaLink {...item} />)}
+            {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
           </ul>
         </div>
       </nav>

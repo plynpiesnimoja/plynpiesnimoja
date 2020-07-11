@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap);
 
 $neapoli-color: #fee2bd;
 $dark-grass: #003734;
@@ -18,7 +19,9 @@ $primary-color: $dark-grass;
 
 :root {
   --font-family-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-geometric: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-family-serif: 'Merriweather', serif;
+  --font-family-grotesk: 'Inter', sans-serif;
   --color-black: $black;
   --color-dark-gray: $dark-gray;
   --color-gray: $gray;
@@ -49,4 +52,6 @@ $primary-color: $dark-grass;
 
 
 $fontstack-sans: var(--font-family-sans);
+$fontstack-geometric: var(--font-family-geometric);
 $fontstack-serif: var(--font-family-serif);
+$fontstack-grotesk: var(--font-family-grotesk);

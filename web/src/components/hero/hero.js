@@ -5,14 +5,13 @@ import { imageUrlFor } from '../../lib/image-url'
 import styles from './hero.module.scss'
 
 const Hero = ({ children, heroImage }) => {
-  // console.log("hiro imidż", heroImage)
-  const HeroImage = heroImage.asset !== null ? imageUrlFor(buildImageObj(heroImage)).fit('crop').url() : false
+  console.log("hiro imidż", heroImage)
+  const HeroImage = heroImage !== null ? imageUrlFor(buildImageObj(heroImage)).fit('crop').url() : false
   return (
     <div 
       className={styles.root} 
       style={{ backgroundImage: HeroImage ? `url(${HeroImage})` : null}} 
     >
-          
       <Container>
         {children}
       </Container>
