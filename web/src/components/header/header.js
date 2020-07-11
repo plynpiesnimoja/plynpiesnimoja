@@ -1,7 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import Icon from 'src/components/icon'
-// import { BandLogo } from 'src/components/logo'
+import { Anchor } from 'src/components/typography'
+import { BandLogo } from 'src/components/logo'
 import { cn } from 'src/lib/helpers'
 
 
@@ -13,19 +14,19 @@ import './header.scss'
 
 const socialMediaIcons = [
   {
-    url: links.facebook,
+    to: links.facebook,
     icon: "facebook",
     label: "Facebook",
     desc: "Polub nas na Facebook'u"
   },
   {
-    url: links.youtube,
+    to: links.youtube,
     icon: "youtube",
     label: "Youtube",
     desc: "Subskrybuj nasz kanał na Youtube"
   },
   {
-    url: links.instagram,
+    to: links.instagram,
     icon: "instagram",
     label: "Instagram",
     desc: "Śledź nas na Instagramie"
@@ -35,9 +36,10 @@ const socialMediaIcons = [
 const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   <header className={styles.root}>
     <div className={styles.wrapper}>
-      {/* <BandLogo /> */}
       <div className={styles.branding}>
-        <Link to='/'>{siteTitle}</Link>
+        <Link to='/'>
+          <BandLogo extended />
+        </Link>
       </div>
 
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
@@ -47,18 +49,12 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
       {console.log("Nav", showNav)}
       {console.log("Show Nav", onShowNav)}
       {console.log("Hide Nav", onHideNav)}
-      {/* <nav className={cn(styles.nav, showNav && styles.showNav)}>
-        <ul>
-          <li>
-            <Link to='/archive/'>Archive</Link>
-          </li>
-        </ul>
-      </nav> */}
+
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <div className={cn("Navigation-container", showNav ? "showNav" : "")}>
           <ul className="Menu-container">
-            <NavItem page="" name='Strona główna' />
+            <NavItem name='Strona główna' />
             {navigation.map(item => <NavItem key={item.page} {...item} />)}
           </ul>
           <ul className="Socialmedia-container">
@@ -78,7 +74,7 @@ export default Header
 const NavItem = (props) => (
   <li className='navLink'>
     <Link 
-      to={`/${props.page}/`}
+      to={props.page ? `/${props.page}/` : '/'}
       activeClassName="active"
     >
       <span>{props.name}</span>
@@ -90,11 +86,11 @@ const NavItem = (props) => (
 
 const SocialMediaLink = (props) => (
   <li className='socialMediaLink'>
-    <Link 
-      to={props.link} 
+    <Anchor
+      {...props} 
       className='socialMediaButton'
     >
         <Icon symbol={props.icon} />
-    </Link>
+    </Anchor>
   </li>
 )

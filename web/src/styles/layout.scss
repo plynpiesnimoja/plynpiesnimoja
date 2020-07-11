@@ -39,6 +39,12 @@ h5,
 h6 {
   font-family: var(--font-family-sans);
 }
+button {
+  cursor: pointer;
+}
 main {
   padding-top: 4rem;
+}
+*:focus {
+  outline: $accent-color dashed 1px;
 }

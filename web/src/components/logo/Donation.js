@@ -14,10 +14,10 @@ w ramach programu
 `
 
 const Donation = ({ className }) => {
-  const classes = ['nck-Logo', className]
+  const classes = cn('nck-Logo', className)
   return (
     <div 
-      className={cn(classes)}
+      className={classes}
       tabIndex='0'
       role='banner'
       aria-label={description}
