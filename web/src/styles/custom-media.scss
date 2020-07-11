@@ -17,8 +17,8 @@ $layout-xl: 1920px;
 
 $breakpoint: $layout-md;
 
-
-$media-min-small: (screen and (min-width: 450px));
+// To-Do and clean up this mess
+$media-min-small: (min-width: $layout-xs);
 $media-max-small: screen and (max-width: 449px);
 $media-min-medium: screen and (min-width: 675px);
 $media-min-large: screen and (min-width: 900px);

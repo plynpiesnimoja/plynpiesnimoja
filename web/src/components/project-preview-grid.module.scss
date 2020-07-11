@@ -1,4 +1,4 @@
-@import '../styles/custom-media.css';
+@import '../styles/custom-media.scss';
 @import '../styles/custom-properties.css';
 
 .root {
@@ -19,15 +19,19 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr;
+  //grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2em;
 
-  @media (--media-min-small) {
+  // @media (--media-min-small) {
+
+
+  //@media (--media-min-medium) {
+  @media screen and (max-width: $layout-sm) {
     grid-template-columns: 1fr 1fr;
   }
-
-  @media (--media-min-medium) {
-    grid-template-columns: 1fr 1fr 1fr;
+  @media screen and (max-width: $layout-xs) {
+    grid-template-columns: 1fr;
   }
 }
 

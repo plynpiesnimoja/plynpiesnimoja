@@ -10,13 +10,45 @@ const Hero = ({ children, heroImage }) => {
   return (
     <div 
       className={styles.root} 
-      style={{ backgroundImage: HeroImage ? `url(${HeroImage})` : null}} 
+      //style={{ backgroundImage: HeroImage ? `url(${HeroImage})` : null}} 
     >
-      <Container>
-        {children}
-      </Container>
+      <div className={styles.heroContainer}>
+        <Container>
+          {children}
+        </Container>
+      </div>
+
+      <Background heroImage={heroImage} />
     </div>
   )
 }
 
 export default Hero
+
+const Background = ({ heroImage }) => (
+  <div 
+    className={styles.heroImage} 
+    //style={heroStyle} 
+    role="img" 
+    aria-label="Zdjęcie zespołu Płyń pieśni moja" 
+  > 
+    {console.log("hiro imidż w bakgrandzie", heroImage)}
+    <img
+      src={imageUrlFor(buildImageObj(heroImage))
+        .width(1920)
+        .height(Math.floor((9 / 16) * 1920))
+        .fit('crop')
+        //.fit('crop')
+        .url()}
+      //alt={props.mainImage.alt}
+    />
+    <GradientOverlay />
+  </div>
+)
+const GradientOverlay = () => (
+  <div className={styles.gradientOverlay} />
+)
+
+export const Overlay = () => (
+  <div className="overlay" />
+)
