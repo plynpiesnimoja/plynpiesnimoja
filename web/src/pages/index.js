@@ -74,9 +74,6 @@ export const query = graphql`
             }
             alt
           }
-          youtube {
-            url
-          }
           title
           _rawExcerpt
           slug {

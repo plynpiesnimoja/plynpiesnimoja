@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import React from 'react'
 import ProjectPreview from './project-preview'
 
@@ -9,6 +9,7 @@ import styles from './project-preview-grid.module.scss'
 
 function ProjectPreviewGrid (props) {
   console.log("Grid prev nołds", props.nodes)
+  console.log("Jutube URL grid", props.nodes.youtube)
   return (
     <div className={styles.root}>
       {props.title && (
@@ -18,6 +19,7 @@ function ProjectPreviewGrid (props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
+              {console.log("Jutube URL grid", node.youtube)}
               <ProjectPreview {...node} />
             </li>
           ))}
@@ -26,7 +28,6 @@ function ProjectPreviewGrid (props) {
 
           <div className={styles.browseMoreNav}>
             <Button link to='/filmy/'>Zobacz więcej...</Button>
-            {/* <Link to={props.browseMoreHref}>Browse more</Link> */}
           </div>
 
       )}

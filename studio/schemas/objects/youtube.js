@@ -24,15 +24,21 @@ export default {
   type: 'object',
   fields: [
     {
-      title: 'URL',
-      name: 'url',
-      type: 'url'
-    }
+      title: 'Youtube ID',
+      name: 'videoId',
+      type: 'string'
+    },
+    // {
+    //   title: 'Url',
+    //   name: 'url',
+    //   type: 'url'
+    // }
 
   ],
   preview: {
     select: {
-      url: 'url'
+      url: 'url',
+      videoId: 'string'
     },
     component: YouTubePreview,
   }

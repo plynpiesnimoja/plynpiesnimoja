@@ -11,6 +11,9 @@ export const query = graphql`
     sampleProject: sanitySampleProject(id: {eq: $id}) {
       id
       publishedAt
+      youtube {
+        videoId
+      }
       categories {
         _id
         title
