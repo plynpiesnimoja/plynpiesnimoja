@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import ProjectPreviewGrid from '../components/project-preview-grid'
+
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
@@ -11,9 +11,9 @@ import { pageNode } from 'src/lib/data';
 import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
-  query FilmyPageQuery {
+  query AboutProjectPageQuery {
     projects: allSanitySampleProject(
-      limit: 100
+      limit: 12
       sort: {fields: [publishedAt], order: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {
@@ -37,9 +37,9 @@ export const query = graphql`
   }
 `
 
-const pageTitle = pageNode.projects 
+const pageTitle = pageNode.aboutProject
 
-const FilmyPage = props => {
+const AboutProjectPage = props => {
   const {data, errors} = props
   if (errors) {
     return (
@@ -48,8 +48,8 @@ const FilmyPage = props => {
       </Layout>
     )
   }
-  const projectNodes =
-    data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
+  // const projectNodes =
+  //   data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
   return (
     <Layout>
       <SEO title={pageTitle} />
@@ -57,11 +57,10 @@ const FilmyPage = props => {
         <div>
           <h1 className={responsiveTitle1}>{pageTitle}</h1>
         </div>
-        
-        {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
+        {/* {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />} */}
       </Container>
     </Layout>
   )
 }
 
-export default FilmyPage
+export default AboutProjectPage

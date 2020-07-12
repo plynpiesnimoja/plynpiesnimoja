@@ -1,20 +1,23 @@
-import {format, distanceInWords, differenceInDays} from 'date-fns'
+import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
-import {Link} from 'gatsby'
-import {buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
+import { Link } from 'gatsby'
+import { buildImageObj } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
 
 import styles from './project.module.css'
 
+
 function Project (props) {
   const {_rawBody, title, categories, mainImage, members, publishedAt, relatedProjects} = props
+  console.log("roł bodi", _rawBody)
   return (
     <article className={styles.root}>
-      {props.mainImage && mainImage.asset && (
-        <div className={styles.mainImage}>
+      
+      <div className={styles.mainImage}>
+        {props.mainImage && mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(mainImage))
               .width(1200)
@@ -23,8 +26,9 @@ function Project (props) {
               .url()}
             alt={mainImage.alt}
           />
-        </div>
-      )}
+        )}
+      </div>
+      
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
@@ -36,13 +40,13 @@ function Project (props) {
               <div className={styles.publishedAt}>
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
                   ? distanceInWords(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), 'MMMM Do YYYY')}
+                  : format(new Date(publishedAt), 'DD / MM / YYYY')}
               </div>
             )}
-            {members && members.length > 0 && <RoleList items={members} title='Project members' />}
+            {members && members.length > 0 && <RoleList items={members} title='Autorzy' />}
             {categories && categories.length > 0 && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
+                <h3 className={styles.categoriesHeadline}>Kategorie</h3>
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
@@ -52,12 +56,12 @@ function Project (props) {
             )}
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Related projects</h3>
+                <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3>
                 <ul>
                   {relatedProjects.map(project => (
                     <li key={`related_${project._id}`}>
                       {project.slug ? (
-                        <Link to={`/project/${project.slug.current}`}>{project.title}</Link>
+                        <Link to={`/film/${project.slug.current}`}>{project.title}</Link>
                       ) : (
                         <span>{project.title}</span>
                       )}

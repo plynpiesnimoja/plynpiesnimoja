@@ -13,6 +13,7 @@ import siteSettings from './documents/siteSettings'
 // Object types
 import bioPortableText from './objects/bioPortableText'
 import figure from './objects/figure'
+// import youtube from './objects/youtube'
 import projectMember from './objects/projectMember'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
@@ -28,6 +29,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     bioPortableText,
     figure,
+    //youtube,
     projectMember,
     projectPortableText,
     simplePortableText,

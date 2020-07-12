@@ -1,7 +1,8 @@
-//@import 'variables.scss';
+@import '../../styles/custom-media.scss';
+@import '../../styles/custom-properties.scss';
 
-// $rule-margin: 1.5em;
-/*
+$rule-margin: 1.5em;
+
 .Rule {
   height: 0.25em;
   width: 4em;
@@ -20,7 +21,7 @@
     height: 0.5em;
   }
   &.Rule-primary {
-    background-color: $primary;
+    background-color: $primary-color;
   }
   &.Rule-default {
     background-color: currentColor;
@@ -105,16 +106,15 @@ mark {
     font-weight: 400;
   }
   h1 {
-    font-size: 4em;
+    font-size: 1.5em;
   }
   h2 {
-    font-size: 2em;
-  }
-  h4 {
     font-size: 1.25em;
   }
-  h6 {
+  h4 {
     font-size: 1em;
   }
+  h6 {
+    font-size: 0.75em;
+  }
 }
-*/

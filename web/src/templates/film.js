@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
 export const query = graphql`
-  query ProjectTemplateQuery($id: String!) {
+  query MovieMovieTemplateQuery($id: String!) {
     sampleProject: sanitySampleProject(id: {eq: $id}) {
       id
       publishedAt
@@ -81,7 +81,7 @@ export const query = graphql`
   }
 `
 
-const ProjectTemplate = props => {
+const MovieProjectTemplate = props => {
   const {data, errors} = props
   const project = data && data.sampleProject
   return (
@@ -99,4 +99,4 @@ const ProjectTemplate = props => {
   )
 }
 
-export default ProjectTemplate
+export default MovieProjectTemplate

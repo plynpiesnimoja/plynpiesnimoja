@@ -1,5 +1,5 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -12,7 +12,7 @@ import SEO from 'src/components/seo'
 import Layout from 'src/containers/layout'
 import Hero from 'src/components/hero'
 
-import { Heading, Typo, Italic } from 'src/components/typography'
+import { Heading, Typo } from 'src/components/typography'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -97,6 +97,7 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site
+  console.log("dejta", data)
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
       .filter(filterOutDocsWithoutSlugs)
@@ -114,7 +115,8 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
 
       <Hero heroImage={site.heroImage}>
-        <Heading size="large">Witajcie w projekcie {site.title}"</Heading>
+        {/* <Heading size="large">Witajcie w projekcie {site.title}</Heading> */}
+        <Heading size="large">Witajcie</Heading>
         <Typo>{site.subtitle}</Typo>
       </Hero>
 
@@ -122,7 +124,7 @@ const IndexPage = props => {
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
-            title='Latest projects'
+            title='Ostatnio dodane'
             nodes={projectNodes}
             browseMoreHref='/filmy/'
           />

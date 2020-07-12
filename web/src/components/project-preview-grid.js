@@ -1,13 +1,18 @@
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import React from 'react'
 import ProjectPreview from './project-preview'
+
+import Button from './button'
+import { Heading, Typo } from 'src/components/typography'
 
 import styles from './project-preview-grid.module.scss'
 
 function ProjectPreviewGrid (props) {
   return (
     <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
+      {props.title && (
+        <Heading size="mid" caps>{props.title}</Heading>
+      )}
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map(node => (
@@ -17,9 +22,12 @@ function ProjectPreviewGrid (props) {
           ))}
       </ul>
       {props.browseMoreHref && (
-        <div className={styles.browseMoreNav}>
-          <Link to={props.browseMoreHref}>Browse more</Link>
-        </div>
+
+          <div className={styles.browseMoreNav}>
+            <Button link to='/filmy/'>Zobacz więcej...</Button>
+            {/* <Link to={props.browseMoreHref}>Browse more</Link> */}
+          </div>
+
       )}
     </div>
   )

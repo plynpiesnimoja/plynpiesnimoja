@@ -1,5 +1,9 @@
 @import './custom-properties.scss';
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: $fontstack-grotesk;
   font-weight: 300;
@@ -40,6 +44,7 @@ h6 {
   font-family: var(--font-family-sans);
 }
 button {
+  border: none;
   cursor: pointer;
 }
 main {

@@ -5,7 +5,7 @@ import { imageUrlFor } from '../../lib/image-url'
 import styles from './hero.module.scss'
 
 const Hero = ({ children, heroImage }) => {
-  console.log("hiro imidż", heroImage)
+  // console.log("hiro imidż", heroImage)
   const HeroImage = heroImage !== null ? imageUrlFor(buildImageObj(heroImage)).fit('crop').url() : false
   return (
     <div 

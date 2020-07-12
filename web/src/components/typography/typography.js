@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cn } from 'src/lib/helpers'
-//import './styles.scss';
+import './styles.scss';
 
 export const Typo = ({ children, caps, bold, bolder, className, span, size }) => {
   const Size = (size === "large" ? "large" : "") || (size === "big" ? "big" : "") || (size === "mid" ? "mid" : "") || (size === "small" ? "small" : "")

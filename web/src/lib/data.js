@@ -8,11 +8,16 @@ export const navigation = [
     name: 'O nas'
   },
   {
-    page: 'about',
+    page: 'o-projekcie',
     name: 'O projekcie'
   }
 ]
 
+export const pageNode = {
+  projects: navigation[0].name,
+  aboutBand: navigation[1].name,
+  aboutProject: navigation[2].name,
+}
 
 export const links = {
   facebook: `https://www.facebook.com/plynpiesnimoja`,
