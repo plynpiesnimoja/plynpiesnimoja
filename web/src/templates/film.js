@@ -48,6 +48,7 @@ export const query = graphql`
         alt
       }
       title
+      subtitle
       slug {
         current
       }
