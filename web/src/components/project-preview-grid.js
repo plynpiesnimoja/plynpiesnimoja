@@ -8,8 +8,6 @@ import { Heading } from 'src/components/typography'
 import styles from './project-preview-grid.module.scss'
 
 function ProjectPreviewGrid (props) {
-  console.log("Grid prev nołds", props.nodes)
-  console.log("Jutube URL grid", props.nodes.youtube)
   return (
     <div className={styles.root}>
       {props.title && (
@@ -19,7 +17,6 @@ function ProjectPreviewGrid (props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
-              {console.log("Jutube URL grid", node.youtube)}
               <ProjectPreview {...node} />
             </li>
           ))}

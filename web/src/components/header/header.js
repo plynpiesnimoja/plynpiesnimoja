@@ -46,11 +46,6 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
         <Icon symbol='hamburger' />
       </button>
 
-      {console.log("Nav", showNav)}
-      {console.log("Show Nav", onShowNav)}
-      {console.log("Hide Nav", onHideNav)}
-
-
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <div className={cn("Navigation-container", showNav ? "showNav" : "")}>
           <ul className="Menu-container">

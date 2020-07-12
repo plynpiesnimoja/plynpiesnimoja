@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Heading, Typo, Anchor } from 'src/components/typography'
+
 import styles from './footer.module.scss'
 
 import { links } from 'src/lib/data';
@@ -14,11 +16,6 @@ const Footer = () => {
           <SocialMedia />
           <Contact />
         </div>
-        {/* <div className={styles.siteInfo}>
-          © {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a> &amp;
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
-        </div> */}
       </div>
     </footer>
   )
@@ -28,8 +25,8 @@ export default Footer
 
 const Copyright = () => (
   <div className="footer-section-column copyright">
-    <h4 size="small" caps>© {new Date().getFullYear()}</h4>
-    <p bolder>Płyń pieśni moja</p>
+    <Heading size="mid" caps>© {new Date().getFullYear()}</Heading>
+    <Typo bolder>Płyń pieśni moja</Typo>
   </div>
 )
 
@@ -50,13 +47,11 @@ const SocialMediaLinks = [
 
 const SocialMedia = () => (
   <div className="footer-section-column social-media">
-    <h4 size="small" caps>Śledź nas</h4>
+    <Heading size="mid" caps>Śledź nas</Heading>
     <ul className="social-media-links">
       {SocialMediaLinks.map((link, i) => (
         <li key={i}>
-
-            <a href={link.url} blank>{link.label}</a>
-
+          <Anchor to={link.url}>{link.label}</Anchor>
         </li>
       ))}
     </ul>
@@ -65,11 +60,9 @@ const SocialMedia = () => (
 
 const Contact = () => (
   <div className="footer-section-column contact">
-    <h4 size="small" caps>Napisz do nas</h4>
+    <Heading size="mid" caps>Napisz do nas</Heading>
     <div className="contact-mail">
-
-        <a href={links.mail} blank>plynpiesnimoja@gmail.com</a>
-
+      <Anchor to={links.mail}>plynpiesnimoja@gmail.com</Anchor>
     </div>
   </div>
 )

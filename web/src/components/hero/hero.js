@@ -27,12 +27,10 @@ export default Hero
 
 const Background = ({ heroImage }) => (
   <div 
-    className={styles.heroImage} 
-    //style={heroStyle} 
+    className={styles.heroImage}
     role="img" 
     aria-label="Zdjęcie zespołu Płyń pieśni moja" 
   > 
-    {console.log("hiro imidż w bakgrandzie", heroImage)}
     <img
       src={imageUrlFor(buildImageObj(heroImage))
         .width(1920)
@@ -40,7 +38,9 @@ const Background = ({ heroImage }) => (
         .fit('crop')
         //.fit('crop')
         .url()}
-      //alt={props.mainImage.alt}
+
+      // TO-DO Alt Text for HeroImage  
+      //alt={props.heroImage.alt}
     />
     <GradientOverlay />
   </div>

@@ -15,8 +15,7 @@ const Anchor = ({
 
 
   return(
-    <a 
-      //className={ButtonStyle} 
+    <a
       href={to} 
       target={target} 
       rel={rel}
