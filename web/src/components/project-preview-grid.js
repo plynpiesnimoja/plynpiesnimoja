@@ -8,6 +8,7 @@ import { Heading, Typo } from 'src/components/typography'
 import styles from './project-preview-grid.module.scss'
 
 function ProjectPreviewGrid (props) {
+  console.log("Grid prev nołds", props.nodes)
   return (
     <div className={styles.root}>
       {props.title && (

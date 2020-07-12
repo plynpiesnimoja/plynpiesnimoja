@@ -80,15 +80,30 @@ const AboutBandPage = props => {
 export default AboutBandPage
 
 
+
+
+
 const Persona = (props) => {
   const { id, name, image, bio } = props
+  const classes = {
+    root: 'Persona',
+    header: 'Persona-header',
+    container: 'Persona-container'
+  }
+
   console.log(...bio)
+
   return(
-    <div style={{ border: `1px solid white`, padding: 10 }} title={id}>
-      {/* <p>{id}</p> */}
-      <Heading size="mid">{name}</Heading>
-      <img src={image.url} width={200}/>
-      <BlockContent blocks={bio || []} />
+    <div className={classes.root} style={{ border: `1px solid white`, padding: 10 }} title={id}>
+      <div className={classes.header}>
+        <Heading size="mid">{name}</Heading>
+        <img src={image.url} width={200}/>
+      </div>
+      <div>
+        <BlockContent blocks={bio || []} />
+      </div>
+      
+
     </div>
   )
 }

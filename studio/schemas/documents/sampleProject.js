@@ -1,4 +1,4 @@
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 
 export default {
   name: 'sampleProject',
@@ -9,6 +9,14 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string'
+    },
+    {
+      name: 'youtube',
+      title: 'Film',
+      type: 'youtube',
+      // options: {
+      //   source: 'title',
+      // }
     },
     {
       name: 'slug',

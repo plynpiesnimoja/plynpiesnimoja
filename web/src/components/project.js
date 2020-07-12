@@ -11,8 +11,8 @@ import styles from './project.module.css'
 
 
 function Project (props) {
-  const {_rawBody, title, categories, mainImage, members, publishedAt, relatedProjects} = props
-  console.log("roł bodi", _rawBody)
+  const {_rawBody, title, categories, mainImage, youtube, members, publishedAt, relatedProjects} = props
+  console.log("jutub", youtube)
   return (
     <article className={styles.root}>
       

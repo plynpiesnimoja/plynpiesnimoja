@@ -4,10 +4,10 @@ import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
-import ProjectPreviewGrid from '../components/project-preview-grid'
+} from 'src/lib/helpers'
+import Container from 'src/components/container'
+import GraphQLErrorList from 'src/components/graphql-error-list'
+import ProjectPreviewGrid from 'src/components/project-preview-grid'
 import SEO from 'src/components/seo'
 import Layout from 'src/containers/layout'
 import Hero from 'src/components/hero'
@@ -73,6 +73,9 @@ export const query = graphql`
               _id
             }
             alt
+          }
+          youtube {
+            url
           }
           title
           _rawExcerpt

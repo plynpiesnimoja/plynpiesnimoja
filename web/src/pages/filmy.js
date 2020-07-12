@@ -26,6 +26,9 @@ export const query = graphql`
             }
             alt
           }
+          youtube {
+            url
+          }
           title
           _rawExcerpt
           slug {
@@ -41,6 +44,7 @@ const pageTitle = pageNode.projects
 
 const FilmyPage = props => {
   const {data, errors} = props
+  
   if (errors) {
     return (
       <Layout>
@@ -50,6 +54,7 @@ const FilmyPage = props => {
   }
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
+  console.log("project nołds", projectNodes)  
   return (
     <Layout>
       <SEO title={pageTitle} />
