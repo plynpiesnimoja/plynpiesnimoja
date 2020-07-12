@@ -3,7 +3,7 @@ import React from 'react'
 import { cn, buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockText from './block-text'
-import { Heading, Typo } from 'src/components/typography'
+import { Heading } from 'src/components/typography'
 import styles from './project-preview.module.css'
 import { responsiveTitle3 } from './typography.module.css'
 
@@ -21,7 +21,6 @@ function ProjectPreview (props) {
           />
         )}
       </div>
-      {/* <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3> */}
       <Heading className={cn(responsiveTitle3, styles.title)} size="large">{props.title}</Heading>
       {props._rawExcerpt && (
         <div className={styles.excerpt}>

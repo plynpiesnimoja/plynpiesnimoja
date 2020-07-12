@@ -51,7 +51,7 @@ const FilmyPage = props => {
   }
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
-  console.log("project nołds dejta", projectNodes)  
+
   return (
     <Layout>
       <SEO title={pageTitle} />

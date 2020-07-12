@@ -7,16 +7,11 @@ import { Anchor } from 'src/components/typography'
 import { cn } from 'src/lib/helpers'
 
 import './button.scss'
-//import styles from './header.module.scss'
+
 
 const Button = (props) => {
   const classes = cn("Button")
-  // const Component = (props.link ? "a" : "button")
-  // return(
-  //   <Component>
-  //     {props.children}
-  //   </Component>
-  // )
+
   if (props.link && !props.external) {
     return(
       <div className={classes}>

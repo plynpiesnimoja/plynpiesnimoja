@@ -97,7 +97,6 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site
-  console.log("dejta", data)
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
       .filter(filterOutDocsWithoutSlugs)

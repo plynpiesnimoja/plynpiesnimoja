@@ -3,7 +3,7 @@ import React from 'react'
 import ProjectPreview from './project-preview'
 
 import Button from './button'
-import { Heading, Typo } from 'src/components/typography'
+import { Heading } from 'src/components/typography'
 
 import styles from './project-preview-grid.module.scss'
 

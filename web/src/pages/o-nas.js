@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
 import BlockContent from 'src/components/block-content'
-import BlockText from 'src/components/block-text'
 
 import { Heading, Typo } from 'src/components/typography'
 

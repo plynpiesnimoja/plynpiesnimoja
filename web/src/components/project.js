@@ -13,9 +13,8 @@ import styles from './project.module.css'
 
 
 function Project (props) {
-  const {_rawBody, title, categories, mainImage, youtube, members, publishedAt, relatedProjects} = props
+  const {_rawBody, title, categories, youtube, members, publishedAt, relatedProjects} = props
 
-  //console.log("jutub in da prodżekt", youtube.videoId)
   console.log("props prodżekt", props)
 
   return (
