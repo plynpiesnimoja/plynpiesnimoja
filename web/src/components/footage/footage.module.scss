@@ -1,0 +1,32 @@
+@import '../../styles/custom-media.scss';
+@import '../../styles/custom-properties.scss';
+
+$break: $layout-sm;
+
+.root {
+  background-color: $black;
+}
+
+.videoWrapper {
+  max-width: 960px;
+  padding: 1em 1.5em;
+  margin: 0 auto;
+  @media screen and (max-width: $break) {
+    //max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.videoContainer {
+  position: relative;
+  padding-bottom: calc(9 / 16 * 100%);
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

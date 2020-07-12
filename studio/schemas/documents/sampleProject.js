@@ -7,7 +7,12 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Title',
+      title: 'Tytuł',
+      type: 'string'
+    },
+    {
+      name: 'subtitle',
+      title: 'Podtytuł',
       type: 'string'
     },
     {
@@ -57,14 +62,8 @@ export default {
     },
     {
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Obraz miniaturka',
       type: 'figure'
-    },
-    {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}]
     },
     {
       name: 'body',
@@ -73,17 +72,26 @@ export default {
     },
     {
       name: 'relatedProjects',
-      title: 'Related projects',
+      title: 'Powiązane nagrania',
+      description: 'Tu wybierz i dodaj wpisy z filmami, które pojawią się w sekcji "Powiązane" (opcjonalnie)',
       type: 'array',
       of: [{type: 'reference', to: {type: 'sampleProject'}}]
-    }
+    },
+    {
+      name: 'categories',
+      title: 'Kategorie',
+      description: 'Dodaj kategorie odnoszące się do nagrania (opcjonalnie)',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'category'}}]
+    },
   ],
   preview: {
     select: {
       title: 'title',
       publishedAt: 'publishedAt',
       slug: 'slug',
-      media: 'mainImage'
+      media: 'mainImage',
+      youtube: 'Film'
     },
     prepare({title = 'No title', publishedAt, slug = {}, media}) {
       const dateSegment = format(publishedAt, 'YYYY/MM')

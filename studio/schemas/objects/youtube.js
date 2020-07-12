@@ -26,7 +26,11 @@ export default {
     {
       title: 'Youtube ID',
       name: 'videoId',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.error('Musisz podać "id" filmu na Youtubie').required(),
+      options: {
+        isHighlighted: true
+      }
     },
     // {
     //   title: 'Url',

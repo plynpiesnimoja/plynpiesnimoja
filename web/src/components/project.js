@@ -7,40 +7,25 @@ import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
 
+import Footage from 'src/components/footage'
+
 import styles from './project.module.css'
 
 
 function Project (props) {
   const {_rawBody, title, categories, mainImage, youtube, members, publishedAt, relatedProjects} = props
 
-  console.log("jutub in da prodżekt", youtube.videoId)
+  //console.log("jutub in da prodżekt", youtube.videoId)
   console.log("props prodżekt", props)
 
   return (
     <article className={styles.root}>
-      
-      <div className={styles.mainImage}>
-        {/* <>
-          {props.mainImage && mainImage.asset && (
-            <img
-              src={imageUrlFor(buildImageObj(mainImage))
-                .width(1200)
-                .height(Math.floor((9 / 16) * 1200))
-                .fit('crop')
-                .url()}
-              alt={mainImage.alt}
-            />
-          )}   
-        </> */}
+      <>
+        {props.youtube && youtube.videoId && (
+          <Footage videoId={youtube.videoId} />
 
-        <>
-          {props.youtube && youtube.videoId && (
-            <Footage videoId={youtube.videoId} />
-          )}
-        </>     
-        
-
-      </div>
+        )}
+      </> 
       
       <Container>
         <div className={styles.grid}>
@@ -98,19 +83,29 @@ function Project (props) {
 
 export default Project
 
+// const styleCss = {
+//   youtube: {
+//     position: `absolute`,
+//     width: `100%`,
+//     height: `100%`
+//   },
+//   container: {
+//     width: `100%`,
+//     height: `100%`
+//   }
+// }
+// const Footage = (props) => (
+//   <div style={styleCss.youtube}>
+//     <iframe style={styleCss.container}
+//       // width="560" 
+//       // height="315" 
+//       src={`https://www.youtube.com/embed/${props.videoId}`}
+//       // src={props.url}
+//       frameborder="0" 
+//       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+//       allowfullscreen
+//     >
 
-const Footage = (props) => (
-  <div>
-    <iframe 
-      width="560" 
-      height="315" 
-      src={`https://www.youtube.com/embed/${props.videoId}`}
-      // src={props.url}
-      frameborder="0" 
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen
-    >
-
-    </iframe>
-  </div>
-)
+//     </iframe>
+//   </div>
+// )
