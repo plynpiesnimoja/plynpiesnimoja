@@ -6,12 +6,14 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Nazwa kategorii',
+      description: 'Na przykład "Muzyka klasyczna", krótko 1-2 wyrazy najlepiej'
     },
     {
       name: 'description',
       type: 'text',
-      title: 'Description'
+      title: 'Opis (opcjonalnie)',
+      description: 'Opis tylko czysto informacyjnie, nie ma wpływu na treści zamieszczonych na stronie'
     }
   ]
 }
