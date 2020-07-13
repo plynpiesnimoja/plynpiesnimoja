@@ -10,7 +10,8 @@ import './button.scss'
 
 
 const Button = (props) => {
-  const classes = cn("Button")
+  const { primary } = props
+  const classes = cn('Button', primary ? 'primary' : 'default')
 
   if (props.link && !props.external) {
     return(
@@ -31,7 +32,7 @@ const Button = (props) => {
   } else {
     return(
       <div className={classes}>
-        <button>
+        <button onClick={props.onClick}>
           <span>{props.children}</span>
         </button>
       </div>

@@ -1,24 +1,82 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { buildImageObj } from '../../lib/helpers'
-import { imageUrlFor } from '../../lib/image-url'
+import { buildImageObj } from 'src/lib/helpers'
+import { imageUrlFor } from 'src/lib/image-url'
+
+import Button from 'src/components/button'
+import { Heading, Typo } from 'src/components/typography'
+import BlockContent from 'src/components/block-content'
+
+import { cn } from 'src/lib/helpers'
+
+import styles from './persona.module.scss'
+import './styles.scss'
 
 const Persona = (props) => {
-  const { container, avatar } = props
-  return(
-    <div>
-          <img
-            src={imageUrlFor(buildImageObj(avatar))
-              .width(1920)
-              .height(Math.floor((9 / 16) * 1920))
-              .fit('crop')
-              .url()}
+  //const [on, setOn] = useState(checked ? true : false);
+  const [on, setOn] = useState(false);
 
-            // TO-DO Alt Text for Avatar -> if any 
-            //alt={props.heroImage.alt}
+  const Switch = () => {
+    setOn(on => !on);
+    //if (onChange) onChange();
+    console.log("czek dis słycz!")
+  }
+  const { id, name, image, bio, container } = props
+  const classes = {
+    root: 'Persona',
+    header: 'Persona-header',
+    container: 'Persona-container',
+    content: 'Persona-content',
+    active: on ? 'active' : ''
+  }
+
+  console.log("persona imidż", image.url)
+
+  return(
+    <div className={cn(styles.root, classes.root, classes.active)}>
+      <div className={styles.personaAvatar}>
+        {image && image.url && (
+          <img 
+            src={image.url} 
           />
+        )}
+      </div>
+      <div className={cn(classes.container, styles.personaContainer)}>
+        <div className={classes.header}>
+          <Heading size="big">
+            {name}
+          </Heading>
+          <Typo>
+            Placeholder for position
+          </Typo>
+        </div>
+        <div className={classes.content}>
+          <div className='Content-block'>
+            <BlockContent blocks={bio || []} />
+          </div>
+          <Button onClick={Switch}>Rozwiń</Button>
+        </div>
+
+      </div>
+
+
     </div>
   )
 }
 
 export default Persona
+
+
+export const Avatar = ({ image }) => (
+  <img
+    src={imageUrlFor(buildImageObj(image.url))
+      .width(200)
+      //.height(200)
+      .height(Math.floor((9 / 16) * 200))
+      .fit('crop')
+      .url()}
+
+    // TO-DO Alt Text for Avatar -> if any 
+    //alt={props.heroImage.alt}
+  />
+)

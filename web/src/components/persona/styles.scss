@@ -1,0 +1,34 @@
+.Persona {
+  .Persona-header {
+    .Heading {
+      margin: 0;
+    }
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+}
+
+
+.Persona-content {
+  display: flex;
+  flex-direction: column;
+  transition: max-height 300ms ease;
+  max-height: 2.5rem;
+  overflow: hidden;
+  background: blue;
+  .Content-block {
+    overflow: hidden;
+    //display: none;
+  }
+}
+.Persona.active {
+  .Persona-content {
+    max-height: 100%;
+    overflow: auto;
+    .Content-block {
+      overflow: auto;
+      //display: block;
+    }
+  }
+}

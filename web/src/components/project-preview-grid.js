@@ -24,7 +24,7 @@ function ProjectPreviewGrid (props) {
       {props.browseMoreHref && (
 
           <div className={styles.browseMoreNav}>
-            <Button link to='/filmy/'>Zobacz więcej...</Button>
+            <Button primary link to='/filmy/'>Zobacz więcej...</Button>
           </div>
 
       )}

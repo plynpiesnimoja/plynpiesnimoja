@@ -2,10 +2,13 @@
 
 .root {
   composes: container from "part:@sanity/dashboard/widget-styles";
+  outline: 2px solid #2276fc;
+  outline-offset: -6px;
 }
 
 .header {
   composes: header from "part:@sanity/dashboard/widget-styles";
+  
 }
 
 .title {
