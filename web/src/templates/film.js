@@ -1,5 +1,5 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Project from '../components/project'

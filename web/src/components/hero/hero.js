@@ -6,7 +6,7 @@ import styles from './hero.module.scss'
 
 const Hero = ({ children, heroImage }) => {
   // console.log("hiro imidż", heroImage)
-  const HeroImage = heroImage !== null ? imageUrlFor(buildImageObj(heroImage)).fit('crop').url() : false
+  // const HeroImage = heroImage !== null ? imageUrlFor(buildImageObj(heroImage)).fit('crop').url() : false
   return (
     <div 
       className={styles.root} 
@@ -17,7 +17,7 @@ const Hero = ({ children, heroImage }) => {
           {children}
         </Container>
       </div>
-
+      {/* TO-DO Condition needed for HeroImage if is not uploaded */}
       <Background heroImage={heroImage} />
     </div>
   )
@@ -28,7 +28,7 @@ export default Hero
 const Background = ({ heroImage }) => (
   <div 
     className={styles.heroImage}
-    role="img" 
+    //role="img" 
     aria-label="Zdjęcie zespołu Płyń pieśni moja" 
   > 
     <img
@@ -36,7 +36,6 @@ const Background = ({ heroImage }) => (
         .width(1920)
         .height(Math.floor((9 / 16) * 1920))
         .fit('crop')
-        //.fit('crop')
         .url()}
 
       // TO-DO Alt Text for HeroImage  
