@@ -30,6 +30,8 @@ const Persona = (props) => {
     active: on ? 'active' : ''
   }
 
+  const label = !on ? 'Więcej...' : 'Zwiń'
+
   console.log("persona imidż", image.url)
 
   return(
@@ -54,7 +56,12 @@ const Persona = (props) => {
           <div className='Content-block'>
             <BlockContent blocks={bio || []} />
           </div>
-          <Button onClick={Switch}>Rozwiń</Button>
+          <div className='Content-bottom-panel'>
+            <Button 
+              onClick={Switch}
+              primary={on ? true : false}
+            >{label}</Button>
+          </div>
         </div>
 
       </div>
