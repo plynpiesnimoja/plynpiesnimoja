@@ -5,7 +5,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-
+import { Persona } from 'src/components/persona'
 import BlockContent from 'src/components/block-content'
 
 import { Heading, Typo } from 'src/components/typography'
@@ -63,6 +63,7 @@ const AboutBandPage = props => {
           <>
             {personNodes.map(person => (
               <Persona 
+                key={person.id}
                 id={person.id}
                 name={person.name}
                 image={person._rawImage.asset}
@@ -82,27 +83,27 @@ export default AboutBandPage
 
 
 
-const Persona = (props) => {
-  const { id, name, image, bio } = props
-  const classes = {
-    root: 'Persona',
-    header: 'Persona-header',
-    container: 'Persona-container'
-  }
+// const Persona = (props) => {
+//   const { id, name, image, bio } = props
+//   const classes = {
+//     root: 'Persona',
+//     header: 'Persona-header',
+//     container: 'Persona-container'
+//   }
 
-  console.log(...bio)
+//   console.log(...bio)
 
-  return(
-    <div className={classes.root} style={{ border: `1px solid white`, padding: 10 }} title={id}>
-      <div className={classes.header}>
-        <Heading size="mid">{name}</Heading>
-        <img src={image.url} width={200}/>
-      </div>
-      <div>
-        <BlockContent blocks={bio || []} />
-      </div>
+//   return(
+//     <div className={classes.root} style={{ border: `1px solid white`, padding: 10 }} title={id}>
+//       <div className={classes.header}>
+//         <Heading size="mid">{name}</Heading>
+//         <img src={image.url} width={200}/>
+//       </div>
+//       <div>
+//         <BlockContent blocks={bio || []} />
+//       </div>
       
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }

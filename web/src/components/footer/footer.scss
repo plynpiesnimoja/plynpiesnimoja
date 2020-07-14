@@ -1,0 +1,63 @@
+@import '../../styles/custom-media.scss';
+@import '../../styles/custom-properties.scss';
+
+.footer-link {
+  color: inherit;
+  background-image: linear-gradient(180deg, transparent 95%, currentColor 0);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  transition: 150ms ease;
+  &:hover {
+    color: $accent-color;
+    background-size: 100% 100%;
+  }
+}
+.top {
+  @media screen and (max-width: $layout-xs) {
+    flex-direction: column;
+  }
+}
+
+.logos {
+  align-items: center;
+
+  .footer-logo {
+    margin-top: 3em;
+  }
+
+  .band-logo {
+    margin-right: 2em;
+    svg {
+      width: 5em;
+      height: 2.5em;
+    }
+  }
+
+  .donation-logo {
+    svg {
+      width: 20em;
+      height: 4em;
+    }
+  }
+}
+
+
+
+.social-media-links {
+  padding: 0;
+}
+
+.contact-mail,
+.social-media-links {
+  margin: 1em 0;
+  li {
+    margin: 0.75rem 0;
+  }
+  // .paragraph {
+  //   transition: color 200ms ease;
+  //   &:hover {
+  //     color: red;
+  //   }
+  // }
+}

@@ -1,14 +1,16 @@
 import React from 'react'
-import {buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
-import {ucfirst} from '../lib/string-utils'
-
+import { buildImageObj } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
+import { ucfirst } from '../lib/string-utils'
+import { Heading, Typo, Rule } from 'src/components/typography'
 import styles from './role-list.module.css'
 
 function RoleList ({items, title}) {
   return (
     <div className={styles.root}>
+      
       <h2 className={styles.headline}>{title}</h2>
+      <Rule full />
       <ul className={styles.list}>
         {items.map(item => (
           <li key={item._key} className={styles.listItem}>
@@ -48,6 +50,7 @@ function RoleList ({items, title}) {
           </li>
         ))}
       </ul>
+      <Rule full thick='small' />
     </div>
   )
 }

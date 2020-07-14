@@ -1,10 +1,26 @@
 @import '../../styles/custom-properties.scss';
 
 .Button {
-  display: flex;
-  min-height: 2.5rem;
-  justify-content: center;
-  align-items: center;
+  background-color: $dark-gray;
+  color: $white;
+  transition: 150ms ease;
+  &.default {
+    &:hover {
+      background-color: $gray;
+    }
+    &:active {
+      span {
+        color: $black;
+      }
+    }
+  }
+  &.primary {
+    background-color: $accent-color;
+    color: $deep-purple;
+    &:hover {
+      background-color: $white;
+    }
+  }
   a, button {
     display: flex;
     width: 100%;
@@ -13,24 +29,18 @@
     text-decoration: none;
     justify-content: center;
     align-items: center;
-    background-color: $accent-color;
+    background-color: transparent;
     margin: 0;
     padding: 0 0.75rem;
     text-transform: uppercase;
-    transition: 150ms ease;
-    &:hover {
-      background-color: $white;
-    }
-    &:active {
-      span {
-        color: $black;
-      }
-    }
+    
+    min-height: 2.5rem;
   }
   span {
     font-family: $fontstack-grotesk;
-    color: $deep-purple;
+    color: inherit;
     font-size: 0.875rem;
     font-weight: 500;
+    // letter-spacing: 0.0625rem;
   }
 }

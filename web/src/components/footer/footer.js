@@ -1,21 +1,28 @@
 import React from 'react'
-
+import { BandLogo, DonationLogo } from 'src/components/logo';
 import { Heading, Typo, Anchor } from 'src/components/typography'
 
 import styles from './footer.module.scss'
+import { cn } from 'src/lib/helpers'
+import { links } from 'src/lib/data'
 
-import { links } from 'src/lib/data';
-
+import './footer.scss'
 
 const Footer = () => {
   return(
-    <footer className={styles.footer}>
+    <footer className={styles.root}>
       <div className={styles.footerWrapper}>
-        <div className={styles.footerSection}>
+        <div className={cn(styles.footerSection, 'top')}>
           <Copyright />
           <SocialMedia />
           <Contact />
         </div>
+
+        <div className={cn(styles.footerSection, 'logos')}>
+          <BandLogo className='footer-logo band-logo' focusable />
+          <DonationLogo className='footer-logo donation-logo' />
+        </div>
+
       </div>
     </footer>
   )
@@ -23,35 +30,44 @@ const Footer = () => {
 
 export default Footer
 
-const Copyright = () => (
-  <div className="footer-section-column copyright">
-    <Heading size="mid" caps>© {new Date().getFullYear()}</Heading>
-    <Typo bolder>Płyń pieśni moja</Typo>
-  </div>
-)
+
 
 const SocialMediaLinks = [
   {
     url: links.facebook,
-    label: "Facebook"
+    label: 'Facebook'
   },
   {
     url: links.youtube,
-    label: "Youtube"
+    label: 'Youtube'
   },
   {
     url: links.instagram,
-    label: "Instagram"
+    label: 'Instagram'
   }
-];
+]
+
+
+const Copyright = () => (
+  <div 
+    className={styles.footerSectionColumn}
+    //className='footer-section-column copyright'
+  >
+    <Heading size='mid' caps>© {new Date().getFullYear()}</Heading>
+    <Typo bolder>Płyń pieśni moja</Typo>
+  </div>
+)
 
 const SocialMedia = () => (
-  <div className="footer-section-column social-media">
-    <Heading size="mid" caps>Śledź nas</Heading>
-    <ul className="social-media-links">
+  <div 
+    className={styles.footerSectionColumn}
+    // className='footer-section-column social-media'
+  >
+    <Heading size='mid' caps>Śledź nas</Heading>
+    <ul className='social-media-links'>
       {SocialMediaLinks.map((link, i) => (
         <li key={i}>
-          <Anchor to={link.url}>{link.label}</Anchor>
+          <Anchor className='footer-link' to={link.url}>{link.label}</Anchor>
         </li>
       ))}
     </ul>
@@ -59,10 +75,13 @@ const SocialMedia = () => (
 )
 
 const Contact = () => (
-  <div className="footer-section-column contact">
-    <Heading size="mid" caps>Napisz do nas</Heading>
-    <div className="contact-mail">
-      <Anchor to={links.mail}>plynpiesnimoja@gmail.com</Anchor>
+  <div 
+    className={styles.footerSectionColumn}
+    // className='footer-section-column contact'
+  >
+    <Heading size='mid' caps>Napisz do nas</Heading>
+    <div className='contact-mail'>
+      <Anchor className='footer-link' to={links.mail}>plynpiesnimoja@gmail.com</Anchor>
     </div>
   </div>
 )

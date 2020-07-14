@@ -1,31 +1,38 @@
 export default {
   widgets: [
+    // {
+    //   name: 'sanity-tutorials',
+    //   options: {
+    //     templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
+    //   }
+    // },
     {
-      name: 'sanity-tutorials',
+      name: 'structure-menu',
       options: {
-        templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
+        title: 'Edytuj stronę'
       }
     },
-    {name: 'structure-menu'},
     {
       name: 'project-info',
       options: {
         __experimental_before: [
           {
             name: 'netlify',
+            
             options: {
+              title: 'Netlify Panel',
               description:
-                'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
+                'UWAGA: Strona się generuje statycznie, dlatego po zmianach treści w CMSie trzeba będzie przejść do panelu usługi Netlify i zrobić "Build" strony. W tym celu kliknij na guzik "Manage sites at Netlify"',
               sites: [
                 {
                   buildHookId: '',
-                  title: 'Sanity Studio',
+                  title: 'Sanity Studio (CMS)',
                   name: '',
                   apiId: ''
                 },
                 {
                   buildHookId: '',
-                  title: 'Portfolio Website',
+                  title: 'Strona PPM (Website)',
                   name: '',
                   apiId: ''
                 }
@@ -47,11 +54,17 @@ export default {
         ]
       }
     },
-    {name: 'project-users', layout: {height: 'auto'}},
+    {
+      name: 'project-users', 
+      options: {
+        title: 'Użytkownicy, edytorzy' 
+      },
+      layout: { height: 'auto' }
+    },
     {
       name: 'document-list',
-      options: {title: 'Recent projects', order: '_createdAt desc', types: ['sampleProject']},
-      layout: {width: 'medium'}
+      options: { title: 'Ostatnio dodane filmy', order: '_createdAt desc', types: ['sampleProject'] },
+      layout: { width: 'medium' }
     }
   ]
 }

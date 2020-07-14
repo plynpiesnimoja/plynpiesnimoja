@@ -1,0 +1,33 @@
+@import '../../styles/custom-media.scss';
+@import '../../styles/custom-properties.scss';
+
+.root {
+  display: flex;
+  margin: 2rem 0;
+  justify-content: space-between;
+  @media screen and (max-width: $layout-sm) {
+    flex-direction: column;
+  }
+}
+
+.personaAvatar {
+  width: 10rem;
+  height: 10rem;
+  background: blue;
+  margin-right: auto;
+  // border-radius: 50%;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
+}
+.personaContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  margin: 0 0 0 2rem;
+
+  @media screen and (max-width: $layout-sm) {
+    margin: 1rem 0;
+  }
+}

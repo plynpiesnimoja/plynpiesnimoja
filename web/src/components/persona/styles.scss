@@ -1,0 +1,40 @@
+.Persona {
+  .Persona-header {
+    .Heading {
+      margin: 0;
+    }
+    margin-bottom: 1.5rem;
+  }
+  transition: max-height 500ms ease;
+  overflow: hidden;
+  // &.active {
+  //   //max-height: 100%;
+  //   //overflow: auto;
+  // }
+}
+
+
+.Persona-content {
+  display: flex;
+  flex-direction: column;
+  transition: max-height 500ms ease;
+  max-height: 2.5rem;
+
+  .Content-block {
+    overflow: hidden;
+  }
+}
+.Persona.active {
+  .Persona-content {
+    max-height: 100%;
+    // .Content-block {
+    //   background-color: coral;
+    // }
+  }
+}
+.Content-bottom-panel {
+  display: flex;
+  .Button {
+    min-width: 10rem;
+  }
+}

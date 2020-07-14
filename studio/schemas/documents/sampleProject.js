@@ -1,9 +1,12 @@
 import { format } from 'date-fns'
+import Icon from 'react-icons/lib/md/movie'
+
 
 export default {
   name: 'sampleProject',
   title: 'Sample project',
   type: 'document',
+  icon: Icon,
   fields: [
     {
       name: 'title',
