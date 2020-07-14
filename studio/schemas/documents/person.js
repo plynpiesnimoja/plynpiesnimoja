@@ -9,7 +9,14 @@ export default {
     {
       name: 'name',
       type: 'string',
-      title: 'Name'
+      title: 'Nazwa',
+      description: 'Imię, nazwisko, pseudonim artystyczny'
+    },
+    {
+      name: 'role',
+      type: 'string',
+      title: 'Opis (rola)',
+      description: 'Krótki opis, rola w projekcie, zawód itd.'
     },
     {
       name: 'slug',

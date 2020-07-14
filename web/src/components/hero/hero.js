@@ -25,29 +25,32 @@ const Hero = ({ children, heroImage }) => {
 
 export default Hero
 
-const Background = ({ heroImage }) => (
-  <div 
-    className={styles.heroImage}
-    //role="img" 
-    aria-label="Zdjęcie zespołu Płyń pieśni moja" 
-  > 
-    <img
-      src={imageUrlFor(buildImageObj(heroImage))
-        .width(1920)
-        .height(Math.floor((9 / 16) * 1920))
-        .fit('crop')
-        .url()}
-
-      // TO-DO Alt Text for HeroImage  
-      //alt={props.heroImage.alt}
-    />
-    <GradientOverlay />
-  </div>
-)
+const Background = (props) => {
+  const { heroImage, welcomeHeader, _rawBody } = props
+  console.log("hiroł props", props)
+  return (
+    <div 
+      className={styles.heroImage}
+      
+    > 
+      <img
+        src={imageUrlFor(buildImageObj(heroImage))
+          .width(1920)
+          .height(Math.floor((9 / 16) * 1920))
+          .fit('crop')
+          .url()} 
+        alt={heroImage.alt}
+        aria-label={heroImage.alt}
+        tabIndex='0'
+      />
+      <GradientOverlay />
+    </div>
+  )
+}
 const GradientOverlay = () => (
-  <div className={styles.gradientOverlay} />
+  <div className={styles.gradientOverlay} tabIndex='-1' />
 )
 
 export const Overlay = () => (
-  <div className="overlay" />
+  <div className="overlay" tabIndex='-1' />
 )

@@ -23,6 +23,9 @@ $rule-margin: 1.5em;
   &.Rule-primary {
     background-color: $primary-color;
   }
+  &.Rule-accent {
+    background-color: $accent-color;
+  }
   &.Rule-default {
     background-color: currentColor;
   }

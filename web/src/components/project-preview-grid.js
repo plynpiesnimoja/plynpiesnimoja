@@ -3,7 +3,7 @@ import React from 'react'
 import ProjectPreview from './project-preview'
 
 import Button from './button'
-import { Heading } from 'src/components/typography'
+import { Heading, Rule } from 'src/components/typography'
 
 import styles from './project-preview-grid.module.scss'
 
@@ -11,7 +11,10 @@ function ProjectPreviewGrid (props) {
   return (
     <div className={styles.root}>
       {props.title && (
-        <Heading size="mid" caps>{props.title}</Heading>
+        <>
+          <Heading size="mid" caps>{props.title}</Heading>
+          <Rule thick='small' />
+        </>
       )}
       <ul className={styles.grid}>
         {props.nodes &&

@@ -10,15 +10,21 @@ import GraphQLErrorList from 'src/components/graphql-error-list'
 import ProjectPreviewGrid from 'src/components/project-preview-grid'
 import SEO from 'src/components/seo'
 import Layout from 'src/containers/layout'
+import BlockContent from 'src/components/block-content'
 import Hero from 'src/components/hero'
 
-import { Heading, Typo } from 'src/components/typography'
+import { Heading, Typo, Rule } from 'src/components/typography'
 
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
       title
-      subtitle
+      description
+      keywords
+    }
+    mainPage: sanitySiteSettingsMainPage(_id: {regex: "/(drafts.|)siteSettingsMainPage/"}) {
+      welcomeHeader
+      _rawBody
       heroImage {
         crop {
           _key
@@ -41,8 +47,6 @@ export const query = graphql`
         }
         alt
       }
-      description
-      keywords
     }
     projects: allSanitySampleProject(
       limit: 3
@@ -97,6 +101,7 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site
+  const mainPage = (data || {}).mainPage
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
       .filter(filterOutDocsWithoutSlugs)
@@ -108,15 +113,21 @@ const IndexPage = props => {
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     )
   }
-
+  console.log("mejnPejdż dejta", mainPage)
+  //const 
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
 
-      <Hero heroImage={site.heroImage}>
+      <Hero heroImage={mainPage.heroImage}>
         {/* <Heading size="large">Witajcie w projekcie {site.title}</Heading> */}
-        <Heading size="large">Witajcie</Heading>
-        <Typo>{site.subtitle}</Typo>
+        <Heading size='large'>{mainPage.welcomeHeader}</Heading>
+        <Rule color='accent' />
+        {/* <Typo> */}
+          <BlockContent blocks={mainPage._rawBody || []} />
+        {/* </Typo> */}
+        
+        
       </Hero>
 
       <Container>

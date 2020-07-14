@@ -37,10 +37,10 @@ function SEO ({description, lang, meta, keywords, title}) {
                 name: 'twitter:card',
                 content: 'summary'
               },
-              {
-                name: 'twitter:creator',
-                content: siteAuthor
-              },
+              // {
+              //   name: 'twitter:creator',
+              //   content: siteAuthor
+              // },
               {
                 name: 'twitter:title',
                 content: title
@@ -88,9 +88,10 @@ const detailsQuery = graphql`
       title
       description
       keywords
-      author {
-        name
-      }
     }
   }
 `
+
+// author {
+//   name
+// }
