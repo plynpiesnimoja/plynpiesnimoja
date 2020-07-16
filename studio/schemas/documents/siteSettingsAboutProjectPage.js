@@ -1,7 +1,7 @@
 export default {
   name: 'siteSettingsAboutProjectPage',
   type: 'document',
-  title: 'O Projekcie',
+  title: 'Strona - O projekcie',
   __experimental_actions: [
     // 'create',
     'update',

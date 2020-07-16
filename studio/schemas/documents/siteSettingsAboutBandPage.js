@@ -1,7 +1,7 @@
 export default {
   name: 'siteSettingsAboutBandPage',
   type: 'document',
-  title: 'O nas',
+  title: 'Strona - O nas',
   __experimental_actions: [
     // 'create',
     'update',
