@@ -17,8 +17,42 @@ import { responsiveTitle1 } from '../components/typography.module.css'
 
 
 // TO-DO: replace _rawImage with image { ... crop {}, asset {} }
+
 export const query = graphql`
   query AboutBandPageQuery {
+    aboutBandPage: sanitySiteSettingsAboutBandPage(_id: {regex: "/(drafts.|)siteSettingsAboutBandPage/"}) {
+      bandMembers {
+        _key
+        person {
+          id
+          name
+          role
+          _rawBio(resolveReferences: {maxDepth: 10})
+          image {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
+            asset {
+              _id
+            }
+            alt
+          }
+        }
+      }
+    }
     persons: allSanityPerson(
         sort: {fields: _id, 
         order: DESC}
@@ -50,9 +84,16 @@ const AboutBandPage = props => {
       </Layout>
     )
   }
+
+  const aboutBandPage = (data || {}).aboutBandPage
+
+  console.log("pejdż dejta", aboutBandPage)
+
+  console.log("band members", aboutBandPage.bandMembers)
+
   const personNodes =
     data && data.persons && mapEdgesToNodes(data.persons).filter(filterOutDocsWithoutSlugs)
-  console.log("persony", personNodes)
+
 
   return (
     <Layout>
@@ -61,12 +102,12 @@ const AboutBandPage = props => {
         <div>
           <h1 className={responsiveTitle1}>{pageTitle}</h1>
         </div>
-
+{/* 
         {personNodes && personNodes.length > 0 && (
           <>
-            {personNodes.map(person => (
+            {personNodes.map((person, i) => (
               <Persona 
-                key={person.id}
+                key={i}
                 id={person.id}
                 name={person.name}
                 role={person.role}
@@ -75,7 +116,18 @@ const AboutBandPage = props => {
               />
             ))}
           </>
-        )}
+        )} */}
+
+        {aboutBandPage.bandMembers.map((item, i) => (
+              <Persona
+                key={i}
+                id={item.person.id}
+                name={item.person.name}
+                role={item.person.role}
+                image={item.person.image}
+                bio={item.person._rawBio}
+              />
+            ))}
       </Container>
     </Layout>
   )
@@ -84,30 +136,10 @@ const AboutBandPage = props => {
 export default AboutBandPage
 
 
-
-
-
-// const Persona = (props) => {
-//   const { id, name, image, bio } = props
-//   const classes = {
-//     root: 'Persona',
-//     header: 'Persona-header',
-//     container: 'Persona-container'
-//   }
-
-//   console.log(...bio)
-
-//   return(
-//     <div className={classes.root} style={{ border: `1px solid white`, padding: 10 }} title={id}>
-//       <div className={classes.header}>
-//         <Heading size="mid">{name}</Heading>
-//         <img src={image.url} width={200}/>
-//       </div>
-//       <div>
-//         <BlockContent blocks={bio || []} />
-//       </div>
-      
-
-//     </div>
-//   )
-// }
+const PersonaMember = (props) => (
+  <div>
+    <p>{props.id}</p>
+    <p>{props.name}</p>
+    <p>{props.role}</p>
+  </div>
+)

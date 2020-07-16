@@ -5,34 +5,16 @@ import GraphQLErrorList from '../components/graphql-error-list'
 
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
+import BlockContent from '../components/block-content'
+//import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
   query AboutProjectPageQuery {
-    projects: allSanitySampleProject(
-      limit: 12
-      sort: {fields: [publishedAt], order: DESC}
-      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
-    ) {
-      edges {
-        node {
-          id
-          mainImage {
-            asset {
-              _id
-            }
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
+    aboutProjectPage: sanitySiteSettingsAboutProjectPage(_id: {regex: "/(drafts.|)siteSettingsAboutProjectPage/"}) {
+      _rawBody
     }
   }
 `
@@ -48,8 +30,13 @@ const AboutProjectPage = props => {
       </Layout>
     )
   }
-  // const projectNodes =
-  //   data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
+  const aboutProjectPage = (data || {}).aboutProjectPage
+
+  const body = aboutProjectPage._rawBody
+
+  // console.log(aboutProjectPage)
+  // console.log("ol dejta", data)
+
   return (
     <Layout>
       <SEO title={pageTitle} />
@@ -57,7 +44,12 @@ const AboutProjectPage = props => {
         <div>
           <h1 className={responsiveTitle1}>{pageTitle}</h1>
         </div>
-        {/* {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />} */}
+
+        {body && <BlockContent blocks={body || []} />}
+
+        {!body && <p>Brak treściwa i empty state</p>}
+
+
       </Container>
     </Layout>
   )

@@ -1,3 +1,6 @@
+@import '../styles/custom-media.scss';
+@import '../styles/custom-properties.scss';
+
 .root {
   display: block;
   color: inherit;
@@ -31,7 +34,7 @@
 .leadMediaThumb {
   position: relative;
   padding-bottom: 66.666%;
-  background: #eee;
+  background-color: $dark-gray;
 
   img {
     position: absolute;

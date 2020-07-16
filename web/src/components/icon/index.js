@@ -3,6 +3,7 @@ import HamburgerIcon from './hamburger'
 import FacebookIcon from './facebook'
 import YoutubeIcon from './youtube'
 import InstagramIcon from './instagram'
+import UserAvatarIcon from './userAvatar'
 
 function Icon (props) {
   switch (props.symbol) {
@@ -14,6 +15,8 @@ function Icon (props) {
       return <YoutubeIcon />
     case 'instagram':
       return <InstagramIcon />
+    case 'userAvatar':
+      return <UserAvatarIcon />
     default:
       return <span>Unknown icon: {props.symbol}</span>
   }
