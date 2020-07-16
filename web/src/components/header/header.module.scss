@@ -24,9 +24,6 @@ $break: $layout-sm;
   display: flex;
   height: 100%;
 
-  // @media screen and (max-width: 600px ) {
-  //   padding: 1.5em 1.5em;
-  // }
 }
 
 .branding {
@@ -63,9 +60,7 @@ $break: $layout-sm;
     fill: inherit;
   }
 
-  // @media (--media-min-small) {
-  //   display: none;
-  // }
+
   @media screen and (max-width: $break) {
     display: block;
   }
@@ -81,17 +76,9 @@ $break: $layout-sm;
     height: 100%;
   }
   ul li a {
-    //display: block;
     color: inherit;
     text-decoration: none;
-    // padding: 0.5em;
   }
-
-  // @media (hover: hover) {
-  //   ul li a:hover {
-  //     color: var(--color-accent);
-  //   }
-  // }
 
   @media screen and (max-width: $break) {
     position: absolute;
@@ -103,6 +90,8 @@ $break: $layout-sm;
     top: 4rem;
   }
 
+
+  // TO-DO or DELETE?
   @media (--media-min-small) {
     display: block;
 

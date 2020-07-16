@@ -49,7 +49,7 @@ export default {
     },
     {
       name: 'members',
-      title: 'Members',
+      title: 'Osoby biorące udział w projekcie (opcjonalnie)',
       type: 'array',
       of: [{type: 'projectMember'}]
     },

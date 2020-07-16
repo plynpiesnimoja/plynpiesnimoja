@@ -4,13 +4,13 @@ export default {
   title: 'Project Member',
   fields: [
     {
-      title: 'Person',
+      title: 'Osoba',
       name: 'person',
       type: 'reference',
       to: {type: 'person'}
     },
     {
-      title: 'Roles',
+      title: 'Rola i udział w projekcie (opcjonalnie)',
       name: 'roles',
       type: 'array',
       of: [{type: 'string'}],
@@ -19,8 +19,10 @@ export default {
         list: [
           {title: 'Designer', value: 'designer'},
           {title: 'Developer', value: 'developer'},
-          {title: 'Editor', value: 'editor'},
-          {title: 'Manager', value: 'manager'}
+          {title: 'Montaż', value: 'montaż'},
+          {title: 'Manager', value: 'manager'},
+          {title: 'Prowadzenie', value: 'prowadzenie'},
+          {title: 'Wokal', value: 'wokal'}
         ]
       }
     }

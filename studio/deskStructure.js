@@ -20,6 +20,26 @@ export default () =>
         )
         .icon(MdNote),
       S.listItem()
+        .title('Strona - O nas')
+        .child(
+          S.editor()
+            .id('siteSettingsAboutBandPage')
+            .schemaType('siteSettingsAboutBandPage')
+            .documentId('siteSettingsAboutBandPage')
+            .title('Treści na "O nas"')
+        )
+        .icon(MdNote),
+      S.listItem()
+        .title('Strona - O projekcie')
+        .child(
+          S.editor()
+            .id('siteSettingsAboutProjectPage')
+            .schemaType('siteSettingsAboutProjectPage')
+            .documentId('siteSettingsAboutProjectPage')
+            .title('Treści na "O projekcie"')
+        )
+        .icon(MdNote),
+      S.listItem()
         .title('Ogólne ustawienia strony')
         .child(
           S.editor()

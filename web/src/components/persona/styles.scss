@@ -1,9 +1,17 @@
+@import '../../styles/custom-media.scss';
+@import '../../styles/custom-properties.scss';
+
+
 .Persona {
   .Persona-header {
     .Heading {
       margin: 0;
     }
     margin-bottom: 1.5rem;
+    min-height: 6rem;
+    @media screen and (max-width: $layout-sm) {
+      min-height: 1rem;
+    }
   }
   transition: max-height 500ms ease;
   overflow: hidden;

@@ -10,7 +10,7 @@ export default {
       title: 'Podpis (opcjonalnie)',
       name: 'caption',
       type: 'string',
-      description: 'Podpis pod zdjęciem (fig.), pojawi się jako osobny element pod obrazkiem (nie dot. zdjęć w tle). Przykład: "Zdjęcie wykonane przez Miśka Zdziśka"',
+      description: 'Podpis pod zdjęciem (fig.), pojawi się jako osobny element pod obrazkiem. UWAGA: nie dot. zdjęć w tle - nie będzie się podpis pojawiać i nie ma on żadnego wpływu. Przykład: "Zdjęcie wykonane przez Miśka Zdziśka"',
       options: {
         isHighlighted: true
       }

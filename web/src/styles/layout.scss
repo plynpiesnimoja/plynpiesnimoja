@@ -41,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-sans);
+  font-family: $fontstack-geometric;
   margin: 0;
 }
 button {
@@ -58,4 +58,5 @@ img {
 }
 // *:focus {
 //   outline: $accent-color dashed 1px;
+//   //outline-color: $accent-color;
 // }
