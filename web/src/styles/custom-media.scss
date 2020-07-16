@@ -17,6 +17,8 @@ $layout-xl: 1920px;
 
 $breakpoint: $layout-md;
 
+$persona-breakpoint: 600px;
+
 // To-Do and clean up this mess
 $media-min-small: (min-width: $layout-xs);
 $media-max-small: screen and (max-width: 449px);

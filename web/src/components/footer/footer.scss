@@ -13,11 +13,11 @@
     background-size: 100% 100%;
   }
 }
-.top {
-  @media screen and (max-width: $layout-xs) {
-    flex-direction: column;
-  }
-}
+// .top {
+//   @media screen and (max-width: $layout-xs) {
+//     flex-direction: column;
+//   }
+// }
 
 .logos {
   align-items: center;
@@ -54,10 +54,4 @@
   li {
     margin: 0.75rem 0;
   }
-  // .paragraph {
-  //   transition: color 200ms ease;
-  //   &:hover {
-  //     color: red;
-  //   }
-  // }
 }

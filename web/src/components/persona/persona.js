@@ -65,63 +65,64 @@ const Persona = (props) => {
   // console.log("persona dejta", props)
 
   return(
-    <>{name && (
+    <>
+      {name && (
+        <div className={cn(styles.root, classes.root, classes.active)}>
+          
+          <div className={styles.personaAvatar}>
+            {image && image.asset && (
+              <Avatar image={image} />
+            )}
+            {!image && (
+              <ImagePlaceHolder />
+            )}
+          </div>
 
-    <div className={cn(styles.root, classes.root, classes.active)}>
-      
-      <div className={styles.personaAvatar}>
-        
-        {image && image.asset && (
-          <Avatar image={image} />
-        )}
+          <div className={cn(classes.container, styles.personaContainer)}>
+            <div className={classes.header}>
+              <Heading size="big">
+                {name}
+              </Heading>
+              {role && (
+                <Typo>{role}</Typo>
+              )}
 
-        {!image && (
-          <ImagePlaceHolder />
-        )}
+            </div>
+            {bio && (
+              <div className={classes.content}>
+                <div className='Content-block'>
+                  {/* Condition here links array > 0 */}
+                  <div className='Persona-links-container'>
+                    
+                    <div className='Persona-bio-link'>
+                      <Button 
+                        //link
+                        icon='documentDownload'
+                        ghostButton
+                      >Pobierz Bio</Button>
+                    </div>
+                    <ul className='Persona-socialmedia-links'>
+                      {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
+                    </ul>
+                  </div>
 
-      </div>
+                  <BlockContent blocks={bio || []} />
+                </div>
 
-      <div className={cn(classes.container, styles.personaContainer)}>
-        <div className={classes.header}>
-          <Heading size="big">
-            {name}
-          </Heading>
-          {role && (
-            <Typo>{role}</Typo>
-          )}
+                <div className='Content-bottom-panel'>
+                  <Button 
+                    onClick={Switch}
+                    primary={on ? true : false}
+                  >{label}</Button>
+                </div>
+              </div>
+            )}
+          </div>
+
 
         </div>
-        {bio && (
-          <div className={classes.content}>
-            <div className='Content-block'>
-              <div className='Persona-links-container'>
-                <div className='Persona-bio-link'>
-                  <Button 
-                    //link
-                    icon='documentDownload'
-                    ghostButton
-                  >Pobierz Bio</Button>
-                </div>
-                <ul className='Persona-socialmedia-links'>
-                  {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
-                </ul>
-              </div>
-              <BlockContent blocks={bio || []} />
-            </div>
-            <div className='Content-bottom-panel'>
-              <Button 
-                onClick={Switch}
-                primary={on ? true : false}
-              >{label}</Button>
-            </div>
-          </div>
-        )}
-      </div>
-
-
-    </div>
-
-    )}</>
+      )}
+    </>
   )
 }
 

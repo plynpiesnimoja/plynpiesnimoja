@@ -9,8 +9,9 @@
     }
     margin-bottom: 1.5rem;
     min-height: 6rem;
-    @media screen and (max-width: $layout-sm) {
+    @media screen and (max-width: $persona-breakpoint) {
       min-height: 1rem;
+      text-align: center;
     }
   }
   transition: max-height 500ms ease;
@@ -42,6 +43,9 @@
 }
 .Content-bottom-panel {
   display: flex;
+  @media screen and (max-width: $persona-breakpoint) {
+    justify-content: center;
+  }
   .Button {
     min-width: 10rem;
   }
@@ -51,6 +55,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  @media screen and (max-width: $persona-breakpoint) {
+    justify-content: center;
+  }
 }
 
 .Persona-bio-link {
