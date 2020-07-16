@@ -46,3 +46,25 @@
     min-width: 10rem;
   }
 }
+.Persona-links-container {
+  color: $accent-color;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Persona-bio-link {
+  margin-right: 1rem; 
+}
+
+.Persona-socialmedia-links {
+  color: inherit;
+  display: flex;
+  margin: 1rem 0.5rem; 
+  a {
+    color: inherit;
+    &:hover {
+      color: $white;
+    }
+  }
+}

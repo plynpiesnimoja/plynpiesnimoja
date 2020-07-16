@@ -2,16 +2,44 @@ import React, { useState, useEffect } from 'react'
 
 import { buildImageObj } from 'src/lib/helpers'
 import { imageUrlFor } from 'src/lib/image-url'
-
+import { Anchor } from 'src/components/typography'
 import Button from 'src/components/button'
 import Icon from 'src/components/icon'
 import { Heading, Typo } from 'src/components/typography'
 import BlockContent from 'src/components/block-content'
 
+import { links } from 'src/lib/data';
 import { cn } from 'src/lib/helpers'
 
 import styles from './persona.module.scss'
 import './styles.scss'
+
+const socialMediaIcons = [
+  {
+    to: links.facebook,
+    icon: "facebook",
+    label: "Facebook",
+    desc: "Polub nas na Facebook'u"
+  },
+  {
+    to: links.youtube,
+    icon: "youtube",
+    label: "Youtube",
+    desc: "Subskrybuj nasz kanał na Youtube"
+  },
+  {
+    to: links.instagram,
+    icon: "instagram",
+    label: "Instagram",
+    desc: "Śledź nas na Instagramie"
+  },
+  {
+    to: links.instagram,
+    icon: "linkedin",
+    label: "Linkedin",
+    desc: "Zobacz linkedina"
+  }
+];
 
 const Persona = (props) => {
   //const [on, setOn] = useState(checked ? true : false);
@@ -66,6 +94,18 @@ const Persona = (props) => {
         {bio && (
           <div className={classes.content}>
             <div className='Content-block'>
+              <div className='Persona-links-container'>
+                <div className='Persona-bio-link'>
+                  <Button 
+                    //link
+                    icon='documentDownload'
+                    ghostButton
+                  >Pobierz Bio</Button>
+                </div>
+                <ul className='Persona-socialmedia-links'>
+                  {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
+                </ul>
+              </div>
               <BlockContent blocks={bio || []} />
             </div>
             <div className='Content-bottom-panel'>
@@ -103,4 +143,17 @@ const ImagePlaceHolder = () => (
   <div className={styles.imagePlaceHolder}>
     <Icon symbol='userAvatar' />
   </div>
+)
+
+const SocialMediaLink = (props) => (
+  <li className='socialMediaLink'>
+    <Anchor
+      // {...props} 
+      to={props.to}
+      ariaLabel={props.desc}
+      className='socialMediaButton'
+    >
+      <Icon symbol={props.icon} />
+    </Anchor>
+  </li>
 )
