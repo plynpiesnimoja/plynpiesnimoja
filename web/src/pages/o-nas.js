@@ -15,6 +15,8 @@ import { pageNode } from 'src/lib/data';
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
+
+// TO-DO: replace _rawImage with image { ... crop {}, asset {} }
 export const query = graphql`
   query AboutBandPageQuery {
     persons: allSanityPerson(
@@ -25,6 +27,7 @@ export const query = graphql`
         node {
           id
           name
+          role
           _rawBio(resolveReferences: {maxDepth: 10})
           _rawImage(resolveReferences: {maxDepth: 10})
           slug {
@@ -66,6 +69,7 @@ const AboutBandPage = props => {
                 key={person.id}
                 id={person.id}
                 name={person.name}
+                role={person.role}
                 image={person._rawImage.asset}
                 bio={person._rawBio}
               />

@@ -48,13 +48,16 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <div className={cn("Navigation-container", showNav ? "showNav" : "")}>
+          
           <ul className="Menu-container">
             <NavItem name='Strona główna' />
             {navigation.map(item => <NavItem key={item.page} {...item} />)}
           </ul>
+
           <ul className="Socialmedia-container">
             {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
           </ul>
+
         </div>
       </nav>
 
@@ -82,10 +85,12 @@ const NavItem = (props) => (
 const SocialMediaLink = (props) => (
   <li className='socialMediaLink'>
     <Anchor
-      {...props} 
+      // {...props} 
+      to={props.to}
+      ariaLabel={props.desc}
       className='socialMediaButton'
     >
-        <Icon symbol={props.icon} />
+      <Icon symbol={props.icon} />
     </Anchor>
   </li>
 )

@@ -21,7 +21,7 @@ const Persona = (props) => {
     //if (onChange) onChange();
     console.log("czek dis słycz!")
   }
-  const { id, name, image, bio, container } = props
+  const { id, name, image, bio, role, container } = props
   const classes = {
     root: 'Persona',
     header: 'Persona-header',
@@ -33,8 +33,11 @@ const Persona = (props) => {
   const label = !on ? 'Więcej...' : 'Zwiń'
 
   console.log("persona imidż", image.url)
+  console.log("persona dejta", props)
 
   return(
+    <>{name && (
+
     <div className={cn(styles.root, classes.root, classes.active)}>
       <div className={styles.personaAvatar}>
         {image && image.url && (
@@ -48,9 +51,10 @@ const Persona = (props) => {
           <Heading size="big">
             {name}
           </Heading>
-          <Typo>
-            Placeholder for position
-          </Typo>
+          {role && (
+            <Typo>{role}</Typo>
+          )}
+
         </div>
         <div className={classes.content}>
           <div className='Content-block'>
@@ -68,6 +72,8 @@ const Persona = (props) => {
 
 
     </div>
+
+    )}</>
   )
 }
 
