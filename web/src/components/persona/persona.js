@@ -17,6 +17,12 @@ import './styles.scss'
 const socialMediaIcons = [
   {
     to: links.facebook,
+    icon: "twitter",
+    label: "Twitter",
+    desc: "Przećwierknij mnie na Twitterze"
+  },
+  {
+    to: links.facebook,
     icon: "facebook",
     label: "Facebook",
     desc: "Polub nas na Facebook'u"

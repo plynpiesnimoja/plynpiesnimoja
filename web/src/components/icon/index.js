@@ -5,6 +5,7 @@ import FacebookIcon from './facebook'
 import LinkedinIcon from './linkedin'
 import YoutubeIcon from './youtube'
 import InstagramIcon from './instagram'
+import TwitterIcon from './twitter'
 import UserAvatarIcon from './userAvatar'
 
 function Icon (props) {
@@ -19,6 +20,8 @@ function Icon (props) {
       return <YoutubeIcon />
     case 'instagram':
       return <InstagramIcon />
+    case 'twitter':
+      return <TwitterIcon />
     case 'linkedin':
       return <LinkedinIcon />
     case 'userAvatar':
