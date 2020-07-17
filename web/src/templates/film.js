@@ -11,6 +11,11 @@ export const query = graphql`
     sampleProject: sanitySampleProject(id: {eq: $id}) {
       id
       publishedAt
+      footage {
+        _key
+        _type
+        videoId
+      }
       youtube {
         videoId
       }
@@ -48,7 +53,6 @@ export const query = graphql`
         alt
       }
       title
-      subtitle
       slug {
         current
       }

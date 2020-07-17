@@ -16,12 +16,14 @@ import gallery from './documents/gallery'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
+import attachment from './objects/attachment'
 import figure from './objects/figure'
 import youtube from './objects/youtube'
 import projectMember from './objects/projectMember'
 import persona from './objects/persona'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
+import socialMediaLinks from './objects/socialMediaLinks'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,12 +35,14 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     bioPortableText,
+    attachment,
     figure,
     youtube,
     projectMember,
     persona,
     projectPortableText,
     simplePortableText,
+    socialMediaLinks,
     
     // The following are document types which will appear
     // in the studio.

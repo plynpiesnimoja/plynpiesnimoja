@@ -14,15 +14,24 @@ import styles from './project.module.css'
 
 
 function Project (props) {
-  const {_rawBody, title, categories, youtube, members, publishedAt, relatedProjects} = props
+  const {_rawBody, title, footage, categories, youtube, members, publishedAt, relatedProjects} = props
 
   console.log("props prodżekt", props)
+  console.log("props prodżekt", footage)
 
+
+  const footageSource = footage[0].videoId
   return (
     <article className={styles.root}>
-      <>
+      {/* <>
         {props.youtube && youtube.videoId && (
           <Footage videoId={youtube.videoId} />
+
+        )}
+      </>  */}
+      <>
+        {footage && footageSource && (
+          <Footage videoId={footageSource} />
 
         )}
       </> 
@@ -92,30 +101,3 @@ function Project (props) {
 }
 
 export default Project
-
-// const styleCss = {
-//   youtube: {
-//     position: `absolute`,
-//     width: `100%`,
-//     height: `100%`
-//   },
-//   container: {
-//     width: `100%`,
-//     height: `100%`
-//   }
-// }
-// const Footage = (props) => (
-//   <div style={styleCss.youtube}>
-//     <iframe style={styleCss.container}
-//       // width="560" 
-//       // height="315" 
-//       src={`https://www.youtube.com/embed/${props.videoId}`}
-//       // src={props.url}
-//       frameborder="0" 
-//       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-//       allowfullscreen
-//     >
-
-//     </iframe>
-//   </div>
-// )

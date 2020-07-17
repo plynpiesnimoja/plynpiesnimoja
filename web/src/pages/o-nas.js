@@ -28,6 +28,26 @@ export const query = graphql`
           name
           role
           _rawBio(resolveReferences: {maxDepth: 10})
+          _rawAttachment
+          attachment {
+            asset {
+              source {
+                name
+                url
+              }
+              url
+            }
+            _key
+            _type
+          }
+          links {
+            _key
+            _type
+            facebook
+            instagram
+            linkedin
+            twitter
+          }
           image {
             crop {
               _key
@@ -64,9 +84,6 @@ export const query = graphql`
           role
           _rawBio(resolveReferences: {maxDepth: 10})
           _rawImage(resolveReferences: {maxDepth: 10})
-          slug {
-            current
-          }
         }
       }
     }
