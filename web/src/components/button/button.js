@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { Link } from 'gatsby'
-// import Icon from 'src/components/icon'
+import Icon from 'src/components/icon'
 import { Anchor } from 'src/components/typography'
 
 import { cn } from 'src/lib/helpers'
@@ -10,21 +10,23 @@ import './button.scss'
 
 
 const Button = (props) => {
-  const { primary } = props
-  const classes = cn('Button', primary ? 'primary' : 'default')
+  const { primary, ghostButton, to, icon, link, external, onClick } = props
+  const classes = cn('Button', primary ? 'primary' : 'default', icon ? 'IconButton' : '', ghostButton && !primary ? 'ghost' : 'default' )
 
-  if (props.link && !props.external) {
+  if (link && !external) {
     return(
       <div className={classes}>
         <Link to={props.to}>
+          {icon && <IconButton icon={icon} />}
           <span>{props.children}</span>
         </Link>
       </div>
     )
-  } else if (props.link && props.external) {
+  } else if (link && external) {
     return(
       <div className={classes}>
         <Anchor to={props.to}>
+          {icon && <IconButton icon={icon} />}
           <span>{props.children}</span>
         </Anchor>
       </div>
@@ -32,7 +34,8 @@ const Button = (props) => {
   } else {
     return(
       <div className={classes}>
-        <button onClick={props.onClick}>
+        <button onClick={onClick}>
+          {icon && <IconButton icon={icon} />}
           <span>{props.children}</span>
         </button>
       </div>
@@ -41,3 +44,12 @@ const Button = (props) => {
 }
 
 export default Button
+
+const IconButton = (props) => {
+  const { icon } = props
+  return(
+    <div className='icon-container'>
+      <Icon symbol={icon} />
+    </div>
+  )
+}

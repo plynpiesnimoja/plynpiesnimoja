@@ -16,7 +16,7 @@ export default () =>
             .id('siteSettingsMainPage')
             .schemaType('siteSettingsMainPage')
             .documentId('siteSettingsMainPage')
-            .title('Treści na "Stronie głównej"')
+            .title('Edytuj stronę główną (index page)')
         )
         .icon(MdNote),
       S.listItem()
@@ -26,7 +26,7 @@ export default () =>
             .id('siteSettingsAboutBandPage')
             .schemaType('siteSettingsAboutBandPage')
             .documentId('siteSettingsAboutBandPage')
-            .title('Treści na "O nas"')
+            .title('Edytuj stronę "O nas"')
         )
         .icon(MdNote),
       S.listItem()
@@ -36,7 +36,7 @@ export default () =>
             .id('siteSettingsAboutProjectPage')
             .schemaType('siteSettingsAboutProjectPage')
             .documentId('siteSettingsAboutProjectPage')
-            .title('Treści na "O projekcie"')
+            .title('Edytuj stronę "O projekcie"')
         )
         .icon(MdNote),
       S.listItem()
@@ -67,5 +67,6 @@ export default () =>
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
-      ...S.documentTypeListItems().filter(hiddenDocTypes)
+      
+      // ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])

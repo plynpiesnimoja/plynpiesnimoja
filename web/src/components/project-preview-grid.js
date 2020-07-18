@@ -12,8 +12,8 @@ function ProjectPreviewGrid (props) {
     <div className={styles.root}>
       {props.title && (
         <>
-          <Heading size="mid" caps>{props.title}</Heading>
-          <Rule thick='small' />
+          <Heading size={3} caps>{props.title}</Heading>
+          <Rule thick='mid' />
         </>
       )}
       <ul className={styles.grid}>
@@ -26,9 +26,9 @@ function ProjectPreviewGrid (props) {
       </ul>
       {props.browseMoreHref && (
 
-          <div className={styles.browseMoreNav}>
-            <Button primary link to='/filmy/'>Zobacz więcej...</Button>
-          </div>
+        <div className={styles.browseMoreNav}>
+          <Button primary link to='/filmy/'>Zobacz wszystkie</Button>
+        </div>
 
       )}
     </div>

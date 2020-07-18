@@ -1,7 +1,7 @@
 export default {
   name: 'siteSettingsAboutProjectPage',
   type: 'document',
-  title: 'O Projekcie',
+  title: 'Strona - O projekcie',
   __experimental_actions: [
     // 'create',
     'update',
@@ -11,8 +11,8 @@ export default {
   fields: [
     {
       name: 'body',
-      title: 'Body',
-      description: 'Lorem ipsum',
+      title: 'Treść główna na stronie (body)',
+      description: 'Edycja do woli, można wrzucać zdjęcia poniżej to pola "rich text", formatowanie itd.',
       type: 'projectPortableText'
     },
   ]

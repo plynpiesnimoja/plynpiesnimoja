@@ -1,20 +1,18 @@
 import React from 'react'
 
-export const YouTubePreview = (props) => (<pre>{JSON.stringlify(props, null, 2)}</pre>)
 
-
-
-export const YT = () => (
+// ID from Youtube URL
+// https://www.sanity.io/guides/portable-text-how-to-add-a-custom-youtube-embed-block
+export const YouTubePreview = ({ value }) => (
   <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/kLsER_zHiS4" 
+    // width="560" 
+    // height="315"
+    width="256" 
+    height="144"
+    src={`https://www.youtube.com/embed/${value.videoId}`} 
     frameborder="0" 
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen
-  >
-
-  </iframe>
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  />
 )
 
 
@@ -22,6 +20,9 @@ export default {
   name: 'youtube',
   title: 'Youtube Embed',
   type: 'object',
+  // options: {
+  //   hotspot: true
+  // },
   fields: [
     {
       title: 'Youtube ID',
@@ -41,9 +42,10 @@ export default {
   ],
   preview: {
     select: {
-      url: 'url',
-      videoId: 'string'
+      //url: 'url',
+      videoId: 'videoId',
+      media: 'videoId'
     },
-    component: YouTubePreview,
+    component: YouTubePreview
   }
 }

@@ -11,6 +11,7 @@ $break: $layout-sm;
   max-width: 960px;
   padding: 1em 1.5em;
   margin: 0 auto;
+  border: 0;
   @media screen and (max-width: $break) {
     //max-width: 100%;
     padding: 0;

@@ -1,11 +1,13 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { cn, buildImageObj } from '../lib/helpers'
+import { 
+  //cn, 
+  buildImageObj 
+} from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockText from './block-text'
 import { Heading } from 'src/components/typography'
-import styles from './project-preview.module.css'
-import { responsiveTitle3 } from './typography.module.css'
+import styles from './project-preview.module.scss'
 
 function ProjectPreview (props) {
   return (
@@ -21,7 +23,17 @@ function ProjectPreview (props) {
           />
         )}
       </div>
-      <Heading className={cn(responsiveTitle3, styles.title)} size="large">{props.title}</Heading>
+      <Heading
+        className='heading-link'
+        // responsive
+        // title 
+        size={2}
+      >
+        <span>
+          {props.title}
+        </span>
+
+      </Heading>
       {props._rawExcerpt && (
         <div className={styles.excerpt}>
           <BlockText blocks={props._rawExcerpt} />

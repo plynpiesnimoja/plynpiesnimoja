@@ -10,19 +10,28 @@ import RoleList from './role-list'
 import Footage from 'src/components/footage'
 import { Heading, Typo, Rule } from 'src/components/typography'
 
-import styles from './project.module.css'
+import styles from './project.module.scss'
 
 
 function Project (props) {
-  const {_rawBody, title, categories, youtube, members, publishedAt, relatedProjects} = props
+  const {_rawBody, title, footage, categories, youtube, members, publishedAt, relatedProjects} = props
 
   console.log("props prodżekt", props)
+  console.log("props prodżekt", footage)
 
+
+  const footageSource = footage[0].videoId
   return (
     <article className={styles.root}>
-      <>
+      {/* <>
         {props.youtube && youtube.videoId && (
           <Footage videoId={youtube.videoId} />
+
+        )}
+      </>  */}
+      <>
+        {footage && footageSource && (
+          <Footage videoId={footageSource} />
 
         )}
       </> 
@@ -36,27 +45,33 @@ function Project (props) {
 
 
           <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
+            <Heading size={1}>{title}</Heading>
             <Rule />
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
           </div>
           <aside className={styles.metaContent}>
-            {publishedAt && (
-              
-                <div className={styles.publishedAt}>
-                  <>
-                    {differenceInDays(new Date(publishedAt), new Date()) > 3
-                      ? distanceInWords(new Date(publishedAt), new Date())
-                      : format(new Date(publishedAt), 'DD / MM / YYYY')}
-                    <Rule thick='small' />
-                  </>
-                </div>
+            <div>
+              {publishedAt && (
+                
+                  <div 
+                    className={styles.publishedAt}
+                    aria-label={`Data publikacji ${format(new Date(publishedAt), 'DD-MM-YYYY')}`}
+                  >
+                    <>
+                      {differenceInDays(new Date(publishedAt), new Date()) > 3
+                        ? distanceInWords(new Date(publishedAt), new Date())
+                        : format(new Date(publishedAt), 'DD / MM / YYYY')}
+                      <Rule thick='small' />
+                    </>
+                  </div>
 
-            )}
+              )}
+            </div>
+            <div>
             {members && members.length > 0 && <RoleList items={members} title='Autorzy' />}
             {categories && categories.length > 0 && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Kategorie</h3>
+                <Heading size={3} caps>Kategorie</Heading>
                 <Rule full />
                 <ul>
                   {categories.map(category => (
@@ -68,7 +83,8 @@ function Project (props) {
             )}
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3>
+                <Heading size={3} caps>Zobacz też</Heading>
+                {/* <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3> */}
                 <Rule full />
                 <ul>
                   {relatedProjects.map(project => (
@@ -84,6 +100,7 @@ function Project (props) {
                 <Rule full thick='small' />
               </div>
             )}
+            </div>
           </aside>
         </div>
       </Container>
@@ -92,30 +109,3 @@ function Project (props) {
 }
 
 export default Project
-
-// const styleCss = {
-//   youtube: {
-//     position: `absolute`,
-//     width: `100%`,
-//     height: `100%`
-//   },
-//   container: {
-//     width: `100%`,
-//     height: `100%`
-//   }
-// }
-// const Footage = (props) => (
-//   <div style={styleCss.youtube}>
-//     <iframe style={styleCss.container}
-//       // width="560" 
-//       // height="315" 
-//       src={`https://www.youtube.com/embed/${props.videoId}`}
-//       // src={props.url}
-//       frameborder="0" 
-//       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-//       allowfullscreen
-//     >
-
-//     </iframe>
-//   </div>
-// )

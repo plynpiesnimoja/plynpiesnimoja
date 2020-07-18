@@ -11,12 +11,20 @@
   z-index: 100;
   // To-Do
   // trick with padding bottom and 56.25% -> CSS tricks
+
   @media screen and (max-width: $breakpoint) {
-    //min-height: calc((100vw / 16) * 9);
+    //height: calc((100vw / 16) * 9);
     min-height: 50vh;
-    
+  }
+  @media screen and (max-width: $layout-xs) {
+    //height: calc(100vw * 1.2);
+    min-height: 50vh;
+    //max-height: calc(75vh - 4rem);
+    height: calc((100vw / 9) * 10);
+    max-height: calc(100vh - 4rem)
     //height: 50vh;
   }
+
   max-height: calc(100vh - 4rem);
   // background-size: cover;
   // background-repeat: no-repeat;
@@ -25,7 +33,6 @@
 .heroContainer {
   position: absolute;
   width: 100%;
-  //top: 0;
   left: 0;
   // @media screen and (max-width: $breakpoint) {
   //   bottom: 2em;
@@ -33,7 +40,7 @@
   //bottom: 4em;
   bottom: 0;
   z-index: 200;
-  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+  //background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
   
 }
 .heroImage {

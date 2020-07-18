@@ -1,0 +1,62 @@
+@import '../styles/custom-media.scss';
+@import '../styles/custom-properties.scss';
+
+.root {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.title {
+  composes: responsiveTitle1 from './typography.module.css';
+}
+
+.root {
+  .title {
+    span {
+      color: inherit;
+      background-image: linear-gradient(180deg, transparent 95%, currentColor 0);
+      background-size: 0 100%;
+      background-repeat: no-repeat;
+      text-decoration: none;
+      transition: 150ms ease;
+    }
+  }
+  &:hover .title {
+    span {
+      background-size: 100% 100%;
+    }
+  }
+}
+
+
+
+.leadMediaThumb {
+  position: relative;
+  padding-bottom: 66.666%;
+  background-color: $dark-gray;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
+
+
+
+.excerpt {
+  p {
+    margin: 0.5em 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}

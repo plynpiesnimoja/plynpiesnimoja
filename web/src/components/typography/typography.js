@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 import { cn } from 'src/lib/helpers'
-import './styles.scss';
+import './styles.scss'
+import './typography.scss'
 
 export const Typo = ({ children, caps, bold, bolder, className, span, size }) => {
   const Size = (size === "large" ? "large" : "") || (size === "big" ? "big" : "") || (size === "mid" ? "mid" : "") || (size === "small" ? "small" : "")
@@ -28,14 +29,34 @@ export const Quote = ({ children }) => (
   </>
 )
 
-export const Heading = ({ id, size, children, caps, first, ...other }) => {
-  const Component = (size === "large" ? "h1" : null) || (size === "big" ? "h2" : null) || (size === "mid" ? "h4" : null) || (size === "small" ? "h6" : null);
+export const Heading = (props) => {
+  const {
+    id, 
+    size = 1, 
+    responsive,
+    title,
+    caps,
+    ...other 
+  } = props
+  const Component = 
+    (size === "large" || size == 1 ? "h1" : null) || 
+    (size === "big"   || size == 2 ? "h2" : null) || 
+    (size == 3 ? "h3" : null) || 
+    (size === "mid"   || size == 4 ? "h4" : null) || 
+    (size == 5 ? "h5" : null) || 
+    (size === "small" || size == 6 ? "h6" : null);
 
-  const classes = cn("Heading", size ? size : "", caps ? "caps" : "")
+  const styles = {
+    root: `Heading${!title ? ` heading${size}` : ''}`,
+    title: title ? `${responsive ? 'responsiveTitle' : 'title'}${size}` : '',
+    caps: caps ? 'caps' : ''
+  }
+  const classes = cn(styles.root, styles.title, styles.caps)
+
   return(
-    <div className={classes} style={first ? { marginTop: 0 } : null}>
+    <div className={classes}>
       <Component id={id ? id : null} {...other}>
-        {children}
+        {props.children}
       </Component>
     </div>
   )

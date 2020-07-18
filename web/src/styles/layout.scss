@@ -1,4 +1,47 @@
 @import './custom-properties.scss';
+@import './custom-media.scss';
+
+:root {
+  --font-family-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-geometric: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-serif: 'Merriweather', serif;
+  --font-family-grotesk: 'Inter', sans-serif;
+  // --color-black: $black;
+  // --color-dark-gray: $dark-gray;
+  // --color-gray: $gray;
+  // --color-light-gray: $light-gray;
+  // --color-very-light-gray: $very-light-gray;
+  // --color-white: $white;
+  // --color-accent: $accent-color;
+
+
+  /* Typography */
+  --unit: 16;
+  --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
+  --font-micro-line-height: calc(12 / 10); /* 12px */
+  --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
+  --font-small-line-height: calc(21 / 14); /* 21px */
+  --font-base-size: 1em; /* 16px */
+  --font-base-line-height: calc(24 / var(--unit)); /* 24px */
+  --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
+  --font-large-line-height: calc(27 / 18); /* 27px */
+  --font-title4-size: calc(18 / var(--base-unit) * 1rem);
+  --font-title4-line-height: calc(21 / 18);
+  --font-title3-size: calc(21 / var(--unit) * 1rem); /* 21px */
+  --font-title3-line-height: calc(30 / 21); /* 30px */
+  --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
+  --font-title2-line-height: calc(33 / 24); /* 33px */
+  --font-title1-size: calc(40 / var(--unit) * 1rem); /* 40px */
+  --font-title1-line-height: calc(48 / 40); /* 57px */
+  --font-heading4-size: calc(18 / var(--base-unit) * 1rem);
+  --font-heading4-line-height: calc(28 / 18);
+  --font-heading3-size: calc(21 / var(--unit) * 1rem); /* 21px */
+  --font-heading3-line-height: calc(32 / 21); /* 30px */
+  --font-heading2-size: calc(24 / var(--unit) * 1rem); /* 24px */
+  --font-heading2-line-height: calc(36 / 24); /* 33px */
+  --font-heading1-size: calc(28 / var(--unit) * 1rem); /* 40px */
+  --font-heading1-line-height: calc(40 / 36); /* 57px */
+}
 
 * {
   box-sizing: border-box;
@@ -35,6 +78,7 @@ li {
   margin: 0;
   padding-inline-start: 0;
 }
+
 h1,
 h2,
 h3,
@@ -44,6 +88,48 @@ h6 {
   font-family: $fontstack-geometric;
   margin: 0;
 }
+h1 {
+  font-size: var(--font-heading1-size);
+  line-height: var(--font-heading1-line-height);
+  @media screen and (max-width: $layout-sm) {
+    font-size: calc(var(--font-heading1-size) * 0.875);
+  }
+}
+h2 {
+  font-size: var(--font-heading2-size);
+  line-height: var(--font-heading2-line-height);
+  @media screen and (max-width: $layout-sm) {
+    font-size: calc(var(--font-heading2-size) * 0.875);
+  }
+}
+h3 {
+  font-size: var(--font-heading3-size);
+  line-height: var(--font-heading3-line-height);
+  @media screen and (max-width: $layout-sm) {
+    font-size: calc(var(--font-heading3-size) * 0.875);
+  }
+}
+h4, h5, h6 {
+  font-size: var(--font-heading4-size);
+  line-height: var(--font-heading4-line-height);
+  @media screen and (max-width: $layout-sm) {
+    font-size: calc(var(--font-heading3-size) * 0.875);
+  }
+}
+p {
+  font-size: 1.5em;
+  //line-height: var(--font-base-line-height);
+  @media screen and (max-width: $layout-xl) {
+    font-size: 1.25em;
+  }
+  @media screen and (max-width: $layout-sm) {
+    font-size: 1em;
+  }
+  @media screen and (max-width: $layout-xs) {
+    font-size: 0.875em;
+  }
+}
+
 button {
   border: none;
   cursor: pointer;
@@ -60,3 +146,5 @@ img {
 //   outline: $accent-color dashed 1px;
 //   //outline-color: $accent-color;
 // }
+
+
