@@ -2,7 +2,7 @@ import React from 'react'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import { ucfirst } from '../lib/string-utils'
-import { Heading, Typo, Rule } from 'src/components/typography'
+import { Heading, Rule } from 'src/components/typography'
 import styles from './role-list.module.scss'
 
 import Icon from 'src/components/icon'
@@ -13,7 +13,7 @@ const RoleList = (props) => {
 
   return (
     <div className={styles.root}>
-      <Heading size={2}>{title}</Heading>
+      <Heading size={3} caps>{title}</Heading>
       <Rule full />
       <ul className={styles.list}>
         {items
@@ -32,11 +32,7 @@ const RoleList = (props) => {
                       alt=''
                     />
                   )}
-                  {!item.person.image && (
-                                
-                                  <ImagePlaceHolder />
-                                
-                  )}
+                  {!item.person.image && <ImagePlaceHolder />}
                 </div>
               </div>
               <div className={styles.label}>

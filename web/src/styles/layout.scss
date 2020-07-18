@@ -39,8 +39,8 @@
   --font-heading3-line-height: calc(32 / 21); /* 30px */
   --font-heading2-size: calc(24 / var(--unit) * 1rem); /* 24px */
   --font-heading2-line-height: calc(36 / 24); /* 33px */
-  --font-heading1-size: calc(40 / var(--unit) * 1rem); /* 40px */
-  --font-heading1-line-height: calc(48 / 40); /* 57px */
+  --font-heading1-size: calc(28 / var(--unit) * 1rem); /* 40px */
+  --font-heading1-line-height: calc(40 / 36); /* 57px */
 }
 
 * {
@@ -119,7 +119,7 @@ h4, h5, h6 {
 p {
   font-size: 1.5em;
   //line-height: var(--font-base-line-height);
-  @media screen and (max-width: $layout-lg) {
+  @media screen and (max-width: $layout-xl) {
     font-size: 1.25em;
   }
   @media screen and (max-width: $layout-sm) {

@@ -7,14 +7,12 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Page from '../containers/page'
 import { Persona } from 'src/components/persona'
-import BlockContent from 'src/components/block-content'
 
-import { Heading, Typo } from 'src/components/typography'
+// import { Heading, Typo } from 'src/components/typography'
 
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
-import { responsiveTitle1 } from '../components/typography.module.css'
 
 
 // TO-DO: replace _rawImage with image { ... crop {}, asset {} }
@@ -120,12 +118,6 @@ const AboutBandPage = props => {
       <Container>
         <Page title={pageTitle}>
 
-        {/* <Heading responsive size={1}>{pageTitle}</Heading> */}
-        {/* <div>
-          <h1 className={responsiveTitle1}>{pageTitle}</h1>
-        </div> */}
-
-
           {aboutBandPage.bandMembers.map((item, i) => (
                 <Persona
                   key={i}
@@ -138,6 +130,7 @@ const AboutBandPage = props => {
                   attachment={item.person.attachment}
                 />
               ))}
+
         </Page>
       </Container>
     </Layout>
@@ -145,12 +138,3 @@ const AboutBandPage = props => {
 }
 
 export default AboutBandPage
-
-
-const PersonaMember = (props) => (
-  <div>
-    <p>{props.id}</p>
-    <p>{props.name}</p>
-    <p>{props.role}</p>
-  </div>
-)

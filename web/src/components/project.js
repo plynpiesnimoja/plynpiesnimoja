@@ -45,28 +45,33 @@ function Project (props) {
 
 
           <div className={styles.mainContent}>
-            {/* <h1 className={styles.title}>{title}</h1> */}
             <Heading size={1}>{title}</Heading>
             <Rule />
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
           </div>
           <aside className={styles.metaContent}>
-            {publishedAt && (
-              
-                <div className={styles.publishedAt}>
-                  <>
-                    {differenceInDays(new Date(publishedAt), new Date()) > 3
-                      ? distanceInWords(new Date(publishedAt), new Date())
-                      : format(new Date(publishedAt), 'DD / MM / YYYY')}
-                    <Rule thick='small' />
-                  </>
-                </div>
+            <div>
+              {publishedAt && (
+                
+                  <div 
+                    className={styles.publishedAt}
+                    aria-label={`Data publikacji ${format(new Date(publishedAt), 'DD-MM-YYYY')}`}
+                  >
+                    <>
+                      {differenceInDays(new Date(publishedAt), new Date()) > 3
+                        ? distanceInWords(new Date(publishedAt), new Date())
+                        : format(new Date(publishedAt), 'DD / MM / YYYY')}
+                      <Rule thick='small' />
+                    </>
+                  </div>
 
-            )}
+              )}
+            </div>
+            <div>
             {members && members.length > 0 && <RoleList items={members} title='Autorzy' />}
             {categories && categories.length > 0 && (
               <div className={styles.categories}>
-                <Heading size={3}>Kategorie</Heading>
+                <Heading size={3} caps>Kategorie</Heading>
                 <Rule full />
                 <ul>
                   {categories.map(category => (
@@ -78,7 +83,7 @@ function Project (props) {
             )}
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
-                <Heading size={3}>Zobacz też</Heading>
+                <Heading size={3} caps>Zobacz też</Heading>
                 {/* <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3> */}
                 <Rule full />
                 <ul>
@@ -95,6 +100,7 @@ function Project (props) {
                 <Rule full thick='small' />
               </div>
             )}
+            </div>
           </aside>
         </div>
       </Container>

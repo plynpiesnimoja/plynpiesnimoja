@@ -81,7 +81,9 @@ const Persona = (props) => {
                 {attachment && attachment.asset && (
                   <div className='Persona-bio-link'>
                     <Button 
-                      link={attachment.asset.url}
+                      to={attachment.asset.url}
+                      link
+                      //to={`?dl=<${attachment.asset.url}>`}
                       external
                       icon='documentDownload'
                       ghostButton

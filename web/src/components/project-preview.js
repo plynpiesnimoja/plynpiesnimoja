@@ -1,11 +1,13 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { cn, buildImageObj } from '../lib/helpers'
+import { 
+  //cn, 
+  buildImageObj 
+} from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockText from './block-text'
 import { Heading } from 'src/components/typography'
 import styles from './project-preview.module.scss'
-import { responsiveTitle3 } from './typography.module.css'
 
 function ProjectPreview (props) {
   return (
@@ -21,8 +23,7 @@ function ProjectPreview (props) {
           />
         )}
       </div>
-      <Heading 
-        //className={cn('heading-link')} 
+      <Heading
         className='heading-link'
         // responsive
         // title 
