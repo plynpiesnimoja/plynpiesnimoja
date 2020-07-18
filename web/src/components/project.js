@@ -10,7 +10,7 @@ import RoleList from './role-list'
 import Footage from 'src/components/footage'
 import { Heading, Typo, Rule } from 'src/components/typography'
 
-import styles from './project.module.css'
+import styles from './project.module.scss'
 
 
 function Project (props) {
@@ -45,7 +45,8 @@ function Project (props) {
 
 
           <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
+            {/* <h1 className={styles.title}>{title}</h1> */}
+            <Heading size={1}>{title}</Heading>
             <Rule />
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
           </div>
@@ -65,7 +66,7 @@ function Project (props) {
             {members && members.length > 0 && <RoleList items={members} title='Autorzy' />}
             {categories && categories.length > 0 && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Kategorie</h3>
+                <Heading size={3}>Kategorie</Heading>
                 <Rule full />
                 <ul>
                   {categories.map(category => (
@@ -77,7 +78,8 @@ function Project (props) {
             )}
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3>
+                <Heading size={3}>Zobacz też</Heading>
+                {/* <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3> */}
                 <Rule full />
                 <ul>
                   {relatedProjects.map(project => (

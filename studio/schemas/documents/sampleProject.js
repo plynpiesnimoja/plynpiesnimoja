@@ -67,6 +67,11 @@ export default {
       type: 'figure'
     },
     {
+      name: 'coverImage',
+      title: 'Obraz miniaturka',
+      type: 'image'
+    },
+    {
       name: 'excerpt',
       title: 'Streszczenie',
       description: 'Fragment, krótki opis pojawiający się pod miniaturką w "kafelku" na stronie z listą nagrań - również na stronie głównej w sekcji "Ostatnio dodane"',

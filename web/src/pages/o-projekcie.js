@@ -5,6 +5,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Page from '../containers/page'
 import BlockContent from '../components/block-content'
 //import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
@@ -41,15 +42,13 @@ const AboutProjectPage = props => {
     <Layout>
       <SEO title={pageTitle} />
       <Container>
-        <div>
-          <h1 className={responsiveTitle1}>{pageTitle}</h1>
-        </div>
+        <Page title={pageTitle}>
 
         {body && <BlockContent blocks={body || []} />}
 
         {!body && <p>Brak treściwa i empty state</p>}
 
-
+        </Page>
       </Container>
     </Layout>
   )

@@ -16,9 +16,6 @@ export const query = graphql`
         _type
         videoId
       }
-      youtube {
-        videoId
-      }
       categories {
         _id
         title

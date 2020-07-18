@@ -24,6 +24,9 @@
   &.ghost {
     background-color: transparent;
     color: $accent-color;
+    a, button {
+      padding: 0;
+    }
     &:hover {
       color: $white;
       background-color: inherit;

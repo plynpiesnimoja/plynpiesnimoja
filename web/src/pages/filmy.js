@@ -5,6 +5,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Page from '../containers/page'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
@@ -56,11 +57,11 @@ const FilmyPage = props => {
     <Layout>
       <SEO title={pageTitle} />
       <Container>
-        <div>
-          <h1 className={responsiveTitle1}>{pageTitle}</h1>
-        </div>
+        <Page title={pageTitle}>
+
+          {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
         
-        {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
+        </Page>
       </Container>
     </Layout>
   )

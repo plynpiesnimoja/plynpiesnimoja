@@ -1,0 +1,75 @@
+@import '../styles/custom-media.scss';
+@import '../styles/custom-properties.scss';
+
+
+
+$breakpoint-project: 600px;
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-column-gap: 2em;
+
+  @media screen and (max-width: $layout-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mainContent {
+  a {
+    color: var(--color-accent);
+
+    @media (hover: hover) {
+      @nest &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.metaContent {
+}
+
+.publishedAt {
+  margin: 1.5rem 0 3rem;
+}
+
+.categories {
+  margin: 2rem 0 3rem;
+
+  ul {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+  }
+
+  ul li {
+    padding: 0.25rem 0;
+  }
+}
+
+.categoriesHeadline {
+  margin: 0.5rem 0 0;
+}
+
+.relatedProjects {
+
+  margin: 2rem 0 3rem;
+
+  ul {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+  }
+
+  a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    padding: 0.25rem 0;
+  }
+}
+
+.relatedProjectsHeadline {
+  margin: 0.5rem 0 0;
+}

@@ -1,23 +1,18 @@
 import React from 'react'
 
-export const YTProto = (props) => (<pre>{JSON.stringlify(props, null, 2)}</pre>)
 
-
-
+// ID from Youtube URL
+// https://www.sanity.io/guides/portable-text-how-to-add-a-custom-youtube-embed-block
 export const YouTubePreview = ({ value }) => (
-  <>
-  {console.log(value.videoId)}
   <iframe 
-    width="560" 
-    height="315" 
-    // src="https://www.youtube.com/embed/kLsER_zHiS4"
+    // width="560" 
+    // height="315"
+    width="256" 
+    height="144"
     src={`https://www.youtube.com/embed/${value.videoId}`} 
     frameborder="0" 
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  >
-
-  </iframe>
-  </>
+  />
 )
 
 
@@ -51,12 +46,6 @@ export default {
       videoId: 'videoId',
       media: 'videoId'
     },
-    component: YouTubePreview,
-    // prepare({title = 'No title', publishedAt, slug = {}, media}) {
-    //   //const dateSegment = format(publishedAt, 'YYYY/MM')
-    //   const dateSegment = format(publishedAt, 'YYYY/MM/DD')
-    //   const path = `/${dateSegment}/${slug.current}/`
-    //   return <YTProto />
-    // }
+    component: YouTubePreview
   }
 }

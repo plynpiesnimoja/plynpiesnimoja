@@ -9,11 +9,9 @@ const Footage = (props) => (
         <iframe
           src={`https://www.youtube.com/embed/${props.videoId}`}
           frameBorder={0} 
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
-        >
-
-        </iframe>
+        />
       </div>
     </div>
   </div>

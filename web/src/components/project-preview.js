@@ -21,9 +21,15 @@ function ProjectPreview (props) {
           />
         )}
       </div>
-      <Heading className={cn(responsiveTitle3, styles.title, 'heading-link')} size="large">
+      <Heading 
+        //className={cn('heading-link')} 
+        className='heading-link'
+        // responsive
+        // title 
+        size={2}
+      >
         <span>
-        {props.title}
+          {props.title}
         </span>
 
       </Heading>

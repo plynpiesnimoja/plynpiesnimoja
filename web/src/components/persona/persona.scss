@@ -7,11 +7,16 @@
     .Heading {
       margin: 0;
     }
-    margin-bottom: 1.5rem;
-    min-height: 6rem;
+    
+    //margin-bottom: 1.5rem;
+    min-height: 10rem;
     @media screen and (max-width: $persona-breakpoint) {
       min-height: 1rem;
       text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .paragraph {
+      margin: 0.5rem 0;
     }
   }
   transition: max-height 500ms ease;
@@ -21,13 +26,16 @@
   //   //overflow: auto;
   // }
 }
-
+// .Persona-container > div:last-child {
+//   border: solid 1px red;
+// }
 
 .Persona-content {
   display: flex;
   flex-direction: column;
   transition: max-height 500ms ease;
-  max-height: 2.5rem;
+  max-height: 3.5rem;
+  
 
   .Content-block {
     overflow: hidden;
@@ -42,6 +50,9 @@
   }
 }
 .Content-bottom-panel {
+  margin: {
+    top: 1rem;
+  }
   display: flex;
   @media screen and (max-width: $persona-breakpoint) {
     justify-content: center;
@@ -54,6 +65,7 @@
   color: $accent-color;
   display: flex;
   align-items: center;
+  min-height: 2.5rem;
   flex-wrap: wrap;
   @media screen and (max-width: $persona-breakpoint) {
     justify-content: center;
@@ -61,17 +73,21 @@
 }
 
 .Persona-bio-link {
-  margin-right: 1rem; 
+  margin-right: 2rem; 
 }
 
 .Persona-socialmedia-links {
   color: inherit;
   display: flex;
-  margin: 1rem 0.5rem; 
+  //margin: 1rem 0.5rem; 
+  // margin: 1rem 0; 
   a {
     color: inherit;
     &:hover {
       color: $white;
     }
+  }
+  li:first-child {
+    margin: 0;
   }
 }

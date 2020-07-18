@@ -5,6 +5,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Page from '../containers/page'
 import { Persona } from 'src/components/persona'
 import BlockContent from 'src/components/block-content'
 
@@ -47,6 +48,7 @@ export const query = graphql`
             instagram
             linkedin
             twitter
+            youtube
           }
           image {
             crop {
@@ -116,35 +118,27 @@ const AboutBandPage = props => {
     <Layout>
       <SEO title={pageTitle} />
       <Container>
-        <div>
-          <h1 className={responsiveTitle1}>{pageTitle}</h1>
-        </div>
-{/* 
-        {personNodes && personNodes.length > 0 && (
-          <>
-            {personNodes.map((person, i) => (
-              <Persona 
-                key={i}
-                id={person.id}
-                name={person.name}
-                role={person.role}
-                image={person._rawImage.asset}
-                bio={person._rawBio}
-              />
-            ))}
-          </>
-        )} */}
+        <Page title={pageTitle}>
 
-        {aboutBandPage.bandMembers.map((item, i) => (
-              <Persona
-                key={i}
-                id={item.person.id}
-                name={item.person.name}
-                role={item.person.role}
-                image={item.person.image}
-                bio={item.person._rawBio}
-              />
-            ))}
+        {/* <Heading responsive size={1}>{pageTitle}</Heading> */}
+        {/* <div>
+          <h1 className={responsiveTitle1}>{pageTitle}</h1>
+        </div> */}
+
+
+          {aboutBandPage.bandMembers.map((item, i) => (
+                <Persona
+                  key={i}
+                  id={item.person.id}
+                  name={item.person.name}
+                  role={item.person.role}
+                  image={item.person.image}
+                  bio={item.person._rawBio}
+                  links={item.person.links ? item.person.links : ''}
+                  attachment={item.person.attachment}
+                />
+              ))}
+        </Page>
       </Container>
     </Layout>
   )

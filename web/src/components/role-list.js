@@ -3,8 +3,9 @@ import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import { ucfirst } from '../lib/string-utils'
 import { Heading, Typo, Rule } from 'src/components/typography'
-import styles from './role-list.module.css'
+import styles from './role-list.module.scss'
 
+import Icon from 'src/components/icon'
 
 const RoleList = (props) => {
 
@@ -12,8 +13,7 @@ const RoleList = (props) => {
 
   return (
     <div className={styles.root}>
-      
-      <h2 className={styles.headline}>{title}</h2>
+      <Heading size={2}>{title}</Heading>
       <Rule full />
       <ul className={styles.list}>
         {items
@@ -32,9 +32,14 @@ const RoleList = (props) => {
                       alt=''
                     />
                   )}
+                  {!item.person.image && (
+                                
+                                  <ImagePlaceHolder />
+                                
+                  )}
                 </div>
               </div>
-              <div>
+              <div className={styles.label}>
                 <div>
                   <strong>{(item.person && item.person.name) || <em>Brak nazwy</em>}</strong>
                 </div>
@@ -62,3 +67,10 @@ const RoleList = (props) => {
 }
 
 export default RoleList
+
+
+const ImagePlaceHolder = () => (
+  <div className={styles.imagePlaceHolder}>
+    <Icon symbol='userAvatar' />
+  </div>
+)

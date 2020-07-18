@@ -8,55 +8,31 @@ import Icon from 'src/components/icon'
 import { Heading, Typo } from 'src/components/typography'
 import BlockContent from 'src/components/block-content'
 
-import { links } from 'src/lib/data';
 import { cn } from 'src/lib/helpers'
 
 import styles from './persona.module.scss'
-import './styles.scss'
-
-const socialMediaIcons = [
-  {
-    to: links.facebook,
-    icon: "twitter",
-    label: "Twitter",
-    desc: "Przećwierknij mnie na Twitterze"
-  },
-  {
-    to: links.facebook,
-    icon: "facebook",
-    label: "Facebook",
-    desc: "Polub nas na Facebook'u"
-  },
-  {
-    to: links.youtube,
-    icon: "youtube",
-    label: "Youtube",
-    desc: "Subskrybuj nasz kanał na Youtube"
-  },
-  {
-    to: links.instagram,
-    icon: "instagram",
-    label: "Instagram",
-    desc: "Śledź nas na Instagramie"
-  },
-  {
-    to: links.instagram,
-    icon: "linkedin",
-    label: "Linkedin",
-    desc: "Zobacz linkedina"
-  }
-];
+import './persona.scss'
 
 const Persona = (props) => {
-  //const [on, setOn] = useState(checked ? true : false);
+  // For one item expanded only trigger
+  // const [on, setOn] = useState(checked ? true : false);
   const [on, setOn] = useState(false);
 
   const Switch = () => {
     setOn(on => !on);
-    //if (onChange) onChange();
+    // if (onChange) onChange();
     console.log("czek dis słycz!")
   }
-  const { id, name, image, bio, role, container } = props
+  const { 
+    // id, 
+    name, 
+    image, 
+    bio, 
+    role, 
+    links, 
+    attachment 
+  } = props
+
   const classes = {
     root: 'Persona',
     header: 'Persona-header',
@@ -67,8 +43,15 @@ const Persona = (props) => {
 
   const label = !on ? 'Więcej...' : 'Zwiń'
 
-  console.log("persona imidż parent", image)
-  // console.log("persona dejta", props)
+  let socialMediaLinks = []
+
+  // Destructing object with social media links and create an array
+  Object.entries(links).forEach(([key, value]) => {
+    if (value && key !== "_type") {
+      socialMediaLinks.push( { type: key, url: value } )
+    }
+  })
+  // console.log("dfg", socialMediaLinks)
 
   return(
     <>
@@ -86,32 +69,41 @@ const Persona = (props) => {
 
           <div className={cn(classes.container, styles.personaContainer)}>
             <div className={classes.header}>
-              <Heading size="big">
+              <Heading size={3}>
                 {name}
               </Heading>
               {role && (
                 <Typo>{role}</Typo>
               )}
 
+              <div className='Persona-links-container'>
+                      
+                {attachment && attachment.asset && (
+                  <div className='Persona-bio-link'>
+                    <Button 
+                      link={attachment.asset.url}
+                      external
+                      icon='documentDownload'
+                      ghostButton
+                    >Pobierz Bio</Button>
+                  </div>
+                )}
+
+                <ul className='Persona-socialmedia-links'>
+                  {socialMediaLinks
+                    .map((item, i) => <SocialMediaLink 
+                                        key={i}
+                                        icon={item.type} 
+                                        to={item.url}
+                                      />)}
+                </ul>
+
+              </div>
             </div>
-            {bio && (
+
+            {bio && socialMediaLinks.length > 0 && (
               <div className={classes.content}>
                 <div className='Content-block'>
-                  {/* Condition here links array > 0 */}
-                  <div className='Persona-links-container'>
-                    
-                    <div className='Persona-bio-link'>
-                      <Button 
-                        //link
-                        icon='documentDownload'
-                        ghostButton
-                      >Pobierz Bio</Button>
-                    </div>
-                    <ul className='Persona-socialmedia-links'>
-                      {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
-                    </ul>
-                  </div>
-
                   <BlockContent blocks={bio || []} />
                 </div>
 
@@ -157,7 +149,7 @@ const SocialMediaLink = (props) => (
     <Anchor
       // {...props} 
       to={props.to}
-      ariaLabel={props.desc}
+      //ariaLabel={props.desc}
       className='socialMediaButton'
     >
       <Icon symbol={props.icon} />

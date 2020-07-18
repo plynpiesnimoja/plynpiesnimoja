@@ -121,7 +121,7 @@ const IndexPage = props => {
 
       <Hero heroImage={mainPage.heroImage}>
         {/* <Heading size="large">Witajcie w projekcie {site.title}</Heading> */}
-        <Heading size='large'>{mainPage.welcomeHeader}</Heading>
+        <Heading responsive title size={1}>{mainPage.welcomeHeader}</Heading>
         <Rule color='accent' />
         {/* <Typo> */}
           <BlockContent blocks={mainPage._rawBody || []} />
