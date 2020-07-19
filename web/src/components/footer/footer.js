@@ -20,7 +20,7 @@ const Footer = () => {
 
         <div className={cn(styles.footerSection, 'logos')}>
           <BandLogo className='footer-logo band-logo' focusable />
-          <DonationLogo className='footer-logo donation-logo' />
+          <DonationLogo className='footer-logo donation-logo' focusable />
         </div>
 
       </div>
@@ -51,9 +51,15 @@ const SocialMediaLinks = [
 const Copyright = () => (
   <div 
     className={styles.footerSectionColumn}
-    //className='footer-section-column copyright'
+    tabIndex={0}
   >
-    <Heading size='mid' caps>© {new Date().getFullYear()}</Heading>
+    <Heading 
+      size='mid' 
+      aria-label={`Wszystkie prawa zastrzeżone ${new Date().getFullYear()}`} 
+      caps
+    >
+      © {new Date().getFullYear()}
+    </Heading>
     <Typo bolder>Płyń pieśni moja</Typo>
   </div>
 )
@@ -61,7 +67,7 @@ const Copyright = () => (
 const SocialMedia = () => (
   <div 
     className={styles.footerSectionColumn}
-    // className='footer-section-column social-media'
+    tabIndex={0}
   >
     <Heading size='mid' caps>Śledź nas</Heading>
     <ul className='social-media-links'>
@@ -77,7 +83,7 @@ const SocialMedia = () => (
 const Contact = () => (
   <div 
     className={styles.footerSectionColumn}
-    // className='footer-section-column contact'
+    tabIndex={0}
   >
     <Heading size='mid' caps>Napisz do nas</Heading>
     <div className='contact-mail'>

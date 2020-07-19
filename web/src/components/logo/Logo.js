@@ -8,9 +8,8 @@ const Logo = ({ className, focusable, extended }) => {
   return (
     <div
       className={cn('ppm-Logo', className)}
-      role='banner'
       aria-label='Logo zespołu Płyń pieśni moja'
-      tabIndex={focusable ? '0' : '-1'}
+      tabIndex={focusable ? 0 : -1}
     >
       <Vector extended={extended} />
     </div>

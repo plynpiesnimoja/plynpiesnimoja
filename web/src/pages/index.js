@@ -120,18 +120,18 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
 
       <Hero heroImage={mainPage.heroImage}>
-        {/* <Heading size="large">Witajcie w projekcie {site.title}</Heading> */}
-        <Heading responsive title size={1}>{mainPage.welcomeHeader}</Heading>
-        <Rule color='accent' />
-        {/* <Typo> */}
-          <BlockContent blocks={mainPage._rawBody || []} />
-        {/* </Typo> */}
-        
+        <section tabIndex={0}>
+          <Heading responsive title size={1}>{mainPage.welcomeHeader}</Heading>
+          <Rule color='accent' />
+          {/* <Typo> */}
+            <BlockContent blocks={mainPage._rawBody || []} />
+          {/* </Typo> */}
+        </section>
         
       </Hero>
 
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        
         {projectNodes && (
           <ProjectPreviewGrid
             title='Ostatnio dodane'
@@ -139,6 +139,7 @@ const IndexPage = props => {
             browseMoreHref='/filmy/'
           />
         )}
+        
       </Container>
     </Layout>
   )

@@ -5,28 +5,25 @@
   display: block;
   color: inherit;
   text-decoration: none;
-}
-
-.title {
-  composes: responsiveTitle1 from './typography.module.css';
-}
-
-.root {
-  .title {
-    span {
-      color: inherit;
-      background-image: linear-gradient(180deg, transparent 95%, currentColor 0);
-      background-size: 0 100%;
-      background-repeat: no-repeat;
-      text-decoration: none;
-      transition: 150ms ease;
-    }
+  border: 0;
+  background: none;
+  span {
+    color: inherit;
+    background-image: linear-gradient(180deg, transparent 95%, currentColor 0);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    transition: 150ms ease;
   }
-  &:hover .title {
+  &:hover {
     span {
       background-size: 100% 100%;
     }
   }
+}
+
+.title {
+  composes: responsiveTitle1 from './typography.module.css';
 }
 
 

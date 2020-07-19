@@ -1,4 +1,5 @@
 import React from 'react'
+//import { SkipNavLink, SkipNavContent } from "@reach/skip-nav"
 import Header from 'src/components/header'
 
 import Footer from 'src/components/footer'
@@ -18,5 +19,5 @@ export default Layout
 
 
 const Main = ({ children }) => (
-  <main className={styles.content}>{children}</main>
+  <main className={styles.content} tabIndex={-1}>{children}</main>
 )

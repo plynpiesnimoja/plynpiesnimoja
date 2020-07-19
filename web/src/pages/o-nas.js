@@ -117,20 +117,24 @@ const AboutBandPage = props => {
       <SEO title={pageTitle} />
       <Container>
         <Page title={pageTitle}>
-
-          {aboutBandPage.bandMembers.map((item, i) => (
-                <Persona
-                  key={i}
-                  id={item.person.id}
-                  name={item.person.name}
-                  role={item.person.role}
-                  image={item.person.image}
-                  bio={item.person._rawBio}
-                  links={item.person.links ? item.person.links : ''}
-                  attachment={item.person.attachment}
-                />
-              ))}
-
+          <section aria-label='Członkowie zespołu'>
+            <ul>
+              {aboutBandPage.bandMembers.map((item, i) => (
+                  <li>
+                    <Persona
+                      key={i}
+                      id={item.person.id}
+                      name={item.person.name}
+                      role={item.person.role}
+                      image={item.person.image}
+                      bio={item.person._rawBio}
+                      links={item.person.links ? item.person.links : ''}
+                      attachment={item.person.attachment}
+                    />
+                </li>
+                ))}
+            </ul>
+          </section>
         </Page>
       </Container>
     </Layout>

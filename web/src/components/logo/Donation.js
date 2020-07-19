@@ -13,14 +13,14 @@ w ramach programu
 „Kultura w sieci”
 `
 
-const Donation = ({ className }) => {
+const Donation = ({ className, focusable }) => {
   const classes = cn('nck-Logo', className)
   return (
     <div 
       className={classes}
-      tabIndex='0'
-      role='banner'
+      tabIndex={0}
       aria-label={description}
+      tabIndex={focusable ? 0 : -1}
     >
       <Vector />
     </div>

@@ -43,11 +43,11 @@ const AboutProjectPage = props => {
       <SEO title={pageTitle} />
       <Container>
         <Page title={pageTitle}>
+          <section tabIndex={0}>
+            {body && <BlockContent blocks={body || []} />}
 
-        {body && <BlockContent blocks={body || []} />}
-
-        {!body && <p>Brak treściwa i empty state</p>}
-
+            {!body && <p>Brak treściwa i empty state</p>}
+          </section>
         </Page>
       </Container>
     </Layout>

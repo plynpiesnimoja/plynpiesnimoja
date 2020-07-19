@@ -1,8 +1,8 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
-import React from 'react'
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby'
-import { buildImageObj } from '../lib/helpers'
-import { imageUrlFor } from '../lib/image-url'
+// import { buildImageObj } from '../lib/helpers'
+// import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
@@ -16,40 +16,60 @@ import styles from './project.module.scss'
 function Project (props) {
   const {_rawBody, title, footage, categories, youtube, members, publishedAt, relatedProjects} = props
 
-  console.log("props prodżekt", props)
-  console.log("props prodżekt", footage)
+  // console.log("props prodżekt", props)
+  // console.log("props prodżekt", footage)
+
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    containerRef.current.focus();
+  });
 
 
   const footageSource = footage[0].videoId
+
+
   return (
-    <article className={styles.root}>
-      {/* <>
-        {props.youtube && youtube.videoId && (
-          <Footage videoId={youtube.videoId} />
+    <div className={styles.root} tabIndex={-1} ariaHidden={true}>
+      <article 
+        className={styles.footage} 
+        tabIndex={-1}
+      >
+        <section 
+          className={styles.footageWrapper} 
+          tabIndex={-1}
+          ref={containerRef} 
+          aria-label={`Film na Youtube`} 
+          // aria-hidden={true}
+           
+        >
+            <div 
+              className={styles.videoContainer} 
+              aria-label={`Obejrzyj odcinek ${props.title}`} 
+              tabIndex={0} 
+              // aria-hidden={false}
+            >
 
-        )}
-      </>  */}
-      <>
-        {footage && footageSource && (
-          <Footage videoId={footageSource} />
+        
+              {footage && footageSource && (
+                <Footage videoId={footageSource} title={title}/>
+              )}
+          </div>
+        </section>
+      </article> 
 
-        )}
-      </> 
       
       <Container>
         <div className={styles.grid}>
 
-
-
-
-
-
-          <div className={styles.mainContent}>
-            <Heading size={1}>{title}</Heading>
+          <article className={styles.mainContent} >
+            <Heading tabIndex={0} size={1}>{title}</Heading>
             <Rule />
-            {_rawBody && <BlockContent blocks={_rawBody || []} />}
-          </div>
-          <aside className={styles.metaContent}>
+            <section tabIndex={0}>
+              {_rawBody && <BlockContent blocks={_rawBody || []} />}
+            </section>
+          </article>
+          <aside className={styles.metaContent} tabIndex={0}>
             <div>
               {publishedAt && (
                 
@@ -58,9 +78,11 @@ function Project (props) {
                     aria-label={`Data publikacji ${format(new Date(publishedAt), 'DD-MM-YYYY')}`}
                   >
                     <>
+                      <time datetime={publishedAt}>
                       {differenceInDays(new Date(publishedAt), new Date()) > 3
                         ? distanceInWords(new Date(publishedAt), new Date())
                         : format(new Date(publishedAt), 'DD / MM / YYYY')}
+                      </time>
                       <Rule thick='small' />
                     </>
                   </div>
@@ -104,7 +126,7 @@ function Project (props) {
           </aside>
         </div>
       </Container>
-    </article>
+    </div>
   )
 }
 

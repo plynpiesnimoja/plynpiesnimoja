@@ -31,7 +31,7 @@ const Background = (props) => {
   return (
     <div 
       className={styles.heroImage}
-      
+      tabIndex={-1}
     > 
       <img
         src={imageUrlFor(buildImageObj(heroImage))
@@ -40,15 +40,15 @@ const Background = (props) => {
           .fit('crop')
           .url()} 
         alt={heroImage.alt}
-        aria-label={heroImage.alt}
-        tabIndex='0'
+        // aria-label={heroImage.alt}
+        // tabIndex='0'
       />
       <GradientOverlay />
     </div>
   )
 }
 const GradientOverlay = () => (
-  <div className={styles.gradientOverlay} tabIndex='-1' />
+  <div className={styles.gradientOverlay} tabIndex={-1} />
 )
 
 export const Overlay = () => (

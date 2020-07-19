@@ -66,11 +66,12 @@ export default {
       title: 'Obraz miniaturka',
       type: 'figure'
     },
-    {
-      name: 'coverImage',
-      title: 'Obraz miniaturka',
-      type: 'image'
-    },
+    // To consider option with no Caption
+    // {
+    //   name: 'coverImage',
+    //   title: 'Obraz miniaturka',
+    //   type: 'image'
+    // },
     {
       name: 'excerpt',
       title: 'Streszczenie',

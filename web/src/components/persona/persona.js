@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import { buildImageObj } from 'src/lib/helpers'
 import { imageUrlFor } from 'src/lib/image-url'
@@ -17,12 +17,20 @@ const Persona = (props) => {
   // For one item expanded only trigger
   // const [on, setOn] = useState(checked ? true : false);
   const [on, setOn] = useState(false);
+  const containerRef = useRef(null);
 
   const Switch = () => {
     setOn(on => !on);
     // if (onChange) onChange();
+    // if (on) setBioFocus()
     console.log("czek dis słycz!")
   }
+  useEffect(() => {
+    if (on) {
+      containerRef.current.focus();
+    }
+  });
+
   const { 
     // id, 
     name, 
@@ -58,7 +66,7 @@ const Persona = (props) => {
       {name && (
         <div className={cn(styles.root, classes.root, classes.active)}>
           
-          <div className={styles.personaAvatar}>
+          <div className={styles.personaAvatar} tabIndex={-1}>
             {image && image.asset && (
               <Avatar image={image} />
             )}
@@ -69,13 +77,14 @@ const Persona = (props) => {
 
           <div className={cn(classes.container, styles.personaContainer)}>
             <div className={classes.header}>
-              <Heading size={3}>
-                {name}
-              </Heading>
-              {role && (
-                <Typo>{role}</Typo>
-              )}
-
+              <div tabIndex={0}>
+                <Heading size={3}>
+                  {name}
+                </Heading>
+                {role && (
+                  <Typo>{role}</Typo>
+                )}
+              </div>
               <div className='Persona-links-container'>
                       
                 {attachment && attachment.asset && (
@@ -83,7 +92,7 @@ const Persona = (props) => {
                     <Button 
                       to={attachment.asset.url}
                       link
-                      //to={`?dl=<${attachment.asset.url}>`}
+                      ariaLabel='Pobierz biografie'
                       external
                       icon='documentDownload'
                       ghostButton
@@ -91,7 +100,7 @@ const Persona = (props) => {
                   </div>
                 )}
 
-                <ul className='Persona-socialmedia-links'>
+                <ul className='Persona-socialmedia-links' ariaLabel='Odnośniki do Social Media'>
                   {socialMediaLinks
                     .map((item, i) => <SocialMediaLink 
                                         key={i}
@@ -104,15 +113,28 @@ const Persona = (props) => {
             </div>
 
             {bio && socialMediaLinks.length > 0 && (
-              <div className={classes.content}>
-                <div className='Content-block'>
-                  <BlockContent blocks={bio || []} />
-                </div>
+              <div className={classes.content} role="region" aria-expanded={on ? true : false}>
+                <section 
+                  // ref={bioRef}
+                  className='Content-block' 
+                  //tabIndex={on ? 0 : -1} >
+                  tabIndex={-1}
+                  ref={containerRef} 
+                >
+                  <BlockContent blocks={bio || []}  />
+                </section>
 
                 <div className='Content-bottom-panel'>
                   <Button 
                     onClick={Switch}
                     primary={on ? true : false}
+                    ariaLabel={
+                      !on 
+                        ? `Pokaż więcej informacji o osobie ${name}` 
+                        : `Zamknij szczegóły`
+                      }
+                    // aria-labelledby={name}
+                    // aria-expanded={on ? true : false}
                   >{label}</Button>
                 </div>
               </div>
@@ -137,6 +159,8 @@ const Avatar = ({ image }) => (
       .fit('crop')
       .url()}
     alt={image.alt}
+    tabIndex={-1}
+    aria-hidden={true}
   />
 )
 
@@ -151,7 +175,7 @@ const SocialMediaLink = (props) => (
     <Anchor
       // {...props} 
       to={props.to}
-      //ariaLabel={props.desc}
+      ariaLabel={`Zobacz konto na ${props.icon}`}
       className='socialMediaButton'
     >
       <Icon symbol={props.icon} />
