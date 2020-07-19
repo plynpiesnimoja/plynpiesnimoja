@@ -54,7 +54,7 @@ export const Heading = (props) => {
   const classes = cn(styles.root, styles.title, styles.caps)
 
   return(
-    <div className={classes} tabIndex={-1}>
+    <div className={classes}>
       <Component id={id ? id : null} {...other}>
         {props.children}
       </Component>

@@ -9,7 +9,7 @@ const Hero = ({ children, heroImage }) => {
   // const HeroImage = heroImage !== null ? imageUrlFor(buildImageObj(heroImage)).fit('crop').url() : false
   return (
     <div 
-      className={styles.root} 
+      className={styles.root} tabIndex={0} aria-hidden={false}
       //style={{ backgroundImage: HeroImage ? `url(${HeroImage})` : null}} 
     >
       <div className={styles.heroContainer}>

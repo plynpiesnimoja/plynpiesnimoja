@@ -120,14 +120,18 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
 
       <Hero heroImage={mainPage.heroImage}>
-        <section tabIndex={0}>
-          <Heading responsive title size={1}>{mainPage.welcomeHeader}</Heading>
-          <Rule color='accent' />
-          {/* <Typo> */}
-            <BlockContent blocks={mainPage._rawBody || []} />
-          {/* </Typo> */}
+        <section>
+          
+            <Heading 
+              responsive 
+              title 
+              size={1}
+            >{mainPage.welcomeHeader}</Heading>
+            <Rule color='accent' />
+            <div tabIndex={0}>
+              <BlockContent blocks={mainPage._rawBody || []} />
+            </div>
         </section>
-        
       </Hero>
 
       <Container>
@@ -141,6 +145,7 @@ const IndexPage = props => {
         )}
         
       </Container>
+
     </Layout>
   )
 }

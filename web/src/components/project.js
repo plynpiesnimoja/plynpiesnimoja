@@ -19,44 +19,31 @@ function Project (props) {
   // console.log("props prodżekt", props)
   // console.log("props prodżekt", footage)
 
-  const containerRef = useRef(null);
+  // const containerRef = useRef(null);
 
-  useEffect(() => {
-    containerRef.current.focus();
-  });
+  // useEffect(() => {
+  //   containerRef.current.focus();
+  // });
 
 
   const footageSource = footage[0].videoId
 
 
   return (
-    <div className={styles.root} tabIndex={-1} ariaHidden={true}>
-      <article 
-        className={styles.footage} 
-        tabIndex={-1}
-      >
-        <section 
-          className={styles.footageWrapper} 
-          tabIndex={-1}
-          ref={containerRef} 
-          aria-label={`Film na Youtube`} 
-          // aria-hidden={true}
-           
-        >
-            <div 
+    <div className={styles.root}>
+      <div className={styles.footage}>
+        <section className={styles.footageWrapper}>
+            <div
               className={styles.videoContainer} 
-              aria-label={`Obejrzyj odcinek ${props.title}`} 
-              tabIndex={0} 
-              // aria-hidden={false}
+              role='presentation'
+              aria-label={`Obejrzyj odcinek ${title}`} 
             >
-
-        
               {footage && footageSource && (
                 <Footage videoId={footageSource} title={title}/>
               )}
           </div>
         </section>
-      </article> 
+      </div> 
 
       
       <Container>

@@ -32,7 +32,15 @@ const socialMediaIcons = [
     desc: "Śledź nas na Instagramie"
   }
 ];
-
+const SkipNavLink = () => (
+  <a 
+    class='skip-to-content-link'
+    href='#main'
+    aria-label='Przejdź do treści i pomiń nawigację'
+  >
+    Przejdź do treści
+  </a>
+)
 const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   <header className={styles.root}>
     <div className={styles.wrapper}>
@@ -40,7 +48,10 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
         <Link to='/'>
           <BandLogo extended />
         </Link>
+        <SkipNavLink />
       </div>
+
+
 
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
         <Icon symbol='hamburger' />

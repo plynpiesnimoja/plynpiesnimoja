@@ -9,16 +9,12 @@ import styles from './project-preview-grid.module.scss'
 
 function ProjectPreviewGrid (props) {
   return (
-    <section 
-      className={styles.root} 
-      //tabIndex={0} 
-      aria-label={props.title}
-    >
+    <section className={styles.root}>
       {props.title && (
-        <>
+        <div tabIndex={0} aria-label={'Ostatnio dodane filmy'}>
           <Heading size={3} caps>{props.title}</Heading>
           <Rule thick='mid' />
-        </>
+        </div>
       )}
       <ul className={styles.grid}>
         {props.nodes &&

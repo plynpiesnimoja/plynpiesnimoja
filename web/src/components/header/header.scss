@@ -95,3 +95,19 @@ $active: $white;
     height: 1.5rem;
   }
 }
+
+
+.skip-to-content-link {
+  background: $black;
+  height: 4rem;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  text-transform: uppercase;
+}
+
+.skip-to-content-link:focus {
+  transform: translateY(0%);
+}
