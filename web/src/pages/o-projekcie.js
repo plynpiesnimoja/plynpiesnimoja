@@ -1,16 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
+import Container from 'src/components/container'
+import GraphQLErrorList from 'src/components/graphql-error-list'
 
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
-import Page from '../containers/page'
-import BlockContent from '../components/block-content'
+import SEO from 'src/components/seo'
+import Layout from 'src/containers/layout'
+import Page from 'src/containers/page'
+import BlockContent from 'src/components/block-content'
+import EmptyState from 'src/components/emptystate'
 //import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
-import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
   query AboutProjectPageQuery {
@@ -35,19 +35,22 @@ const AboutProjectPage = props => {
 
   const body = aboutProjectPage._rawBody
 
-  // console.log(aboutProjectPage)
-  // console.log("ol dejta", data)
-
   return (
     <Layout>
       <SEO title={pageTitle} />
       <Container>
         <Page title={pageTitle}>
+          <section tabIndex={0}>
+            {body && <BlockContent blocks={body || []} />}
 
-        {body && <BlockContent blocks={body || []} />}
-
-        {!body && <p>Brak treściwa i empty state</p>}
-
+            {!body && (
+              <EmptyState 
+                title='Ta strona jest jeszcze pusta.'
+              >
+                Przepraszamy, ale jeszcze nie uzupełniliśmy tutaj treści. Zrobimy to niebawem.
+              </EmptyState>
+            )}
+          </section>
         </Page>
       </Container>
     </Layout>

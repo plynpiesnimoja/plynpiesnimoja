@@ -9,12 +9,12 @@ import styles from './project-preview-grid.module.scss'
 
 function ProjectPreviewGrid (props) {
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       {props.title && (
-        <>
+        <div tabIndex={0} aria-label={'Ostatnio dodane filmy'}>
           <Heading size={3} caps>{props.title}</Heading>
           <Rule thick='mid' />
-        </>
+        </div>
       )}
       <ul className={styles.grid}>
         {props.nodes &&
@@ -27,11 +27,18 @@ function ProjectPreviewGrid (props) {
       {props.browseMoreHref && (
 
         <div className={styles.browseMoreNav}>
-          <Button primary link to='/filmy/'>Zobacz wszystkie</Button>
+          <Button 
+            primary 
+            link 
+            to='/filmy/'
+            ariaLabel='Przejdź do strony ze wszystkimi nagraniami.'
+          >
+            Zobacz wszystkie
+          </Button>
         </div>
 
       )}
-    </div>
+    </section>
   )
 }
 

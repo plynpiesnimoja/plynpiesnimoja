@@ -1,15 +1,21 @@
 import React from 'react'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from 'src/components/layout'
+import SEO from 'src/components/seo'
 import Container from 'src/components/container'
+import EmptyState from 'src/components/emptystate'
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title='404: Not found' />
     <Container>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+
+      <EmptyState 
+          title='Nie znaleziono strony'
+      >
+        Strona nie istnieje. Upewnij się czy wpisałeś poprawny adres strony.
+      </EmptyState>
+
     </Container>
   </Layout>
 )

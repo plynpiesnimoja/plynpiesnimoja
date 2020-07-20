@@ -24,7 +24,10 @@ export default {
     {
       name: 'heroImage',
       title: 'Zdjęcie główne (tło)',
-      type: 'figure',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
       description: 'Zdjęcie powitalne na całą stronę, tzw. "Hero Image"'
     },
   ]

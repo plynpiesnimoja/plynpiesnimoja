@@ -13,7 +13,8 @@ import Layout from 'src/containers/layout'
 import BlockContent from 'src/components/block-content'
 import Hero from 'src/components/hero'
 
-import { Heading, Typo, Rule } from 'src/components/typography'
+
+import { Heading, Rule } from 'src/components/typography'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -45,7 +46,6 @@ export const query = graphql`
         asset {
           _id
         }
-        alt
       }
     }
     projects: allSanitySampleProject(
@@ -56,7 +56,7 @@ export const query = graphql`
       edges {
         node {
           id
-          mainImage {
+          thumbImage {
             crop {
               _key
               _type
@@ -113,25 +113,31 @@ const IndexPage = props => {
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     )
   }
-  console.log("mejnPejdż dejta", mainPage)
-  //const 
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
 
       <Hero heroImage={mainPage.heroImage}>
-        {/* <Heading size="large">Witajcie w projekcie {site.title}</Heading> */}
-        <Heading responsive title size={1}>{mainPage.welcomeHeader}</Heading>
-        <Rule color='accent' />
-        {/* <Typo> */}
-          <BlockContent blocks={mainPage._rawBody || []} />
-        {/* </Typo> */}
-        
-        
+        <section>
+          
+            <Heading 
+              responsive 
+              title 
+              size={1}
+            >{mainPage.welcomeHeader}</Heading>
+
+            <Rule color='accent' />
+
+            <div tabIndex={0}>
+              <BlockContent blocks={mainPage._rawBody || []} />
+            </div>
+
+        </section>
       </Hero>
 
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        
         {projectNodes && (
           <ProjectPreviewGrid
             title='Ostatnio dodane'
@@ -139,7 +145,15 @@ const IndexPage = props => {
             browseMoreHref='/filmy/'
           />
         )}
+
+        {/* <EmptyState 
+          title='Chlej kawę'
+        >
+          Sorry Batory, ale nie ma tu nic do oglądania
+        </EmptyState> */}
+        
       </Container>
+
     </Layout>
   )
 }

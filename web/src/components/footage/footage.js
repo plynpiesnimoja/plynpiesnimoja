@@ -1,20 +1,14 @@
 import React from 'react'
 
-import styles from './footage.module.scss'
+// import styles from './footage.module.scss'
 
-const Footage = (props) => (
-  <div className={styles.root}>
-    <div className={styles.videoWrapper}>
-      <div className={styles.videoContainer}>
-        <iframe
-          src={`https://www.youtube.com/embed/${props.videoId}`}
-          frameBorder={0} 
-          allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen
-        />
-      </div>
-    </div>
-  </div>
+const Footage = props => (
+    <iframe
+      src={`https://www.youtube.com/embed/${props.videoId}?rel=0`}
+      frameBorder={0} 
+      allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+      allowFullScreen
+    />
 )
 
 export default Footage

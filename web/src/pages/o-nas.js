@@ -1,16 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
+import Container from 'src/components/container'
+import GraphQLErrorList from 'src/components/graphql-error-list'
 
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
-import Page from '../containers/page'
+import SEO from 'src/components/seo'
+import Layout from 'src/containers/layout'
+import Page from 'src/containers/page'
 import { Persona } from 'src/components/persona'
 
+import EmptyState from 'src/components/emptystate'
 // import { Heading, Typo } from 'src/components/typography'
 
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
+// import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
 
@@ -104,12 +105,9 @@ const AboutBandPage = props => {
 
   const aboutBandPage = (data || {}).aboutBandPage
 
-  console.log("pejdż dejta", aboutBandPage)
 
-  console.log("band members", aboutBandPage.bandMembers)
-
-  const personNodes =
-    data && data.persons && mapEdgesToNodes(data.persons).filter(filterOutDocsWithoutSlugs)
+  // const personNodes =
+  //   data && data.persons && mapEdgesToNodes(data.persons).filter(filterOutDocsWithoutSlugs)
 
 
   return (
@@ -117,20 +115,34 @@ const AboutBandPage = props => {
       <SEO title={pageTitle} />
       <Container>
         <Page title={pageTitle}>
+          {aboutBandPage.bandMembers && aboutBandPage.bandMembers.length > 0 && (
+            <section aria-label='Członkowie zespołu'>
+              <ul>
+                {aboutBandPage.bandMembers.map((item, i) => (
+                    <li key={i}>
+                      <Persona
+                        id={item.person.id}
+                        name={item.person.name}
+                        role={item.person.role}
+                        image={item.person.image}
+                        bio={item.person._rawBio}
+                        links={item.person.links ? item.person.links : ''}
+                        attachment={item.person.attachment}
+                      />
+                  </li>
+                  ))}
+              </ul>
+            </section>
+          )}
 
-          {aboutBandPage.bandMembers.map((item, i) => (
-                <Persona
-                  key={i}
-                  id={item.person.id}
-                  name={item.person.name}
-                  role={item.person.role}
-                  image={item.person.image}
-                  bio={item.person._rawBio}
-                  links={item.person.links ? item.person.links : ''}
-                  attachment={item.person.attachment}
-                />
-              ))}
-
+          
+          {!aboutBandPage.bandMembers.length > 0 && (
+            <EmptyState 
+              title='Ta strona jest jeszcze pusta.'
+            >
+              Przepraszamy, ale jeszcze nie uzupełniliśmy tutaj treści. Zrobimy to niebawem.
+            </EmptyState>
+          )}
         </Page>
       </Container>
     </Layout>

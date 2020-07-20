@@ -1,55 +1,61 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
 import { Link } from 'gatsby'
-import { buildImageObj } from '../lib/helpers'
-import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
 
 import Footage from 'src/components/footage'
-import { Heading, Typo, Rule } from 'src/components/typography'
+import { Heading, Rule } from 'src/components/typography'
 
 import styles from './project.module.scss'
 
 
-function Project (props) {
-  const {_rawBody, title, footage, categories, youtube, members, publishedAt, relatedProjects} = props
+const Project = props => {
+  const { 
+    _rawBody, 
+    title, 
+    footage, 
+    categories, 
+    members, 
+    publishedAt, 
+    relatedProjects 
+  } = props
 
-  console.log("props prodżekt", props)
-  console.log("props prodżekt", footage)
-
-
+  // Prevents from displaying more than 1 video,
+  // Sanity Studio will not allow to add more than 1 video but output data is an array
+  // so request for only first argument is needed 
   const footageSource = footage[0].videoId
+
+
   return (
-    <article className={styles.root}>
-      {/* <>
-        {props.youtube && youtube.videoId && (
-          <Footage videoId={youtube.videoId} />
+    <div className={styles.root}>
+      <div className={styles.footage}>
+        <section className={styles.footageWrapper}>
+            <div
+              className={styles.videoContainer} 
+              role='presentation'
+              aria-label={`Obejrzyj odcinek ${title}`} 
+            >
+              {footage && footageSource && (
+                <Footage videoId={footageSource} title={title}/>
+              )}
+          </div>
+        </section>
+      </div> 
 
-        )}
-      </>  */}
-      <>
-        {footage && footageSource && (
-          <Footage videoId={footageSource} />
-
-        )}
-      </> 
       
       <Container>
         <div className={styles.grid}>
 
-
-
-
-
-
-          <div className={styles.mainContent}>
-            <Heading size={1}>{title}</Heading>
+          <article className={styles.mainContent} >
+            <Heading tabIndex={0} size={1}>{title}</Heading>
             <Rule />
-            {_rawBody && <BlockContent blocks={_rawBody || []} />}
-          </div>
-          <aside className={styles.metaContent}>
+            <section tabIndex={0}>
+              {_rawBody && <BlockContent blocks={_rawBody || []} />}
+            </section>
+          </article>
+          <aside className={styles.metaContent} tabIndex={0}>
             <div>
               {publishedAt && (
                 
@@ -58,9 +64,11 @@ function Project (props) {
                     aria-label={`Data publikacji ${format(new Date(publishedAt), 'DD-MM-YYYY')}`}
                   >
                     <>
+                      <time datetime={publishedAt}>
                       {differenceInDays(new Date(publishedAt), new Date()) > 3
                         ? distanceInWords(new Date(publishedAt), new Date())
                         : format(new Date(publishedAt), 'DD / MM / YYYY')}
+                      </time>
                       <Rule thick='small' />
                     </>
                   </div>
@@ -84,7 +92,6 @@ function Project (props) {
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
                 <Heading size={3} caps>Zobacz też</Heading>
-                {/* <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3> */}
                 <Rule full />
                 <ul>
                   {relatedProjects.map(project => (
@@ -104,7 +111,7 @@ function Project (props) {
           </aside>
         </div>
       </Container>
-    </article>
+    </div>
   )
 }
 

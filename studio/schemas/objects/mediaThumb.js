@@ -1,6 +1,6 @@
 export default {
-  name: 'figure',
-  title: 'Image',
+  name: 'mediaThumb',
+  title: 'Obraz miniaturka',
   type: 'image',
   options: {
     hotspot: true
@@ -15,21 +15,11 @@ export default {
       options: {
         isHighlighted: true
       }
-    },
-    {
-      title: 'Podpis (opcjonalnie)',
-      name: 'caption',
-      type: 'string',
-      description: 'Podpis pod zdjęciem (fig.), pojawi się jako osobny element pod obrazkiem. Przykład: "Zdjęcie wykonane przez Miśka Zdziśka"',
-      options: {
-        isHighlighted: true
-      }
     }
   ],
   preview: {
     select: {
       imageUrl: 'asset.url',
-      title: 'caption'
     }
   }
 }

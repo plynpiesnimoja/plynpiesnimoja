@@ -7,9 +7,9 @@ $active: $white;
 .Navigation-container {
   display: flex;
   height: 100%;
-  &.showNav {
-    display: block;
-    //padding: 2rem 0;
+  &.mobile {
+    flex-direction: column;
+    height: auto;
 
     .Menu-container,
     .Socialmedia-container {
@@ -24,7 +24,18 @@ $active: $white;
     }
   }
 }
-
+.mobile {
+  position: absolute;
+  background-color: $dark-gray;
+  color: $light-gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  left: 0;
+  right: 0;
+  top: 4rem;
+  &.hide {
+    display: none;
+  }
+}
 
 .navLink {
   display: flex;
@@ -44,7 +55,7 @@ $active: $white;
     justify-content: center;
     align-items: center;
     height: 100%;
-    transition: 150ms ease;
+    transition: background-size 150ms ease;
     position: relative;
     background-image: linear-gradient(180deg, transparent 95%, $light-gray 0);
     background-size: 0 100%;
@@ -68,7 +79,6 @@ $active: $white;
       width: 100%;
       height: 0.25rem;
       bottom: 0;
-      //background: currentColor;
       background: $accent-color;
     }
   }
@@ -94,4 +104,20 @@ $active: $white;
     width: 1.5rem;
     height: 1.5rem;
   }
+}
+
+
+.skip-to-content-link {
+  background: $black;
+  height: 4rem;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  text-transform: uppercase;
+}
+
+.skip-to-content-link:focus {
+  transform: translateY(0%);
 }

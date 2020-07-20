@@ -13,7 +13,7 @@ export default {
       title: 'Tytuł',
       type: 'string',
       validation: Rule => Rule.error('No jakiś tytuł film musi mieć!').required(),
-      description: 'RADA: Po prostu "Tytuł" nagrania jak na ten zamieszczony na kanale Youtube.',
+      description: 'Tytuł nagrania jak na ten zamieszczony na kanale Youtube. Pojawi się też w artykuje pod filmem i w podglądzie na stronie z filmami.',
     },
     {
       name: 'footage',
@@ -57,19 +57,21 @@ export default {
     },
     {
       name: 'publishedAt',
-      title: 'Data publikacji',
-      description: 'Użyj daty do utrzymania porządku chronologicznego w w sekcji "Filmy", nagrania wyświetlane bedą od najnowszego do najstarszego.',
-      type: 'datetime'
+      title: 'Data publikacji (wymagane)',
+      description: 'Użyj daty do utrzymania porządku chronologicznego w sekcji "Filmy", nagrania wyświetlane bedą od najnowszego do najstarszego.',
+      type: 'datetime',
+      validation: Rule => Rule.error('Musisz podać datę publikacji filmu!').required(),
     },
     {
       name: 'mainImage',
       title: 'Obraz miniaturka',
       type: 'figure'
     },
+    // To consider option with no Caption
     {
-      name: 'coverImage',
+      name: 'thumbImage',
       title: 'Obraz miniaturka',
-      type: 'image'
+      type: 'mediaThumb',
     },
     {
       name: 'excerpt',
@@ -77,19 +79,9 @@ export default {
       description: 'Fragment, krótki opis pojawiający się pod miniaturką w "kafelku" na stronie z listą nagrań - również na stronie głównej w sekcji "Ostatnio dodane"',
       type: 'simplePortableText'
     },
-    // {
-    //   name: 'startedAt',
-    //   title: 'Started at',
-    //   type: 'datetime'
-    // },
-    // {
-    //   name: 'endedAt',
-    //   title: 'Ended at',
-    //   type: 'datetime'
-    // },
     {
       name: 'body',
-      title: 'Treść główna do filmu (body)',
+      title: 'Artykuł, treść główna do filmu (body)',
       description: 'Opis i treści pod nagraniem na stronie z filmem.',
       type: 'projectPortableText'
     },

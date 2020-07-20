@@ -1,0 +1,21 @@
+@import '../../styles/custom-properties.scss';
+
+
+.EmptyState {
+  .Heading {
+    margin: 0;
+  }
+}
+
+
+.Vector {
+  svg {
+    .accent-color {
+      fill: $accent-color;
+    }
+    .background {
+      fill: $primary-color;
+    }
+  }
+}
+

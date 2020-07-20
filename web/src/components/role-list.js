@@ -1,7 +1,7 @@
 import React from 'react'
-import { buildImageObj } from '../lib/helpers'
-import { imageUrlFor } from '../lib/image-url'
-import { ucfirst } from '../lib/string-utils'
+import { buildImageObj } from 'src/lib/helpers'
+import { imageUrlFor } from 'src/lib/image-url'
+import { ucfirst } from 'src/lib/string-utils'
 import { Heading, Rule } from 'src/components/typography'
 import styles from './role-list.module.scss'
 

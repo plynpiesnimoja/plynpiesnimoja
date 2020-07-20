@@ -11,11 +11,11 @@ export default ({node}) => {
   }
 
   const fluidProps = getFluidGatsbyImage(node.asset._ref, {maxWidth: 675}, clientConfig.sanity)
-
+// aria-hidden={true}>
   return (
-    <figure className={styles.root}>
-      <Img fluid={fluidProps} alt={node.alt} />
-      {node.caption && <figcaption>{node.caption}</figcaption>}
+    <figure className={styles.root} role='img' aria-label={node.alt}>
+      <Img fluid={fluidProps} aria-hidden={true} alt={node.alt} />
+      {node.caption && <figcaption aria-label={node.caption}>{node.caption}</figcaption>}
     </figure>
   )
 }

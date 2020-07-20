@@ -1,15 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
-import ProjectPreviewGrid from '../components/project-preview-grid'
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
-import Page from '../containers/page'
+import Container from 'src/components/container'
+import GraphQLErrorList from 'src/components/graphql-error-list'
+import ProjectPreviewGrid from 'src/components/project-preview-grid'
+import SEO from 'src/components/seo'
+import Layout from 'src/containers/layout'
+import Page from 'src/containers/page'
+import EmptyState from 'src/components/emptystate'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
-
-import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
   query FilmyPageQuery {
@@ -22,6 +21,12 @@ export const query = graphql`
         node {
           id
           mainImage {
+            asset {
+              _id
+            }
+            alt
+          }
+          thumbImage {
             asset {
               _id
             }
@@ -60,6 +65,15 @@ const FilmyPage = props => {
         <Page title={pageTitle}>
 
           {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
+
+
+          {!projectNodes && (
+            <EmptyState 
+              title='Ta strona jest jeszcze pusta.'
+            >
+              Przepraszamy, ale jeszcze nie uzupełniliśmy tutaj treści. Zrobimy to niebawem.
+            </EmptyState>
+          )}
         
         </Page>
       </Container>

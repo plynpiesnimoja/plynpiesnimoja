@@ -1,5 +1,8 @@
 import React from 'react'
+
 import HamburgerIcon from './hamburger'
+import MenuIcon from './menu'
+import CloseIcon from './close'
 import DocumentDownloadIcon from './documentDownload'
 import FacebookIcon from './facebook'
 import LinkedinIcon from './linkedin'
@@ -7,11 +10,16 @@ import YoutubeIcon from './youtube'
 import InstagramIcon from './instagram'
 import TwitterIcon from './twitter'
 import UserAvatarIcon from './userAvatar'
+import VideoIcon from './video'
 
-function Icon (props) {
+const Icon = props => {
   switch (props.symbol) {
     case 'hamburger':
       return <HamburgerIcon />
+    case 'menu':
+      return <MenuIcon />
+    case 'close':
+      return <CloseIcon />
     case 'documentDownload':
       return <DocumentDownloadIcon />
     case 'facebook':
@@ -26,6 +34,8 @@ function Icon (props) {
       return <LinkedinIcon />
     case 'userAvatar':
       return <UserAvatarIcon />
+    case 'video':
+      return <VideoIcon />
     default:
       return <span>Unknown icon: {props.symbol}</span>
   }
