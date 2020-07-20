@@ -54,13 +54,13 @@ const Copyright = () => (
     tabIndex={0}
   >
     <Heading 
-      size='mid' 
+      size={4} 
       aria-label={`Wszystkie prawa zastrzeżone ${new Date().getFullYear()}`} 
       caps
     >
       © {new Date().getFullYear()}
     </Heading>
-    <Typo bolder>Płyń pieśni moja</Typo>
+    <Typo>Płyń pieśni moja</Typo>
   </div>
 )
 
@@ -69,11 +69,13 @@ const SocialMedia = () => (
     className={styles.footerSectionColumn}
     tabIndex={0}
   >
-    <Heading size='mid' caps>Śledź nas</Heading>
+    <Heading size={4} caps>Śledź nas</Heading>
     <ul className='social-media-links'>
       {SocialMediaLinks.map((link, i) => (
         <li key={i}>
-          <Anchor className='footer-link' to={link.url}>{link.label}</Anchor>
+          <Typo>
+            <Anchor className='footer-link' to={link.url}>{link.label}</Anchor>
+          </Typo>
         </li>
       ))}
     </ul>
@@ -85,9 +87,16 @@ const Contact = () => (
     className={styles.footerSectionColumn}
     tabIndex={0}
   >
-    <Heading size='mid' caps>Napisz do nas</Heading>
+    <Heading 
+      size={4} 
+      caps
+    >
+      Napisz do nas
+    </Heading>
     <div className='contact-mail'>
-      <Anchor className='footer-link' to={links.mail}>plynpiesnimoja@gmail.com</Anchor>
+      <Typo>
+        <Anchor className='footer-link' to={links.mail}>plynpiesnimoja@gmail.com</Anchor>
+      </Typo>
     </div>
   </div>
 )

@@ -85,7 +85,7 @@ const Persona = (props) => {
                   {name}
                 </Heading>
                 {role && (
-                  <Typo>{role}</Typo>
+                  <Typo regular responsive>{role}</Typo>
                 )}
               </div>
               <div className='Persona-links-container'>
@@ -102,20 +102,21 @@ const Persona = (props) => {
                     >Pobierz Bio</Button>
                   </div>
                 )}
-
-                <ul className='Persona-socialmedia-links' aria-label='Odnośniki do Social Media'>
-                  {socialMediaLinks
-                    .map((item, i) => <SocialMediaLink 
-                                        key={i}
-                                        icon={item.type} 
-                                        to={item.url}
-                                      />)}
-                </ul>
+                {socialMediaLinks.length > 0 && (
+                  <ul className='Persona-socialmedia-links' aria-label='Odnośniki do Social Media'>
+                    {socialMediaLinks
+                      .map((item, i) => <SocialMediaLink 
+                                          key={i}
+                                          icon={item.type} 
+                                          to={item.url}
+                                        />)}
+                  </ul>
+                )}
 
               </div>
             </div>
 
-            {bio && socialMediaLinks.length > 0 && (
+            {bio && (
               <div className={classes.content} role="region" aria-expanded={on ? true : false}>
                 <section 
                   className='Content-block' 

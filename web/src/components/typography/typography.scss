@@ -2,16 +2,16 @@
 @import '../../styles/custom-properties.scss';
 
 
-$font-title4-size: calc(28 / var(--base-unit) * 1rem);
+$font-title4-size: calc(28 / var(--unit) * 1rem);
 $font-title4-line-height: calc(24 / 20);
 
-$font-title3-size: calc(32 / var(--base-unit) * 1rem);
+$font-title3-size: calc(32 / var(--unit) * 1rem);
 $font-title3-line-height: calc(28 / 24);
 
-$font-title2-size: calc(40 / var(--base-unit) * 1rem);
+$font-title2-size: calc(40 / 16 * 1rem);
 $font-title2-line-height: calc(36 / 32);
 
-$font-title1-size: calc(56 / var(--base-unit) * 1rem);
+$font-title1-size: calc(56 / var(--unit) * 1rem);
 $font-title1-line-height: calc(56 / 49);
 
 
@@ -35,50 +35,25 @@ $font-title1-line-height: calc(56 / 49);
       }
     }
   }
-  &[class*="title"],
-  &[class*="responsiveTitle"] {
-    h1, h2, h3, h4, h5, h6 {
-      font-size: inherit;
-      line-height: inherit;
-    }
-  }
-  h1 {
-    font-size: var(--font-heading1-size);
-    line-height: var(--font-heading1-line-height);
-    @media screen and (max-width: $layout-md) {
-      font-size: calc(var(--font-heading1-size) * 0.875);
-    }
-  }
-  h2 {
-    font-size: var(--font-heading2-size);
-    line-height: var(--font-heading2-line-height);
-    @media screen and (max-width: $layout-md) {
-      font-size: calc(var(--font-heading2-size) * 0.875);
-    }
-  }
-  h3 {
-    font-size: var(--font-heading3-size);
-    line-height: var(--font-heading3-line-height);
-    @media screen and (max-width: $layout-md) {
-      font-size: calc(var(--font-heading3-size) * 0.875);
-    }
-  }
-  h4, h5, h6 {
-    font-size: var(--font-heading4-size);
-    line-height: var(--font-heading4-line-height);
-    @media screen and (max-width: $layout-md) {
-      font-size: calc(var(--font-heading4-size) * 0.875);
-    }
-  }
+  // h1, h2, h3, h4, h5, h6 {
+  //   font-size: inherit !important;
+  //   line-height: inherit !important;
+  // }
+
 }
 
+// [class*="title"],
+// [class*="responsiveTitle"] {
+//   h1, h2, h3, h4, h5, h6 {
+//     font-size: inherit !important;
+//     line-height: inherit !important;
+//   }
+// }
 
 /*
  * Statically sized elements
  */
-@mixin name {
-  
-}
+
 .title1 {
   font-size: $font-title1-size;
   line-height: $font-title1-line-height;
@@ -131,53 +106,43 @@ $font-title1-line-height: calc(56 / 49);
   line-height: var(--font-base-line-height);
   margin: 0.5rem 0 1rem 0;
 
-  @media (--media-min-small) {
-    font-size: var(--font-base-size);
-    line-height: var(--font-base-line-height);
-  }
+  // @media (--media-min-small) {
+  //   font-size: var(--font-base-size);
+  //   line-height: var(--font-base-line-height);
+  // }
 
-  @media (--media-min-medium) {
-    font-size: var(--font-large-size);
-    line-height: var(--font-large-line-height);
-  }
+  // @media (--media-min-medium) {
+  //   font-size: var(--font-large-size);
+  //   line-height: var(--font-large-line-height);
+  // }
 }
 
 .blockQuote {
   background-color: $gray;
 }
 
-.responsiveTitle1 {
-  font-weight: 900;
-  font-size: $font-title1-size;
-  line-height: $font-title1-line-height;
-  margin: 1rem 0 2rem;
+.responsiveTitle1 h1 {
+    font-weight: 900;
+    font-size: $font-title1-size;
+    line-height: $font-title1-line-height;
+    margin: 1rem 0 2rem;
 
-  @media screen and (max-width: $layout-md) {
-    font-size: $font-title2-size;
-    line-height: $font-title2-line-height;
-    //margin: 1rem 0 3rem;
-  }
+    @media screen and (max-width: $layout-md) {
+      font-size: $font-title2-size;
+      line-height: $font-title2-line-height;
+      //margin: 1rem 0 3rem;
+    }
 
-  @media screen and (max-width: $layout-xs) {
-    font-size: $font-title3-size;
-    line-height: $font-title3-line-height;
-    //margin: 0.5rem 0 2rem;
-  }
-  @media screen and (max-width: $layout-0) {
-    font-size: $font-title4-size;
-    line-height: $font-title4-line-height;
-    //margin: 0.5rem 0 2rem;
-  }
-
-  // @media (--media-min-small) {
-  //   font-size: var(--font-title2-size);
-  //   line-height: var(--font-title2-line-height);
-  // }
-
-  // @media (--media-min-medium) {
-  //   font-size: var(--font-title1-size);
-  //   line-height: var(--font-title1-line-height);
-  // }
+    @media screen and (max-width: $layout-xs) {
+      font-size: $font-title3-size;
+      line-height: $font-title3-line-height;
+      //margin: 0.5rem 0 2rem;
+    }
+    @media screen and (max-width: $layout-0) {
+      font-size: $font-title4-size;
+      line-height: $font-title4-line-height;
+      //margin: 0.5rem 0 2rem;
+    }
 }
 
 .responsiveTitle2 {

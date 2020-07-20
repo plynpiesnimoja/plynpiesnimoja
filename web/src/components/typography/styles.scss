@@ -48,22 +48,46 @@ mark {
   padding: 0.125em;
 }
 
-.paragraph {
+p.paragraph {
   font-size: 1em;
-  line-height: 1.4em;
-  margin: 1em 0;
-  &.small{
-    font-size: 0.875em;
-  }
-  &.mid {
-    font-size: 1em;
-  }
-  &.big {
-    font-size: 1.25em;
-  }
-  &.large {
+  
+  //line-height: var(--font-base-line-height);
+  &.responsive {
     font-size: 1.5em;
+    @media screen and (max-width: $layout-xl) {
+      font-size: 1.25em;
+    }
+    @media screen and (max-width: $layout-sm) {
+      font-size: 1em;
+    }
+    @media screen and (max-width: $layout-xs) {
+      font-size: 0.875em;
+    }
   }
+  // font-size: 1.5rem;
+  // line-height: 1.4em;
+  // margin: 1em 0;
+  // @media screen and (max-width: $layout-xl) {
+  //   font-size: 1.25rem;
+  // }
+  // @media screen and (max-width: $layout-sm) {
+  //   font-size: 1rem;
+  // }
+  // @media screen and (max-width: $layout-xs) {
+  //   font-size: 0.875rem;
+  // }
+  // &.small{
+  //   font-size: 0.875em;
+  // }
+  // &.mid {
+  //   font-size: 1em;
+  // }
+  // &.big {
+  //   font-size: 1.25em;
+  // }
+  // &.large {
+  //   font-size: 1.5em;
+  // }
 }
 
 .paragraph,
@@ -72,8 +96,11 @@ mark {
     text-transform: uppercase;
     font-weight: 400;
   }
-  &.bold {
+  &.regular {
     font-weight: 300;
+  }
+  &.bold {
+    font-weight: 400;
     &:first-child {
       margin-top: 0;
     }
@@ -82,7 +109,7 @@ mark {
     } 
   }
   &.bolder {
-    font-weight: 400;
+    font-weight: 500;
     &:first-child {
       margin-top: 0;
     }

@@ -4,9 +4,19 @@ import { cn } from 'src/lib/helpers'
 import './styles.scss'
 import './typography.scss'
 
-export const Typo = ({ children, caps, bold, bolder, className, span, size }) => {
+export const Typo = ({ 
+    className,
+    children, 
+    caps, 
+    regular, 
+    bold, 
+    bolder, 
+    span, 
+    size,
+    responsive 
+  }) => {
   const Size = (size === "large" ? "large" : "") || (size === "big" ? "big" : "") || (size === "mid" ? "mid" : "") || (size === "small" ? "small" : "")
-  const classes = cn(span ? "text" : "paragraph", Size, caps ? "caps" : "", !bolder && bold ? "bold" : "", !bold && bolder ? "bolder" : "", className)
+  const classes = cn(span ? 'text' : 'paragraph', responsive && 'responsive', Size, caps && 'caps', regular && 'regular', !bolder && bold && 'bold', !bold && bolder && 'bolder', className)
   return(
     <p className={classes}>
       {children}
@@ -36,6 +46,7 @@ export const Heading = (props) => {
     responsive,
     title,
     caps,
+    className,
     ...other 
   } = props
   const Component = 
@@ -51,7 +62,7 @@ export const Heading = (props) => {
     title: title ? `${responsive ? 'responsiveTitle' : 'title'}${size}` : '',
     caps: caps ? 'caps' : ''
   }
-  const classes = cn(styles.root, styles.title, styles.caps)
+  const classes = cn(className, styles.root, styles.title, styles.caps)
 
   return(
     <div className={classes}>

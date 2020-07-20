@@ -1,10 +1,10 @@
 @import '../../styles/custom-properties.scss';
 
 .Button {
-  background-color: $dark-gray;
   color: $white;
   transition: 150ms ease;
   &.default {
+    background-color: $dark-gray;
     &:hover {
       background-color: $gray;
     }
@@ -46,7 +46,7 @@
     text-decoration: none;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background: none;
     margin: 0;
     padding: 0 0.75rem;
     text-transform: uppercase;
