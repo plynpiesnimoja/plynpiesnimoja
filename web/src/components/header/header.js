@@ -73,14 +73,21 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
 
 
         {width <= breakPoint && (
-          <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+          <button 
+            className={styles.toggleNavButton} 
+            onClick={showNav ? onHideNav : onShowNav}
+            aria-label='Guzik menu'
+            aria-expanded={showNav ? true : false}
+          >
             <Icon symbol={showNav ? 'close' : 'menu'} />
           </button>
         )}
 
 
         <nav className={styles.nav}>
-          <div className={cn('Navigation-container', width <= breakPoint && 'mobile', showNav ? 'open' : 'hide')}>
+          <div 
+            className={cn('Navigation-container', width <= breakPoint && 'mobile', showNav ? 'open' : 'hide')}
+          >
             
             <ul className="Menu-container">
               <NavItem name='Strona główna' />
