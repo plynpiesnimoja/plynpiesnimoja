@@ -17,10 +17,10 @@ export default {
       type: 'string',
       title: 'Opis',
       description: 'Krótki opis osoby, rola w projekcie, zawód itd. Maksymalnie 128 znaków.',
-      validation: Rule => Rule.max(128).error("Opis musi mieć maksymalnie 128 znaków!"),
+      validation: Rule => Rule.max(196).error("Opis musi mieć maksymalnie 128 znaków!"),
       options: {
         source: 'name',
-        maxLength: 128
+        maxLength: 196
       }
     },
     // {
