@@ -9,7 +9,7 @@ $break: $layout-sm;
   position: fixed;
   width: 100%;
   z-index: 10000;
-  backdrop-filter: saturate(100%) blur(20px);
+  // backdrop-filter: saturate(100%) blur(20px);
   height: 4rem;
   color: $light-gray;
   background-color: $black;
@@ -45,18 +45,15 @@ $break: $layout-sm;
 }
 
 .toggleNavButton {
-  display: none;
-  appearance: none;
-  font-size: 24px;
-  border: none;
   background: none;
   margin: 0;
-  padding: calc(14 / 17 / 2 * 1rem);
-  outline: none;
+  padding: 0.5rem;
   color: inherit;
-
-  @media screen and (max-width: $break) {
-    display: block;
+  &:hover {
+    color: $accent-color;
+  }
+  &:active {
+    color: $white;
   }
   svg {
     width: 1.5rem;
@@ -65,9 +62,6 @@ $break: $layout-sm;
 }
 
 .nav {
-  @media screen and (max-width: $break) {
-    display: none;
-  }
   ul {
     display: flex;
     align-items: center;
@@ -77,36 +71,6 @@ $break: $layout-sm;
     color: inherit;
     text-decoration: none;
   }
-
-  @media screen and (max-width: $break) {
-    position: absolute;
-    background-color: $dark-gray;
-    color: $light-gray;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    left: 0;
-    right: 0;
-    top: 4rem;
-  }
-
-
-  // TO-DO or DELETE?
-  @media (--media-min-small) {
-    display: block;
-
-    ul {
-      list-style: none;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    ul li a {
-      padding: 0.5rem;
-    }
-  }
-}
-
-.showNav {
-  display: block;
 }
 
 

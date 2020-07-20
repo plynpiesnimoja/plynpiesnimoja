@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Icon from 'src/components/icon'
 import { Anchor } from 'src/components/typography'
 import { BandLogo } from 'src/components/logo'
@@ -33,6 +33,8 @@ const socialMediaIcons = [
   }
 ]
 
+const breakPoint = 768
+
 const SkipNavLink = () => (
   <a 
     className='skip-to-content-link'
@@ -44,6 +46,21 @@ const SkipNavLink = () => (
 )
 const Header = ({ onHideNav, onShowNav, showNav }) => {
   console.log("showNav, onHideNav, onShowNav", showNav, onHideNav, onShowNav)
+  //const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
+  const [width, setWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+  
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    };
+  });
+
+  console.log(width)
+
   return(
     <header className={styles.root}>
       <div className={styles.wrapper}>
@@ -55,13 +72,15 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
         </div>
 
 
+        {width <= breakPoint && (
+          <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+            <Icon symbol={showNav ? 'close' : 'menu'} />
+          </button>
+        )}
 
-        <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-          <Icon symbol='menu' />
-        </button>
 
-        <nav className={cn(styles.nav, showNav && styles.showNav)}>
-          <div className={cn("Navigation-container", showNav ? "showNav" : "")}>
+        <nav className={styles.nav}>
+          <div className={cn('Navigation-container', width <= breakPoint && 'mobile', showNav ? 'open' : 'hide')}>
             
             <ul className="Menu-container">
               <NavItem name='Strona główna' />

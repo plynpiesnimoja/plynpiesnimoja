@@ -2,6 +2,7 @@ import React from 'react'
 
 import HamburgerIcon from './hamburger'
 import MenuIcon from './menu'
+import CloseIcon from './close'
 import DocumentDownloadIcon from './documentDownload'
 import FacebookIcon from './facebook'
 import LinkedinIcon from './linkedin'
@@ -17,6 +18,8 @@ const Icon = props => {
       return <HamburgerIcon />
     case 'menu':
       return <MenuIcon />
+    case 'close':
+      return <CloseIcon />
     case 'documentDownload':
       return <DocumentDownloadIcon />
     case 'facebook':
