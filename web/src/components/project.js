@@ -1,31 +1,30 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
-import React, { useRef, useEffect } from 'react';
+import React from 'react'
 import { Link } from 'gatsby'
-// import { buildImageObj } from '../lib/helpers'
-// import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
 
 import Footage from 'src/components/footage'
-import { Heading, Typo, Rule } from 'src/components/typography'
+import { Heading, Rule } from 'src/components/typography'
 
 import styles from './project.module.scss'
 
 
-function Project (props) {
-  const {_rawBody, title, footage, categories, youtube, members, publishedAt, relatedProjects} = props
+const Project = props => {
+  const { 
+    _rawBody, 
+    title, 
+    footage, 
+    categories, 
+    members, 
+    publishedAt, 
+    relatedProjects 
+  } = props
 
-  // console.log("props prodżekt", props)
-  // console.log("props prodżekt", footage)
-
-  // const containerRef = useRef(null);
-
-  // useEffect(() => {
-  //   containerRef.current.focus();
-  // });
-
-
+  // Prevents from displaying more than 1 video,
+  // Sanity Studio will not allow to add more than 1 video but output data is an array
+  // so request for only first argument is needed 
   const footageSource = footage[0].videoId
 
 
@@ -93,7 +92,6 @@ function Project (props) {
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
                 <Heading size={3} caps>Zobacz też</Heading>
-                {/* <h3 className={styles.relatedProjectsHeadline}>Powiązane</h3> */}
                 <Rule full />
                 <ul>
                   {relatedProjects.map(project => (

@@ -31,51 +31,54 @@ const socialMediaIcons = [
     label: "Instagram",
     desc: "Śledź nas na Instagramie"
   }
-];
+]
+
 const SkipNavLink = () => (
   <a 
-    class='skip-to-content-link'
+    className='skip-to-content-link'
     href='#main'
     aria-label='Przejdź do treści i pomiń nawigację'
   >
     Przejdź do treści
   </a>
 )
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
-  <header className={styles.root}>
-    <div className={styles.wrapper}>
-      <div className={styles.branding}>
-        <Link to='/'>
-          <BandLogo extended />
-        </Link>
-        <SkipNavLink />
-      </div>
-
-
-
-      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol='hamburger' />
-      </button>
-
-      <nav className={cn(styles.nav, showNav && styles.showNav)}>
-        <div className={cn("Navigation-container", showNav ? "showNav" : "")}>
-          
-          <ul className="Menu-container">
-            <NavItem name='Strona główna' />
-            {navigation.map(item => <NavItem key={item.page} {...item} />)}
-          </ul>
-
-          <ul className="Socialmedia-container">
-            {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
-          </ul>
-
+const Header = ({ onHideNav, onShowNav, showNav }) => {
+  console.log("showNav, onHideNav, onShowNav", showNav, onHideNav, onShowNav)
+  return(
+    <header className={styles.root}>
+      <div className={styles.wrapper}>
+        <div className={styles.branding}>
+          <Link to='/'>
+            <BandLogo extended />
+          </Link>
+          <SkipNavLink />
         </div>
-      </nav>
 
-    </div>
-  </header>
-)
 
+
+        <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+          <Icon symbol='menu' />
+        </button>
+
+        <nav className={cn(styles.nav, showNav && styles.showNav)}>
+          <div className={cn("Navigation-container", showNav ? "showNav" : "")}>
+            
+            <ul className="Menu-container">
+              <NavItem name='Strona główna' />
+              {navigation.map(item => <NavItem key={item.page} {...item} />)}
+            </ul>
+
+            <ul className="Socialmedia-container">
+              {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
+            </ul>
+
+          </div>
+        </nav>
+
+      </div>
+    </header>
+  )
+}
 export default Header
 
 
@@ -96,7 +99,6 @@ const NavItem = (props) => (
 const SocialMediaLink = (props) => (
   <li className='socialMediaLink'>
     <Anchor
-      // {...props} 
       to={props.to}
       ariaLabel={props.desc}
       className='socialMediaButton'

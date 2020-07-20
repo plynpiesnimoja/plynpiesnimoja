@@ -23,7 +23,6 @@ const Persona = (props) => {
     setOn(on => !on);
     // if (onChange) onChange();
     // if (on) setBioFocus()
-    console.log("czek dis słycz!")
   }
   useEffect(() => {
     if (on) {
@@ -32,7 +31,7 @@ const Persona = (props) => {
   });
 
   const { 
-    // id, 
+    id, 
     name, 
     image, 
     bio, 
@@ -59,12 +58,14 @@ const Persona = (props) => {
       socialMediaLinks.push( { type: key, url: value } )
     }
   })
-  // console.log("dfg", socialMediaLinks)
 
   return(
     <>
       {name && (
-        <div className={cn(styles.root, classes.root, classes.active)}>
+        <div 
+          className={cn(styles.root, classes.root, classes.active)}
+          data-id-person={id}
+        >
           
           <div className={styles.personaAvatar} tabIndex={-1}>
             {image && image.asset && (
@@ -78,7 +79,7 @@ const Persona = (props) => {
           <div className={cn(classes.container, styles.personaContainer)}>
             <div className={classes.header}>
               <div tabIndex={0}>
-                <Heading size={3}>
+                <Heading size={2}>
                   {name}
                 </Heading>
                 {role && (
@@ -100,7 +101,7 @@ const Persona = (props) => {
                   </div>
                 )}
 
-                <ul className='Persona-socialmedia-links' ariaLabel='Odnośniki do Social Media'>
+                <ul className='Persona-socialmedia-links' aria-label='Odnośniki do Social Media'>
                   {socialMediaLinks
                     .map((item, i) => <SocialMediaLink 
                                         key={i}

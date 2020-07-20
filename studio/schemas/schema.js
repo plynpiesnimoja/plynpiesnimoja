@@ -24,6 +24,7 @@ import persona from './objects/persona'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
 import socialMediaLinks from './objects/socialMediaLinks'
+import mediaThumb from './objects/mediaThumb'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,6 +38,7 @@ export default createSchema({
     bioPortableText,
     attachment,
     figure,
+    mediaThumb,
     youtube,
     projectMember,
     persona,

@@ -55,14 +55,12 @@ $break: $layout-sm;
   outline: none;
   color: inherit;
 
-  svg {
-    display: block;
-    fill: inherit;
-  }
-
-
   @media screen and (max-width: $break) {
     display: block;
+  }
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 

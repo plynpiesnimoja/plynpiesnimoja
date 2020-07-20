@@ -12,8 +12,9 @@ import SEO from 'src/components/seo'
 import Layout from 'src/containers/layout'
 import BlockContent from 'src/components/block-content'
 import Hero from 'src/components/hero'
+import EmptyState from 'src/components/emptystate'
 
-import { Heading, Typo, Rule } from 'src/components/typography'
+import { Heading, Rule } from 'src/components/typography'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -113,8 +114,7 @@ const IndexPage = props => {
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     )
   }
-  console.log("mejnPejdż dejta", mainPage)
-  //const 
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
@@ -127,10 +127,13 @@ const IndexPage = props => {
               title 
               size={1}
             >{mainPage.welcomeHeader}</Heading>
+
             <Rule color='accent' />
+
             <div tabIndex={0}>
               <BlockContent blocks={mainPage._rawBody || []} />
             </div>
+
         </section>
       </Hero>
 
@@ -143,6 +146,12 @@ const IndexPage = props => {
             browseMoreHref='/filmy/'
           />
         )}
+
+        {/* <EmptyState 
+          title='Chlej kawę'
+        >
+          Sorry Batory, ale nie ma tu nic do oglądania
+        </EmptyState> */}
         
       </Container>
 

@@ -6,6 +6,7 @@ import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Page from '../containers/page'
+import EmptyState from 'src/components/emptystate'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
@@ -60,6 +61,15 @@ const FilmyPage = props => {
         <Page title={pageTitle}>
 
           {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
+
+
+          {!projectNodes && (
+            <EmptyState 
+              title='Ta strona jest jeszcze pusta.'
+            >
+              Przepraszamy, ale jeszcze nie uzupełniliśmy tutaj treści. Zrobimy to niebawem.
+            </EmptyState>
+          )}
         
         </Page>
       </Container>

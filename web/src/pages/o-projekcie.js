@@ -7,10 +7,10 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Page from '../containers/page'
 import BlockContent from '../components/block-content'
+import EmptyState from 'src/components/emptystate'
 //import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
-import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
   query AboutProjectPageQuery {
@@ -46,7 +46,13 @@ const AboutProjectPage = props => {
           <section tabIndex={0}>
             {body && <BlockContent blocks={body || []} />}
 
-            {!body && <p>Brak treściwa i empty state</p>}
+            {!body && (
+              <EmptyState 
+                title='Ta strona jest jeszcze pusta.'
+              >
+                Przepraszamy, ale jeszcze nie uzupełniliśmy tutaj treści. Zrobimy to niebawem.
+              </EmptyState>
+            )}
           </section>
         </Page>
       </Container>
