@@ -35,29 +35,40 @@ const socialMediaIcons = [
 
 const breakPoint = 768
 
-const SkipNavLink = () => (
-  <a 
-    className='skip-to-content-link'
-    href='#main'
-    aria-label='Przejdź do treści i pomiń nawigację'
-  >
-    Przejdź do treści
-  </a>
-)
-const Header = ({ onHideNav, onShowNav, showNav }) => {
-  console.log("showNav, onHideNav, onShowNav", showNav, onHideNav, onShowNav)
-  //const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
-  const [width, setWidth] = useState(window.innerWidth)
+
+
+let defaultHeight
+let defaultWidth
+
+if (typeof window !== `undefined`) {
+  defaultHeight = window.innerHeight
+  defaultWidth = window.innerWidth
+}
+
+const useWindowSize = () => {
+  const [dimensions, setDimensions] = useState({
+    windowHeight: defaultHeight,
+    windowWidth: defaultWidth,
+  })
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-  
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    };
-  });
+    const handler = () => setDimensions({
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
+    })
+
+    window.addEventListener(`resize`, handler)
+    return () => window.removeEventListener(`resize`, handler)
+  }, [])
+
+  return dimensions
+}
+
+
+
+const Header = ({ onHideNav, onShowNav, showNav }) => {
+  const viewportSize = useWindowSize();
+  let width = viewportSize.windowWidth;
 
   console.log(width)
 
@@ -132,4 +143,15 @@ const SocialMediaLink = (props) => (
       <Icon symbol={props.icon} />
     </Anchor>
   </li>
+)
+
+
+const SkipNavLink = () => (
+  <a 
+    className='skip-to-content-link'
+    href='#main'
+    aria-label='Przejdź do treści i pomiń nawigację'
+  >
+    Przejdź do treści
+  </a>
 )
