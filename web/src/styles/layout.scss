@@ -89,31 +89,51 @@ h6 {
   margin: 0;
 }
 h1 {
-  font-size: var(--font-heading1-size);
-  line-height: var(--font-heading1-line-height);
+  font-size: calc(var(--font-heading1-size) * 1.5);
+  @media screen and (max-width: $layout-xl) {
+    font-size: calc(var(--font-heading1-size) * 1.25);
+  }
   @media screen and (max-width: $layout-sm) {
+    font-size: var(--font-heading1-size);
+  }
+  @media screen and (max-width: $layout-xs) {
     font-size: calc(var(--font-heading1-size) * 0.875);
   }
 }
 h2 {
-  font-size: var(--font-heading2-size);
-  line-height: var(--font-heading2-line-height);
+  font-size: calc(var(--font-heading2-size) * 1.5);
+  @media screen and (max-width: $layout-xl) {
+    font-size: calc(var(--font-heading2-size) * 1.25);
+  }
   @media screen and (max-width: $layout-sm) {
+    font-size: var(--font-heading2-size);
+  }
+  @media screen and (max-width: $layout-xs) {
     font-size: calc(var(--font-heading2-size) * 0.875);
   }
 }
 h3 {
-  font-size: var(--font-heading3-size);
-  line-height: var(--font-heading3-line-height);
+  font-size: calc(var(--font-heading3-size) * 1.5);
+  @media screen and (max-width: $layout-xl) {
+    font-size: calc(var(--font-heading3-size) * 1.25);
+  }
   @media screen and (max-width: $layout-sm) {
+    font-size: var(--font-heading3-size);
+  }
+  @media screen and (max-width: $layout-xs) {
     font-size: calc(var(--font-heading3-size) * 0.875);
   }
 }
 h4, h5, h6 {
-  font-size: var(--font-heading4-size);
-  line-height: var(--font-heading4-line-height);
+  font-size: calc(var(--font-heading4-size) * 1.5);
+  @media screen and (max-width: $layout-xl) {
+    font-size: calc(var(--font-heading4-size) * 1.25);
+  }
   @media screen and (max-width: $layout-sm) {
-    font-size: calc(var(--font-heading3-size) * 0.875);
+    font-size: var(--font-heading4-size);
+  }
+  @media screen and (max-width: $layout-xs) {
+    font-size: calc(var(--font-heading4-size) * 0.875);
   }
 }
 p {
