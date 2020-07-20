@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { Link } from 'gatsby'
 import Icon from 'src/components/icon'
@@ -11,7 +11,8 @@ import './button.scss'
 
 const Button = (props) => {
   const { primary, ghostButton, to, icon, link, external, onClick, ariaLabel, ...others } = props
-  const classes = cn('Button', primary ? 'primary' : 'default', icon ? 'IconButton' : '', ghostButton && !primary ? 'ghost' : 'default' )
+  // const classes = cn('Button', primary ? 'primary' : 'default', icon ? 'IconButton' : '', ghostButton && !primary ? 'ghost' : 'default' )
+  const classes = cn('Button', primary && 'primary', icon && 'IconButton', ghostButton && 'ghost',  !primary && !ghostButton && 'default' )
 
   if (link && !external) {
     return(

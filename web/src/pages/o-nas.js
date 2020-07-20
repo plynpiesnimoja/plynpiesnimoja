@@ -1,17 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
+import Container from 'src/components/container'
+import GraphQLErrorList from 'src/components/graphql-error-list'
 
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
-import Page from '../containers/page'
+import SEO from 'src/components/seo'
+import Layout from 'src/containers/layout'
+import Page from 'src/containers/page'
 import { Persona } from 'src/components/persona'
 
 import EmptyState from 'src/components/emptystate'
 // import { Heading, Typo } from 'src/components/typography'
 
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
+// import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
 
 

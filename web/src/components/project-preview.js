@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { buildImageObj } from '../lib/helpers'
-import { imageUrlFor } from '../lib/image-url'
+import { buildImageObj } from 'src/lib/helpers'
+import { imageUrlFor } from 'src/lib/image-url'
 import BlockText from './block-text'
 import { Heading } from 'src/components/typography'
 import Icon from 'src/components/icon'
@@ -12,16 +12,16 @@ const ProjectPreview = props => {
   return (
     <Link className={styles.root} to={`/film/${props.slug.current}`}>
       <div className={styles.leadMediaThumb}>
-        {props.mainImage && props.mainImage.asset && (
+        {props.thumbImage && props.thumbImage.asset && (
           <img
-            src={imageUrlFor(buildImageObj(props.mainImage))
+            src={imageUrlFor(buildImageObj(props.thumbImage))
               .width(600)
               .height(Math.floor((9 / 16) * 600))
               .url()}
-            alt={props.mainImage.alt}
+            alt={props.thumbImage.alt}
           />
         )}
-        {!props.mainImage && <FootageThumbPlaceHolder />}
+        {!props.thumbImage && <FootageThumbPlaceHolder />}
       </div>
       <Heading
         className='heading-link'

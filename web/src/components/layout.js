@@ -3,7 +3,7 @@ import Header from 'src/components/header'
 
 import Footer from 'src/components/footer'
 
-import '../styles/layout.scss'
+import 'src/styles/layout.scss'
 import styles from './layout.module.scss'
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (

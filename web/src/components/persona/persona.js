@@ -59,6 +59,8 @@ const Persona = (props) => {
     }
   })
 
+
+  console.log(props)
   return(
     <>
       {name && (
@@ -116,9 +118,7 @@ const Persona = (props) => {
             {bio && socialMediaLinks.length > 0 && (
               <div className={classes.content} role="region" aria-expanded={on ? true : false}>
                 <section 
-                  // ref={bioRef}
                   className='Content-block' 
-                  //tabIndex={on ? 0 : -1} >
                   tabIndex={-1}
                   ref={containerRef} 
                 >
@@ -134,8 +134,6 @@ const Persona = (props) => {
                         ? `Pokaż więcej informacji o osobie ${name}` 
                         : `Zamknij szczegóły`
                       }
-                    // aria-labelledby={name}
-                    // aria-expanded={on ? true : false}
                   >{label}</Button>
                 </div>
               </div>
@@ -166,7 +164,7 @@ const Avatar = ({ image }) => (
 )
 
 const ImagePlaceHolder = () => (
-  <div className={styles.imagePlaceHolder}>
+  <div className={styles.imagePlaceHolder} tabIndex={-1} aria-hidden={true}>
     <Icon symbol='userAvatar' />
   </div>
 )

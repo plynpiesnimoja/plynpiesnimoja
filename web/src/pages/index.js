@@ -12,7 +12,7 @@ import SEO from 'src/components/seo'
 import Layout from 'src/containers/layout'
 import BlockContent from 'src/components/block-content'
 import Hero from 'src/components/hero'
-import EmptyState from 'src/components/emptystate'
+
 
 import { Heading, Rule } from 'src/components/typography'
 
@@ -46,7 +46,6 @@ export const query = graphql`
         asset {
           _id
         }
-        alt
       }
     }
     projects: allSanitySampleProject(
@@ -57,7 +56,7 @@ export const query = graphql`
       edges {
         node {
           id
-          mainImage {
+          thumbImage {
             crop {
               _key
               _type

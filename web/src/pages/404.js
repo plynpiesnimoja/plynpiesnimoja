@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from 'src/components/layout'
+import SEO from 'src/components/seo'
 import Container from 'src/components/container'
 import EmptyState from 'src/components/emptystate'
 

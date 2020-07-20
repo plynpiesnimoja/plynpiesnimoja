@@ -1,17 +1,12 @@
 import React from 'react'
-import Container from '../../components/container'
-import { buildImageObj } from '../../lib/helpers'
-import { imageUrlFor } from '../../lib/image-url'
+import Container from 'src/components/container'
+import { buildImageObj } from 'src/lib/helpers'
+import { imageUrlFor } from 'src/lib/image-url'
 import styles from './hero.module.scss'
 
 const Hero = ({ children, heroImage }) => {
-  // console.log("hiro imidż", heroImage)
-  // const HeroImage = heroImage !== null ? imageUrlFor(buildImageObj(heroImage)).fit('crop').url() : false
   return (
-    <div 
-      className={styles.root} tabIndex={0} aria-hidden={false}
-      //style={{ backgroundImage: HeroImage ? `url(${HeroImage})` : null}} 
-    >
+    <div className={styles.root} tabIndex={0} aria-hidden={false}>
       <div className={styles.heroContainer}>
         <Container>
           {children}
@@ -26,7 +21,7 @@ const Hero = ({ children, heroImage }) => {
 export default Hero
 
 const Background = (props) => {
-  const { heroImage, welcomeHeader, _rawBody } = props
+  const { heroImage } = props
   console.log("hiroł props", props)
   return (
     <div 
@@ -39,9 +34,9 @@ const Background = (props) => {
           .height(Math.floor((9 / 16) * 1920))
           .fit('crop')
           .url()} 
-        alt={heroImage.alt}
+        alt='Zdjęcie zespołu w tle'
+        // alt={heroImage.alt}
         // aria-label={heroImage.alt}
-        // tabIndex='0'
       />
       <GradientOverlay />
     </div>

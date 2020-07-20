@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
+import Container from 'src/components/container'
+import GraphQLErrorList from 'src/components/graphql-error-list'
 
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
-import Page from '../containers/page'
-import BlockContent from '../components/block-content'
+import SEO from 'src/components/seo'
+import Layout from 'src/containers/layout'
+import Page from 'src/containers/page'
+import BlockContent from 'src/components/block-content'
 import EmptyState from 'src/components/emptystate'
 //import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'src/lib/helpers'
 import { pageNode } from 'src/lib/data';
@@ -34,9 +34,6 @@ const AboutProjectPage = props => {
   const aboutProjectPage = (data || {}).aboutProjectPage
 
   const body = aboutProjectPage._rawBody
-
-  // console.log(aboutProjectPage)
-  // console.log("ol dejta", data)
 
   return (
     <Layout>
