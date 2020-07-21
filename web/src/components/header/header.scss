@@ -14,7 +14,7 @@ $active: $white;
     .Menu-container,
     .Socialmedia-container {
       justify-content: center;
-      margin: 3rem 0;
+      margin: 1rem 0;
     }
     .Menu-container {
       flex-direction: column;
@@ -22,7 +22,9 @@ $active: $white;
         height: 3rem;
       }
     }
+    z-index: 200;
   }
+
 }
 .mobile {
   position: absolute;
@@ -120,4 +122,18 @@ $active: $white;
 
 .skip-to-content-link:focus {
   transform: translateY(0%);
+}
+
+
+.overlay {
+  position: absolute;
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-grow: 1;
+  backdrop-filter: saturate(100%) blur(20px);
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
 }
