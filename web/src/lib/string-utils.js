@@ -2,6 +2,10 @@ export function ucfirst (str) {
   return `${str.substr(0, 1).toUpperCase()}${str.substr(1)}`
 }
 
+export const polishBreakingTextFormatter = (str) => {
+  return str.replace(/ (.) /gi, " "+'\$1'+"&nbsp;")
+}
+
 export const PolishBreakingText = () => {
   function lastSingleLetterToNewLine(el) {
     let result;

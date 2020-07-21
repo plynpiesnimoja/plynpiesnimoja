@@ -35,6 +35,21 @@ $font-title1-line-height: calc(56 / 49);
       }
     }
   }
+  &.light {
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 400;
+    }
+  }
+  &.normal {
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 500;
+    }
+  }
+  &.bold {
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+    }
+  }
   // h1, h2, h3, h4, h5, h6 {
   //   font-size: inherit !important;
   //   line-height: inherit !important;

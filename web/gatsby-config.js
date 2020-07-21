@@ -11,9 +11,9 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-173147850-1",
+        trackingId: 'UA-173147850-1',
         // this option places the tracking script into the head of the DOM
         head: true,
         // other options

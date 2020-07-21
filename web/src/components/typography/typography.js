@@ -47,6 +47,7 @@ export const Heading = (props) => {
     title,
     caps,
     className,
+    letterStyle = 700,
     ...other 
   } = props
   const Component = 
@@ -56,13 +57,17 @@ export const Heading = (props) => {
     (size === "mid"   || size == 4 ? "h4" : null) || 
     (size == 5 ? "h5" : null) || 
     (size === "small" || size == 6 ? "h6" : null);
-
+  const Weight =
+    (letterStyle == 400 && 'light') ||
+    (letterStyle == 500 && 'normal') ||
+    (letterStyle == 600 && 'bold') ||
+    (letterStyle == 600 && '')
   const styles = {
     root: `Heading${!title ? ` heading${size}` : ''}`,
     title: title ? `${responsive ? 'responsiveTitle' : 'title'}${size}` : '',
     caps: caps ? 'caps' : ''
   }
-  const classes = cn(className, styles.root, styles.title, styles.caps)
+  const classes = cn(className, styles.root, styles.title, styles.caps, Weight)
 
   return(
     <div className={classes}>
