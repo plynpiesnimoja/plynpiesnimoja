@@ -21,7 +21,8 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-sass',
+    // 'gatsby-plugin-breakpoints',
     'gatsby-plugin-root-import',
     {
       resolve: 'gatsby-source-sanity',

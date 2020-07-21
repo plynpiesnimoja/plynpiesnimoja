@@ -1,5 +1,7 @@
-import { Link } from 'gatsby'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'gatsby'
+// import { useBreakpoint } from 'gatsby-plugin-breakpoints'
+
 import Icon from 'src/components/icon'
 import { Anchor } from 'src/components/typography'
 import { BandLogo } from 'src/components/logo'
@@ -59,6 +61,7 @@ const useWindowSize = () => {
 
     window.addEventListener(`resize`, handler)
     return () => window.removeEventListener(`resize`, handler)
+
   }, [])
 
   return dimensions
@@ -70,7 +73,7 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
   const viewportSize = useWindowSize();
   let width = viewportSize.windowWidth;
 
-  console.log(width)
+  // console.log(width)
 
   return(
     <header className={styles.root}>
@@ -82,35 +85,22 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
           <SkipNavLink />
         </div>
 
-
+        {width > breakPoint && <Navigation />}
         {width <= breakPoint && (
-          <button 
-            className={styles.toggleNavButton} 
-            onClick={showNav ? onHideNav : onShowNav}
-            aria-label='Guzik menu'
-            aria-expanded={showNav ? true : false}
-          >
-            <Icon symbol={showNav ? 'close' : 'menu'} />
-          </button>
+          <>
+            <button 
+              className={styles.toggleNavButton} 
+              onClick={showNav ? onHideNav : onShowNav}
+              aria-label='Guzik menu'
+              aria-expanded={showNav ? true : false}
+            >
+              <Icon symbol={showNav ? 'close' : 'menu'} />
+            </button>
+            {showNav && (
+              <Navigation mobile />
+            )}
+          </>
         )}
-
-
-        <nav className={styles.nav}>
-          <div 
-            className={cn('Navigation-container', width <= breakPoint && 'mobile', showNav ? 'open' : 'hide')}
-          >
-            
-            <ul className="Menu-container">
-              <NavItem name='Strona główna' />
-              {navigation.map(item => <NavItem key={item.page} {...item} />)}
-            </ul>
-
-            <ul className="Socialmedia-container">
-              {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
-            </ul>
-
-          </div>
-        </nav>
 
       </div>
     </header>
@@ -118,7 +108,42 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
 }
 export default Header
 
+const Navigation = props => {
+  const { 
+    mobile, 
+    //showNav 
+  } = props
 
+  const classes = {
+    navigationContainer: 'Navigation-container',
+    mobileNavigation: 'mobile',
+    overlay: 'overlay'
+  }
+
+  return(
+    <nav className={styles.nav}>
+      <div className={cn(
+        classes.navigationContainer,
+        mobile && classes.mobileNavigation,
+        // showNav ? 'open' : 'hide'
+      )}>
+        
+        <ul className="Menu-container">
+          <NavItem name='Strona główna' />
+          {navigation.map(item => <NavItem key={item.page} {...item} />)}
+        </ul>
+
+        <ul className="Socialmedia-container">
+          {socialMediaIcons.map(item => <SocialMediaLink key={item.icon} {...item} />)}
+        </ul>
+
+      </div>
+      {mobile && (
+        <div className={classes.overlay} />
+      )} 
+    </nav>
+  )
+}
 
 const NavItem = (props) => (
   <li className='navLink'>
