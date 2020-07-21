@@ -53,10 +53,10 @@ p.paragraph {
   
   //line-height: var(--font-base-line-height);
   &.responsive {
-    font-size: 1.5em;
-    @media screen and (max-width: $layout-xl) {
+    // font-size: 1.5em;
+    // @media screen and (max-width: $layout-xl) {
       font-size: 1.25em;
-    }
+    //}
     @media screen and (max-width: $layout-sm) {
       font-size: 1em;
     }

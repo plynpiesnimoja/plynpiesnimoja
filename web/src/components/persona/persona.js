@@ -8,6 +8,8 @@ import Icon from 'src/components/icon'
 import { Heading, Typo } from 'src/components/typography'
 import BlockContent from 'src/components/block-content'
 
+import { polishBreakingTextFormatter } from 'src/lib/string-utils'
+
 import { cn } from 'src/lib/helpers'
 
 import styles from './persona.module.scss'
@@ -85,7 +87,8 @@ const Persona = (props) => {
                   {name}
                 </Heading>
                 {role && (
-                  <Typo regular responsive>{role}</Typo>
+                  // <Typo regular responsive>{role}</Typo>
+                  <Heading size={4} letterStyle={400} regular responsive>{role}</Heading>
                 )}
               </div>
               <div className='Persona-links-container'>

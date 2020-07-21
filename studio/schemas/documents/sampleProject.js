@@ -63,12 +63,6 @@ export default {
       validation: Rule => Rule.error('Musisz podać datę publikacji filmu!').required(),
     },
     {
-      name: 'mainImage',
-      title: 'Obraz miniaturka',
-      type: 'figure'
-    },
-    // To consider option with no Caption
-    {
       name: 'thumbImage',
       title: 'Obraz miniaturka',
       type: 'mediaThumb',
@@ -86,30 +80,46 @@ export default {
       type: 'projectPortableText'
     },
     {
-      name: 'members',
-      title: 'Osoby biorące udział w projekcie (opcjonalnie)',
-      type: 'array',
-      of: [{type: 'projectMember'}]
-    },
-    {
       name: 'relatedProjects',
       title: 'Powiązane nagrania',
       description: 'Tu wybierz i dodaj wpisy z filmami, które pojawią się w sekcji "Powiązane" (opcjonalnie)',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'sampleProject'}}]
+      of: [{type: 'reference', to: {type: 'sampleProject'}}],
+      options: {
+        collapsible: true, 
+        collapsed: false
+      }
+    },
+    {
+      name: 'members',
+      title: 'Osoby biorące udział w projekcie (opcjonalnie)',
+      type: 'array',
+      of: [{type: 'projectMember'}],
+      options: {
+        collapsible: true, 
+        collapsed: true
+      }
     },
     {
       name: 'categories',
       title: 'Kategorie',
       description: 'Dodaj kategorie odnoszące się do nagrania (opcjonalnie)',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}]
+      of: [{type: 'reference', to: {type: 'category'}}],
+      options: {
+        collapsible: true, 
+        collapsed: true
+      }
     },
     {
       name: 'description',
       title: 'Opis (opcjonalnie)',
       description: 'Dodaj opis projektu, np. fragment streszczenia dla orientacji w systemie zarzadzania treścią. Opis pojawi się w kafelku projektu w panelu z listą filmów w CMSie.',
-      type: 'string'
+      type: 'string',
+      options: {
+        collapsible: true, 
+        collapsed: false
+      }
     },
   ],
   orderings: [
@@ -140,7 +150,7 @@ export default {
       title: 'title',
       publishedAt: 'publishedAt',
       slug: 'slug',
-      media: 'mainImage',
+      media: 'thumbImage',
       description: 'description'
     },
     prepare({ 

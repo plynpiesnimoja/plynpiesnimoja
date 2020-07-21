@@ -89,10 +89,10 @@ h6 {
   margin: 0;
 }
 h1 {
-  font-size: calc(var(--font-heading1-size) * 1.5);
-  @media screen and (max-width: $layout-xl) {
+  // font-size: calc(var(--font-heading1-size) * 1.5);
+  // @media screen and (max-width: $layout-xl) {
     font-size: calc(var(--font-heading1-size) * 1.25);
-  }
+  //}
   @media screen and (max-width: $layout-sm) {
     font-size: var(--font-heading1-size);
   }
@@ -101,10 +101,10 @@ h1 {
   }
 }
 h2 {
-  font-size: calc(var(--font-heading2-size) * 1.5);
-  @media screen and (max-width: $layout-xl) {
+  // font-size: calc(var(--font-heading2-size) * 1.5);
+  // @media screen and (max-width: $layout-xl) {
     font-size: calc(var(--font-heading2-size) * 1.25);
-  }
+  //}
   @media screen and (max-width: $layout-sm) {
     font-size: var(--font-heading2-size);
   }
@@ -113,10 +113,10 @@ h2 {
   }
 }
 h3 {
-  font-size: calc(var(--font-heading3-size) * 1.5);
-  @media screen and (max-width: $layout-xl) {
+  // font-size: calc(var(--font-heading3-size) * 1.5);
+  // @media screen and (max-width: $layout-xl) {
     font-size: calc(var(--font-heading3-size) * 1.25);
-  }
+  // }
   @media screen and (max-width: $layout-sm) {
     font-size: var(--font-heading3-size);
   }
@@ -125,10 +125,10 @@ h3 {
   }
 }
 h4, h5, h6 {
-  font-size: calc(var(--font-heading4-size) * 1.5);
-  @media screen and (max-width: $layout-xl) {
+  // font-size: calc(var(--font-heading4-size) * 1.5);
+  // @media screen and (max-width: $layout-xl) {
     font-size: calc(var(--font-heading4-size) * 1.25);
-  }
+  // }
   @media screen and (max-width: $layout-sm) {
     font-size: var(--font-heading4-size);
   }
@@ -137,11 +137,11 @@ h4, h5, h6 {
   }
 }
 p {
-  font-size: 1.5em;
-  //line-height: var(--font-base-line-height);
-  @media screen and (max-width: $layout-xl) {
-    font-size: 1.25em;
-  }
+  font-size: 1.25em;
+  line-height: var(--font-base-line-height);
+  // @media screen and (max-width: $layout-lg) {
+  //   font-size: 1.25em;
+  // }
   @media screen and (max-width: $layout-sm) {
     font-size: 1em;
   }

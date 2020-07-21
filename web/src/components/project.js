@@ -64,7 +64,7 @@ const Project = props => {
                     aria-label={`Data publikacji ${format(new Date(publishedAt), 'DD-MM-YYYY')}`}
                   >
                     <>
-                      <time datetime={publishedAt}>
+                      <time dateTime={publishedAt}>
                       {differenceInDays(new Date(publishedAt), new Date()) > 3
                         ? distanceInWords(new Date(publishedAt), new Date())
                         : format(new Date(publishedAt), 'DD / MM / YYYY')}
