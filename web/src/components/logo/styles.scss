@@ -1,11 +1,11 @@
-//@import 'variables.scss';
+@import '../../styles/custom-properties.scss';
 
 .ppm-Logo {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  .five-line-element {
+  .staff-element {
     fill: currentColor;
   }
 }
@@ -21,3 +21,4 @@
     height: 4em;
   }
 }
+

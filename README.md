@@ -1,38 +1,43 @@
-# plynpiesnimoja
+# Plyń Pieśni Moja Website
 
-A portfolio using structured content and a static site builder.
+This is official website of **Plyń pieśni moja** Band Project. 
 
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gatsby-portfolio).
+Live Project: [View Site](https://www.plynpiesnimoja.pl)
 
-## What you have
+## About Project
 
-- A blazing fast portfolio with [Gatsby.js](https://gatsbyjs.org)
+Few pasionate Musicans are promoting classical music and history to the youngest.
+
+Project is donated by **National Centre For Culture**.
+
+
+## Project Overview
+
+Project is deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gatsby-portfolio).
+
+- A blazing fast website starter with [Gatsby.js](https://gatsbyjs.org)
 - Structured content using [Sanity.io](https://www.sanity.io)
 - Global deployment on [Netlify](https://netlify.com)
 
-## Quick start
 
-1. Clone this repository from your GitHub account
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the Studio and frontend locally
-   - Your Studio should be running on [http://localhost:3333](http://localhost:3333)
-   - Your frontend should be running on [http://localhost:8000](http://localhost:8000)
-4. `npm run build` to build to production locally
+### Dependencies
+* Google Analytics - `gatsby-plugin-google-analytics`
+* Gatsby Plugin Sass - `gatsby-plugin-sass`
+* Carbon Icons by IBM - [Carbon Design System](https://www.carbondesignsystem.com)
 
-## Enable real-time content preview in development
+### Design
 
-1. Go to your [project’s API settings on manage.sanity.io](https://manage.sanity.io/projects/spwn81yk/settings/api) and create a token with read rights.
-2. Copy `.env.development.template` to `.env.development` and paste in the token: `SANITY_READ_TOKEN="yourTokenHere"`.
-3. Restart the development server (`ctrl + C` and `npm run dev`).
+Website is designed and developed by **Dominik Kiepuszewski**. 
 
-If you want to disable the preview you can set `watchMode: false` in gatsby-config.js. If you just want to preview published changes you can set `overlayDrafts: false` in gatsby-config.js.
+Logo of **Płyś pieśni moja** and Images, movies are owned by Band.
 
-## Deploy changes
+Logo design by **Dominik Kiepuszewski**. 
 
-Netlify automatically deploys new changes commited to the `master` branch on GitHub. If you want to change the deployment branch you may do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
+Copyright ® All rights reserved 2020
 
-## Get help
 
-[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
 
-Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
+## Contributing
+
+This is code repository for Musicans band website. 
+Therefore, we most likely will _not_ accept pull requests.

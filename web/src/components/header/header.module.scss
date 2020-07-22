@@ -29,18 +29,8 @@ $break: $layout-sm;
   display: flex;
   align-items: center;
   flex: 1;
-  color: $white;
+  color: $light-gray;
   position: relative;
-  a {
-    display: flex;
-    height: 100%;
-    color: inherit;
-    text-decoration: none;
-    align-items: center;
-    &:hover {
-      color: $accent-color;
-    }
-  }
 }
 
 .toggleNavButton {

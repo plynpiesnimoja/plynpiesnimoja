@@ -10,7 +10,7 @@ import styles from './project-preview.module.scss'
 
 const ProjectPreview = props => {
   return (
-    <Link className={styles.root} to={`/film/${props.slug.current}`}>
+    <Link className={styles.root} to={`/film/${props.slug.current}`} draggable={false}>
       <div className={styles.leadMediaThumb}>
         {props.thumbImage && props.thumbImage.asset && (
           <img

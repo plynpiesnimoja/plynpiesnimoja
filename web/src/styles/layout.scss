@@ -45,6 +45,11 @@
 
 * {
   box-sizing: border-box;
+  user-drag: none;
+}
+::selection {
+  color: $primary-color;
+  background: $accent-color;
 }
 
 html {

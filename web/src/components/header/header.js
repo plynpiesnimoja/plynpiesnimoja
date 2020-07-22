@@ -78,7 +78,7 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
   return(
     <header className={styles.root}>
       <div className={styles.wrapper}>
-        <div className={styles.branding}>
+        <div className={cn(styles.branding, 'logoBanner')}>
           <Link to='/'>
             <BandLogo extended />
           </Link>
