@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 
+
 import { buildImageObj } from 'src/lib/helpers'
 import { imageUrlFor } from 'src/lib/image-url'
 import { Anchor } from 'src/components/typography'
@@ -62,7 +63,11 @@ const Persona = (props) => {
   })
 
 
-  console.log(props)
+  // console.log(props)
+
+  // console.log(polishBreakingTextFormatter(role))
+  // console.log(bio[0].children[0].text)
+
   return(
     <>
       {name && (
@@ -126,7 +131,7 @@ const Persona = (props) => {
                   tabIndex={-1}
                   ref={containerRef} 
                 >
-                  <BlockContent blocks={bio || []}  />
+                  <BlockContent blocks={bio || []}  />    
                 </section>
 
                 <div className='Content-bottom-panel'>

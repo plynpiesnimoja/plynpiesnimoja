@@ -130,7 +130,7 @@ const IndexPage = props => {
             <Rule color='accent' />
 
             <div tabIndex={0}>
-              <BlockContent blocks={mainPage._rawBody || []} />
+              <BlockContent className='text-size2' blocks={mainPage._rawBody || []} />
             </div>
 
         </section>

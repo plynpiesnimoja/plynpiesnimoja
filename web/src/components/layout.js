@@ -3,13 +3,13 @@ import Header from 'src/components/header'
 
 import Footer from 'src/components/footer'
 
-//import { PolishBreakingText } from 'src/lib/string-utils'
+import { PolishBreakingText } from 'src/lib/string-utils'
 
 import 'src/styles/layout.scss'
 import styles from './layout.module.scss'
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
-  //useEffect(() => PolishBreakingText(), [])
+  
   return(
     <>
       <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
@@ -22,12 +22,15 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 export default Layout
 
 
-const Main = ({ children }) => (
-  <main 
-    id='main' 
-    className={styles.content} 
-    tabIndex={-1}
-    aria-hidden={false}
-    role='presentation'
-  >{children}</main>
-)
+const Main = ({ children }) => { 
+  useEffect(() => PolishBreakingText(), [])
+  return(
+    <main 
+      id='main' 
+      className={styles.content} 
+      tabIndex={-1}
+      aria-hidden={false}
+      role='presentation'
+    >{children}</main>
+  )
+}

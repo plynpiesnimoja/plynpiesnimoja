@@ -47,6 +47,7 @@
   box-sizing: border-box;
   user-drag: none;
 }
+
 ::selection {
   color: $primary-color;
   background: $accent-color;
@@ -93,74 +94,103 @@ h6 {
   font-family: $fontstack-geometric;
   margin: 0;
 }
-h1 {
-  // font-size: calc(var(--font-heading1-size) * 1.5);
-  // @media screen and (max-width: $layout-xl) {
-    font-size: calc(var(--font-heading1-size) * 1.25);
-  //}
-  @media screen and (max-width: $layout-sm) {
-    font-size: var(--font-heading1-size);
+.blockText-container,
+.blockContent-container {
+  &.text-size1 {
+    font-size: 1rem;
   }
-  @media screen and (max-width: $layout-xs) {
-    font-size: calc(var(--font-heading1-size) * 0.875);
+  &.text-size2 {
+    font-size: 1.25rem;
   }
-}
-h2 {
-  // font-size: calc(var(--font-heading2-size) * 1.5);
-  // @media screen and (max-width: $layout-xl) {
-    font-size: calc(var(--font-heading2-size) * 1.25);
-  //}
-  @media screen and (max-width: $layout-sm) {
-    font-size: var(--font-heading2-size);
+  &.text-size3 {
+    font-size: 1.5rem;
   }
-  @media screen and (max-width: $layout-xs) {
-    font-size: calc(var(--font-heading2-size) * 0.875);
+  h1 {
+    // font-size: calc(var(--font-heading1-size) * 1.5);
+    // @media screen and (max-width: $layout-xl) {
+      font-size: calc(var(--font-heading1-size) * 1.25);
+    //}
+    @media screen and (max-width: $layout-sm) {
+      font-size: var(--font-heading1-size);
+    }
+    @media screen and (max-width: $layout-xs) {
+      font-size: calc(var(--font-heading1-size) * 0.875);
+    }
   }
-}
-h3 {
-  // font-size: calc(var(--font-heading3-size) * 1.5);
-  // @media screen and (max-width: $layout-xl) {
-    font-size: calc(var(--font-heading3-size) * 1.25);
-  // }
-  @media screen and (max-width: $layout-sm) {
-    font-size: var(--font-heading3-size);
+  h2 {
+    // font-size: calc(var(--font-heading2-size) * 1.5);
+    // @media screen and (max-width: $layout-xl) {
+      font-size: calc(var(--font-heading2-size) * 1.25);
+    //}
+    @media screen and (max-width: $layout-sm) {
+      font-size: var(--font-heading2-size);
+    }
+    @media screen and (max-width: $layout-xs) {
+      font-size: calc(var(--font-heading2-size) * 0.875);
+    }
   }
-  @media screen and (max-width: $layout-xs) {
-    font-size: calc(var(--font-heading3-size) * 0.875);
+  h3 {
+    // font-size: calc(var(--font-heading3-size) * 1.5);
+    // @media screen and (max-width: $layout-xl) {
+      font-size: calc(var(--font-heading3-size) * 1.25);
+    // }
+    @media screen and (max-width: $layout-sm) {
+      font-size: var(--font-heading3-size);
+    }
+    @media screen and (max-width: $layout-xs) {
+      font-size: calc(var(--font-heading3-size) * 0.875);
+    }
   }
-}
-h4, h5, h6 {
-  // font-size: calc(var(--font-heading4-size) * 1.5);
-  // @media screen and (max-width: $layout-xl) {
-    font-size: calc(var(--font-heading4-size) * 1.25);
-  // }
-  @media screen and (max-width: $layout-sm) {
-    font-size: var(--font-heading4-size);
+  h4, h5, h6 {
+    // font-size: calc(var(--font-heading4-size) * 1.5);
+    // @media screen and (max-width: $layout-xl) {
+      font-size: calc(var(--font-heading4-size) * 1.25);
+    // }
+    @media screen and (max-width: $layout-sm) {
+      font-size: var(--font-heading4-size);
+    }
+    @media screen and (max-width: $layout-xs) {
+      font-size: calc(var(--font-heading4-size) * 0.875);
+    }
   }
-  @media screen and (max-width: $layout-xs) {
-    font-size: calc(var(--font-heading4-size) * 0.875);
-  }
-}
-p {
-  font-size: 1.25em;
-  line-height: var(--font-base-line-height);
-  // @media screen and (max-width: $layout-lg) {
-  //   font-size: 1.25em;
-  // }
-  @media screen and (max-width: $layout-sm) {
-    font-size: 1em;
-  }
-  @media screen and (max-width: $layout-xs) {
-    font-size: 0.875em;
-  }
-}
-a {
-  color: inherit;
-  &:focus {
-    outline: rgba($accent-color, 0.5) dashed 1px;
-  }
-}
 
+  p {
+    font-size: 1.25em;
+    line-height: var(--font-base-line-height);
+    // @media screen and (max-width: $layout-lg) {
+    //   font-size: 1.25em;
+    // }
+    @media screen and (max-width: $layout-sm) {
+      font-size: 1em;
+    }
+    @media screen and (max-width: $layout-xs) {
+      font-size: 0.875em;
+    }
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: 150ms ease;
+    font-weight: 300;
+    &:hover {
+      color: $accent-color;
+      border-color: $accent-color;
+      background-color: rgba($accent-color, 0.25);
+    }
+    &:focus {
+      outline: rgba($accent-color, 0.5) dashed 1px;
+    }
+  }
+  strong {
+    font-weight: 600;
+  }
+  em {
+    font-family: var(--font-family-serif);
+    font-weight: 300;
+    font-size: 1.25em;
+  }
+}
 button {
   border: none;
   cursor: pointer;
@@ -173,34 +203,9 @@ main {
 img {
   user-select: none;
 }
-// header a {
-//   border: 0;
-//   background: none;
-// }
-
-// main a {
-//   color: $accent-color;
-//   background-image: linear-gradient(180deg, transparent 95%, currentColor 0);
-//   background-size: 0 100%;
-//   background-repeat: no-repeat;
-//   text-decoration: none;
-//   transition: background-size 150ms ease;
-//   font-size: inherit;
-//   border-bottom: 2px dashed rgba($accent-color, 0.5);
-//   &:hover {
-//     background-size: 100% 100%;
-//   }
-//   &:active {
-//     background-color: rgba($accent-color, 0.2);
-//   }
-// }
 
 *:focus {
   //outline: rgba($accent-color, 0.5) dashed 1px;
   outline: none;
   //outline-color: $accent-color;
 }
-
-// .fokus-pokus:focus {
-//   outline-color: red;
-// }
