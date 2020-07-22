@@ -13,6 +13,8 @@ Project is donated by **National Centre For Culture**.
 
 ## Project Overview
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/31763108-e2fb-4d31-b80c-f876dcdf7c2c/deploy-status)](https://app.netlify.com/sites/plynpiesnimoja/deploys)
+
 Project is deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gatsby-portfolio).
 
 - A blazing fast website starter with [Gatsby.js](https://gatsbyjs.org)
@@ -21,6 +23,7 @@ Project is deployed from [sanity.io/create](https://www.sanity.io/create/?templa
 
 
 ### Dependencies
+
 * Google Analytics - `gatsby-plugin-google-analytics`
 * Gatsby Plugin Sass - `gatsby-plugin-sass`
 * Carbon Icons by IBM - [Carbon Design System](https://www.carbondesignsystem.com)
