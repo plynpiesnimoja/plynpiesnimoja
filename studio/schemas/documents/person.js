@@ -46,15 +46,19 @@ export default {
     {
       name: 'attachment',
       title: 'Załącznik',
-      type: 'attachment',
-      options: {
-        storeOriginalFilename: true
-      }
+      type: 'attachment'
+    },
+    {
+      name: 'websiteLink',
+      title: 'Strona www',
+      type: 'url',
+      description: 'Adres strony internetowej osoby jeśli posiada i chce się pochwalić.',
     },
     {
       name: 'links',
       title: 'Odnośniki',
       type: 'socialMediaLinks',
+      description: 'Adresy i linki do social mediów. Typ URL, np. "https://www.instagram.com/nazwa".',
       options: {
         collapsible: true, // Makes the whole fieldset collapsible
         collapsed: false, // Defines if the fieldset should be collapsed by default or not

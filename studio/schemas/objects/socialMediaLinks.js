@@ -5,41 +5,7 @@
 export default {
   title: 'Odnośniki',
   name: 'socialMediaLinks',
-  type: 'object',
-
-
-  // fieldsets: [
-  //   {
-  //     title: 'Social media handles',
-  //     name: 'social',
-  //     options: {
-  //       collapsible: true, // Makes the whole fieldset collapsible
-  //       collapsed: false, // Defines if the fieldset should be collapsed by default or not
-  //       columns: 2 // Defines a grid for the fields and how many columns it should have
-  //     }
-  //   }
-  // ],
-  // fields: [
-  //   {
-  //     title: 'Twitter',
-  //     name: 'twitter',
-  //     type: 'string',
-  //     fieldset: 'social'
-  //   },
-  //   {
-  //     title: 'Instagram',
-  //     name: 'instagram',
-  //     type: 'string',
-  //     fieldset: 'social'
-  //   },
-  //   {
-  //     title: 'Facebook',
-  //     name: 'facebook',
-  //     type: 'string',
-  //     fieldset: 'social'
-  //   }
-  // ]
-  
+  type: 'object',  
   fields: [
     {
       name: 'twitter', 
@@ -65,6 +31,11 @@ export default {
       name: 'linkedin', 
       type: 'url', 
       title: 'Linkedin'
+    },
+    {
+      name: 'tiktok', 
+      type: 'url', 
+      title: 'TikTok'
     }
   ]
 }
