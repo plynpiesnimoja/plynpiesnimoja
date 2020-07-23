@@ -32,7 +32,7 @@ export const PolishBreakingText = () => {
     });
   }
   //let el = document.querySelectorAll('h1, h2, h3, h4, h5,, h6, p, span, em, .text, .paragraph');
-  let el = document.querySelectorAll('p');
+  let el = document.querySelectorAll('p, .paragraph');
   console.log(el)
   lastSingleLetterToNewLine(el);  
 }

@@ -40,7 +40,8 @@ const Persona = (props) => {
     bio, 
     role, 
     links, 
-    attachment 
+    attachment,
+    websiteLink 
   } = props
 
   const classes = {
@@ -63,7 +64,7 @@ const Persona = (props) => {
   })
 
 
-  // console.log(props)
+  console.log(props)
 
   // console.log(polishBreakingTextFormatter(role))
   // console.log(bio[0].children[0].text)
@@ -104,6 +105,18 @@ const Persona = (props) => {
                       to={attachment.asset.url}
                       link
                       ariaLabel='Pobierz biografie'
+                      external
+                      icon='documentDownload'
+                      ghostButton
+                    >Pobierz Bio</Button>
+                  </div>
+                )}
+                {websiteLink && (
+                  <div className='Persona-website-link'>
+                    <Button 
+                      to={websiteLink}
+                      link
+                      ariaLabel='Odwiedź stronę'
                       external
                       icon='documentDownload'
                       ghostButton
