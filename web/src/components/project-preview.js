@@ -2,16 +2,19 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { buildImageObj } from 'src/lib/helpers'
 import { imageUrlFor } from 'src/lib/image-url'
+import { cn } from 'src/lib/helpers'
 import BlockText from './block-text'
 import { Heading } from 'src/components/typography'
 import Icon from 'src/components/icon'
+// import { BadgeNew } from 'src/components/badge'
 
 import styles from './project-preview.module.scss'
 
 const ProjectPreview = props => {
   return (
     <Link className={styles.root} to={`/film/${props.slug.current}`} draggable={false}>
-      <div className={styles.leadMediaThumb}>
+      <div className={cn(styles.leadMediaThumb, 'thumbImage')}>
+        {/* <BadgeNew /> */}
         {props.thumbImage && props.thumbImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(props.thumbImage))

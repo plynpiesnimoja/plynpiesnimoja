@@ -9,8 +9,6 @@ import Icon from 'src/components/icon'
 import { Heading, Typo } from 'src/components/typography'
 import BlockContent from 'src/components/block-content'
 
-import { polishBreakingTextFormatter } from 'src/lib/string-utils'
-
 import { cn } from 'src/lib/helpers'
 
 import styles from './persona.module.scss'
@@ -66,7 +64,6 @@ const Persona = (props) => {
 
   console.log(props)
 
-  // console.log(polishBreakingTextFormatter(role))
   // console.log(bio[0].children[0].text)
 
   return(

@@ -1,0 +1,13 @@
+.Badge {
+  position: absolute;
+  display: flex;
+}
+
+.newBadge {
+  left: 0;
+  top: 0;
+  background-color: coral;
+  width: 1rem;
+  height: 1rem;
+  z-index: 10000;
+}

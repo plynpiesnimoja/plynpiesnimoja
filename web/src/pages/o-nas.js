@@ -16,8 +16,6 @@ import { pageNode } from 'src/lib/data';
 
 
 
-// TO-DO: replace _rawImage with image { ... crop {}, asset {} }
-
 export const query = graphql`
   query AboutBandPageQuery {
     aboutBandPage: sanitySiteSettingsAboutBandPage(_id: {regex: "/(drafts.|)siteSettingsAboutBandPage/"}) {
@@ -127,7 +125,7 @@ const AboutBandPage = props => {
                         role={item.person.role}
                         image={item.person.image}
                         bio={item.person._rawBio}
-                        links={item.person.links ? item.person.links : ''}
+                        links={item.person.links ? item.person.links : ''} // && operator?
                         attachment={item.person.attachment}
                       />
                   </li>

@@ -3,7 +3,7 @@ import Header from 'src/components/header'
 
 import Footer from 'src/components/footer'
 
-import { PolishBreakingText } from 'src/lib/string-utils'
+import { TextFormatter } from 'src/lib/string-utils'
 
 import 'src/styles/layout.scss'
 import styles from './layout.module.scss'
@@ -23,7 +23,7 @@ export default Layout
 
 
 const Main = ({ children }) => { 
-  useEffect(() => PolishBreakingText(), [])
+  useEffect(() => TextFormatter(), [])
   return(
     <main 
       id='main' 
