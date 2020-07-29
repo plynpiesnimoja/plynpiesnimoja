@@ -218,8 +218,8 @@ $font-title1-line-height: calc(56 / 49);
   background-repeat: no-repeat;
   text-decoration: none;
   transition: 150ms ease;
-  // &:hover {
-  //   color: $accent-color;
-  //   background-size: 100% 100%;
-  // }
+  &:hover {
+    color: $accent-color;
+    background-size: 100% 100%;
+  }
 }
