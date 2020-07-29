@@ -11,6 +11,7 @@ import Icon from 'src/components/icon'
 import styles from './project-preview.module.scss'
 
 const ProjectPreview = props => {
+  console.log("tumbImidż", props.thumbImage.asset)
   return (
     <Link className={styles.root} to={`/film/${props.slug.current}`} draggable={false}>
       <div className={cn(styles.leadMediaThumb, 'thumbImage')}>

@@ -1,4 +1,5 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
+
 import React from 'react'
 import { Link } from 'gatsby'
 import BlockContent from './block-content'
@@ -15,7 +16,8 @@ const Project = props => {
   const { 
     _rawBody, 
     title, 
-    footage, 
+    footage,
+    thumbImage, 
     categories, 
     members, 
     publishedAt, 
@@ -27,6 +29,8 @@ const Project = props => {
   // so request for only first argument is needed 
   const footageSource = footage[0].videoId
 
+  console.log("Prodżekt Kołwer Imidż", thumbImage.asset)
+  console.log("Pokaż Propsy", props)
 
   return (
     <div className={styles.root}>
@@ -38,8 +42,16 @@ const Project = props => {
               aria-label={`Obejrzyj odcinek ${title}`} 
             >
               {footage && footageSource && (
-                <Footage videoId={footageSource} title={title}/>
+                
+
+                <Footage 
+                  videoId={footageSource} 
+                  title={title}
+                  thumbImage={thumbImage}
+                />
+
               )}
+
           </div>
         </section>
       </div> 
