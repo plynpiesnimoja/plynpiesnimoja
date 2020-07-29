@@ -22,19 +22,19 @@ export default {
             options: {
               title: 'Netlify Panel',
               description:
-                'UWAGA: Strona się generuje statycznie, dlatego po zmianach treści w CMSie trzeba będzie przejść do panelu usługi Netlify i zrobić "Build" strony. W tym celu kliknij na guzik "Manage sites at Netlify"',
+                'UWAGA: Strona się generuje statycznie, dlatego po zmianach treści w CMSie trzeba będzie kliknąć guzik "Deploy". Jeżeli status pokaże się "Failed", można proces powtórzyć, nie przyniesie zmiany to ponownie. Jeśli to to nie przyniesie skutku, telefon lub wiadomosć do Dominika :)',
               sites: [
                 {
-                  buildHookId: '',
-                  title: 'Sanity Studio (CMS)',
-                  name: '',
-                  apiId: ''
+                  buildHookId: '5f034b785334fcaa85abf05d',
+                  title: 'Website: Strona PPM',
+                  name: 'plynpiesnimoja',
+                  apiId: '31763108-e2fb-4d31-b80c-f876dcdf7c2c'
                 },
                 {
-                  buildHookId: '',
-                  title: 'Strona PPM (Website)',
-                  name: '',
-                  apiId: ''
+                  // buildHookId: '5f034b781c90d6ac6ce49d03', 
+                  title: 'CMS: Sanity Studio',
+                  name: 'plynpiesnimoja-studio',
+                  apiId: '099694ec-fb08-42c6-9a98-146f19ef55eb'
                 }
               ]
             }

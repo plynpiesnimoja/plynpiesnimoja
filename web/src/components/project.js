@@ -29,9 +29,6 @@ const Project = props => {
   // so request for only first argument is needed 
   const footageSource = footage[0].videoId
 
-  console.log("Prodżekt Kołwer Imidż", thumbImage.asset)
-  console.log("Pokaż Propsy", props)
-
   return (
     <div className={styles.root}>
       <div className={styles.footage}>
