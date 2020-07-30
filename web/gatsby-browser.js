@@ -5,3 +5,16 @@
  */
 
 // You can delete this file if you're not using it
+
+export const onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm(
+    `This application has been updated. ` +
+      `Reload to display the latest version?`
+  )
+  if (answer === true) {
+    window.location.reload()
+  }
+}
+
+// In case using custom sw, code registering in Gatsby
+// export const registerServiceWorker = () => true 

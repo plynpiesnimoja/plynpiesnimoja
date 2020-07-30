@@ -73,6 +73,7 @@ module.exports = {
         display: `standalone`,
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
