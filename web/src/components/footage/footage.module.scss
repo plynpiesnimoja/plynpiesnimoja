@@ -19,7 +19,7 @@ $break: $layout-sm;
   }
 }
 
-.videoContainer {
+.videoContainer2 {
   position: relative;
   padding-bottom: calc(9 / 16 * 100%);
 
@@ -29,5 +29,21 @@ $break: $layout-sm;
     left: 0;
     width: 100%;
     height: 100%;
+  }
+}
+
+.videoContainer {
+  &:focus {
+    outline: 1px solid red;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  a span {
+    color: red;
   }
 }

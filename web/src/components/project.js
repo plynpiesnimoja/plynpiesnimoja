@@ -32,11 +32,11 @@ const Project = props => {
   return (
     <div className={styles.root}>
       <div className={styles.footage}>
-        <section className={styles.footageWrapper}>
+        <section className={styles.footageWrapper}> 
             <div
               className={styles.videoContainer} 
               role='presentation'
-              aria-label={`Obejrzyj odcinek ${title}`} 
+              aria-label={`Sekcja z wideo, nagranie pod tytułem: ${title}`} 
             >
               {footage && footageSource && (
                 
