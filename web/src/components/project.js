@@ -106,7 +106,9 @@ const Project = props => {
                   {relatedProjects.map(project => (
                     <li key={`related_${project._id}`}>
                       {project.slug ? (
-                        <Link to={`/film/${project.slug.current}`}>{project.title}</Link>
+                        <Link to={`/film/${project.slug.current}`}>
+                          <span>{project.title}</span>
+                        </Link>
                       ) : (
                         <span>{project.title}</span>
                       )}

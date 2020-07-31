@@ -101,21 +101,28 @@ $breakpoint-project: 600px;
     margin: 0.75rem 0;
     padding: 0;
   }
-
+  li {
+    padding: {
+      bottom: 1em;
+    }
+    &:last-child {
+      padding: 0;
+    }
+  }
   a {
-    // @include typography.animatedLink;
-    display: inline-block;
+    display: block;
+    padding: 0.25rem 0;
     text-decoration: none;
-    //padding: 0.25rem 0;
-    margin: 0.25rem 0;
     color: inherit;
-    background-image: linear-gradient(180deg, transparent 95%, currentColor 0);
-    background-size: 0 100%;
-    background-repeat: no-repeat;
-    text-decoration: none;
-    transition: 150ms ease;
-    &:hover {
-      //color: $accent-color;
+    span {
+      color: inherit;
+      background-image: linear-gradient(180deg, transparent 95%, currentColor 0);
+      background-size: 0 100%;
+      background-repeat: no-repeat;
+      text-decoration: none;
+      transition: 150ms ease;
+    }
+    &:hover span {
       background-size: 100% 100%;
     }
   }
