@@ -20,7 +20,7 @@ const Footage = props => {
       <iframe
         className={styles.videoContainer}
         src={`https://www.youtube.com/embed/${props.videoId}?rel=0`}
-        srcdoc={`${settings.style}<a href=https://www.youtube.com/embed/${props.videoId}?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=1&autoplay=1 tabindex=0 aria-label=${settings.label}><img src=https://img.youtube.com/vi/${props.videoId}/hqdefault.jpg alt=${props.title}><span>▶</span></a>`}
+        // srcdoc={`${settings.style}<a href=https://www.youtube.com/embed/${props.videoId}?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=1&autoplay=1 tabindex=0 aria-label=${settings.label}><img src=https://img.youtube.com/vi/${props.videoId}/hqdefault.jpg alt=${props.title}><span>▶</span></a>`}
         frameBorder={0} 
         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
@@ -28,7 +28,7 @@ const Footage = props => {
         //title={props.title}
         //tabIndex={0}
       />
-      {/* <PlaceHolderImage {...props} /> */}
+      <PlaceHolderImage {...props} />
     </>
   )
 }
