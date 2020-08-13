@@ -46,6 +46,9 @@
 * {
   box-sizing: border-box;
   user-drag: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 ::selection {
@@ -79,10 +82,29 @@ ul {
   padding: 0;
   padding-inline-start: 0;
 }
+
 li {
   list-style: none;
   margin: 0;
   padding-inline-start: 0;
+}
+
+a:focus {
+  outline: rgba($accent-color, 0.5) dashed 1px !important;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  padding-top: 4rem;
+  background-color: $primary-color;
+}
+
+img {
+  user-select: none;
 }
 
 h1,
@@ -94,6 +116,7 @@ h6 {
   font-family: $fontstack-geometric;
   margin: 0;
 }
+
 .blockText-container,
 .blockContent-container {
   &.text-size1 {
@@ -191,21 +214,6 @@ h6 {
     //font-size: 1.125em;
   }
 }
-button {
-  border: none;
-  cursor: pointer;
-}
-main {
-  padding-top: 4rem;
-  background-color: $primary-color;
-}
 
-img {
-  user-select: none;
-}
 
-*:focus {
-  //outline: rgba($accent-color, 0.5) dashed 1px;
-  //outline: none;
-  //outline-color: $accent-color;
-}
+

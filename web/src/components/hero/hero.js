@@ -22,7 +22,7 @@ export default Hero
 
 const Background = (props) => {
   const { heroImage } = props
-  console.log("hiroł props", props)
+
   return (
     <div 
       className={styles.heroImage}

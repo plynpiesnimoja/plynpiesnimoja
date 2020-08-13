@@ -8,11 +8,13 @@ $break: $layout-sm;
   position: fixed;
   width: 100%;
   z-index: 10000;
-  // backdrop-filter: saturate(100%) blur(20px);
   height: 4rem;
   color: $light-gray;
-  background-color: $black;
   font-family: $fontstack-sans;
+  background-color: $black;
+  // background-color: rgba($black, 0.5);
+  // background-image: linear-gradient(rgba($black , 1), rgba($black , 0.5));
+  // backdrop-filter: saturate(100%) blur(20px);
 }
 
 .wrapper {

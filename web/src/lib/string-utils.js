@@ -5,7 +5,7 @@ export function ucfirst (str) {
 export const TextFormatter = () => {
   function lastSingleLetterToNewLine(el) {
     let result;
-    el.forEach((element, i) => {
+    el.forEach(element => {
        
       if(!element.innerHTML.match(/[{}]|<script|^\n$/gi)){
         result = element.innerHTML.replace(/ (.) /gi, " "+'\$1'+"&nbsp;");
@@ -14,7 +14,7 @@ export const TextFormatter = () => {
       //console.log(result);
     });
   }
-  let el = document.querySelectorAll('p, .paragraph');
-  console.log(el)
+  let el = document.querySelectorAll('p, .paragraph, span, .Heading');
+  //console.log(el)
   lastSingleLetterToNewLine(el);  
 }

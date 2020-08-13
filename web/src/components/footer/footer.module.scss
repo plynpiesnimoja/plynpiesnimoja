@@ -14,10 +14,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @media (--media-min-small) {
-    padding: 6em 2em 2em;
-  }
 }
 
 .companyAddress {

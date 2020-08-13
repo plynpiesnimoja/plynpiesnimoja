@@ -61,11 +61,6 @@ const Persona = (props) => {
     }
   })
 
-
-  console.log(props)
-
-  // console.log(bio[0].children[0].text)
-
   return(
     <>
       {name && (
@@ -85,15 +80,20 @@ const Persona = (props) => {
 
           <div className={cn(classes.container, styles.personaContainer)}>
             <div className={classes.header}>
+
               <div tabIndex={0}>
+
                 <Heading size={2}>
                   {name}
                 </Heading>
+
                 {role && (
                   // <Typo regular responsive>{role}</Typo>
                   <Heading size={4} letterStyle={400} regular responsive>{role}</Heading>
                 )}
+
               </div>
+
               <div className='Persona-links-container'>
                       
                 {attachment && attachment.asset && (
@@ -108,6 +108,7 @@ const Persona = (props) => {
                     >Pobierz Bio</Button>
                   </div>
                 )}
+
                 {websiteLink && (
                   <div className='Persona-website-link'>
                     <Button 
@@ -120,14 +121,15 @@ const Persona = (props) => {
                     >Pobierz Bio</Button>
                   </div>
                 )}
+                
                 {socialMediaLinks.length > 0 && (
                   <ul className='Persona-socialmedia-links' aria-label='Odnośniki do Social Media'>
-                    {socialMediaLinks
-                      .map((item, i) => <SocialMediaLink 
-                                          key={i}
-                                          icon={item.type} 
-                                          to={item.url}
-                                        />)}
+                    {socialMediaLinks.map((item, i) => 
+                      <SocialMediaLink 
+                        key={i}
+                        icon={item.type} 
+                        to={item.url}
+                      />)}
                   </ul>
                 )}
 

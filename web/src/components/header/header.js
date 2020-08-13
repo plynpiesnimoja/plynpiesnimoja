@@ -73,8 +73,6 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
   const viewportSize = useWindowSize();
   let width = viewportSize.windowWidth;
 
-  // console.log(width)
-
   return(
     <header className={styles.root}>
       <div className={styles.wrapper}>

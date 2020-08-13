@@ -15,7 +15,7 @@ export const Typo = ({
     size,
     responsive 
   }) => {
-  const Size = (size === "large" ? "large" : "") || (size === "big" ? "big" : "") || (size === "mid" ? "mid" : "") || (size === "small" ? "small" : "")
+  const Size = (size === 'large' ? 'large' : '') || (size === 'big' ? 'big' : '') || (size === 'mid' ? 'mid' : '') || (size === 'small' ? 'small' : '')
   const classes = cn(span ? 'text' : 'paragraph', responsive && 'responsive', Size, caps && 'caps', regular && 'regular', !bolder && bold && 'bold', !bold && bolder && 'bolder', className)
   return(
     <p className={classes}>
@@ -25,7 +25,7 @@ export const Typo = ({
 }
 
 export const Italic = ({ children, caps, bold, bolder, className }) => {
-  const classes = cn("italic", caps ? "caps" : "", !bolder && bold ? "bold" : "", !bold && bolder ? "bolder" : "", className)
+  const classes = cn('italic', caps ? 'caps' : '', !bolder && bold ? 'bold' : '', !bold && bolder ? 'bolder' : '', className)
   return(
     <em className={classes}>
       {children}
@@ -48,25 +48,30 @@ export const Heading = (props) => {
     caps,
     className,
     letterStyle = 700,
+    regular,
     ...other 
   } = props
+
   const Component = 
-    (size === "large" || size == 1 ? "h1" : null) || 
-    (size === "big"   || size == 2 ? "h2" : null) || 
-    (size == 3 ? "h3" : null) || 
-    (size === "mid"   || size == 4 ? "h4" : null) || 
-    (size == 5 ? "h5" : null) || 
-    (size === "small" || size == 6 ? "h6" : null);
+    (size === 'large' || size == 1 ? 'h1' : null) || 
+    (size === 'big'   || size == 2 ? 'h2' : null) || 
+    (size == 3 ? 'h3' : null) || 
+    (size === 'mid'   || size == 4 ? 'h4' : null) || 
+    (size == 5 ? 'h5' : null) || 
+    (size === 'small' || size == 6 ? 'h6' : null);
+
   const Weight =
     (letterStyle == 400 && 'light') ||
     (letterStyle == 500 && 'normal') ||
     (letterStyle == 600 && 'bold') ||
     (letterStyle == 600 && '')
+  
   const styles = {
     root: `Heading${!title ? ` heading${size}` : ''}`,
     title: title ? `${responsive ? 'responsiveTitle' : 'title'}${size}` : '',
     caps: caps ? 'caps' : ''
   }
+
   const classes = cn(className, styles.root, styles.title, styles.caps, Weight)
 
   return(

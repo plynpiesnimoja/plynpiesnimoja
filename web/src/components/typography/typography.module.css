@@ -1,4 +1,6 @@
-@import '../styles/custom-media.css';
+@import '../../styles/custom-media.css';
+
+/* Old Typography Styles */
 
 :root {
   --base-unit: 16;
