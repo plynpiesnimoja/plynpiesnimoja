@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useReducer } from 'react'
 
-
+import Icon from 'src/components/icon'
 import { Heading, Typo } from 'src/components/typography'
 import Button from 'src/components/button'
 import './cookie.scss'
@@ -59,9 +59,13 @@ const CookiePopup = () => {
     <>
       {!checkCookieValue && (
             <div className='CookieContainer'>
-              <Heading size={4}>Ta strona nie zawiera cukru</Heading>
-              <Typo>Ale na naszej Stronie internetowej korzystamy z usługi <strong>Google Analytics</strong>, usługi analizy stron internetowych oferowanej przez <strong>Google Inc.</strong>, potrzebujemy jej do tylko do danych ilości odwiedzających nas użytkowników.</Typo>
-              <Button onClick={AcceptCookie}>OK</Button>
+              <Icon symbol='cookie' />
+              <Heading size={3}>Ta strona nie zawiera cukru</Heading>
+              <Typo size='small'>
+                  Ale na naszej Stronie internetowej korzystamy z usługi <strong>Google Analytics</strong>, 
+                  usługi analizy stron internetowych oferowanej przez <strong>Google Inc.</strong>, 
+                  potrzebujemy jej do naszej informacji o ilości odwiedzających nas użytkowników.</Typo>
+              <Button primary onClick={AcceptCookie}>OK</Button>
             </div>
       )}
     </>
