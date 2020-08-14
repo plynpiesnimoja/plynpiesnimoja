@@ -17,10 +17,13 @@ export const Typo = ({
   }) => {
   const Size = (size === 'large' ? 'large' : '') || (size === 'big' ? 'big' : '') || (size === 'mid' ? 'mid' : '') || (size === 'small' ? 'small' : '')
   const classes = cn(span ? 'text' : 'paragraph', responsive && 'responsive', Size, caps && 'caps', regular && 'regular', !bolder && bold && 'bold', !bold && bolder && 'bolder', className)
+  
+  const Component = span ? 'span' : 'p'
+  
   return(
-    <p className={classes}>
+    <Component className={classes}>
       {children}
-    </p>
+    </Component>
   )
 }
 

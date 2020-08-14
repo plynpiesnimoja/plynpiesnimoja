@@ -1,0 +1,13 @@
+@import '../../styles/custom-properties.scss';
+
+.CookieContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed; 
+  bottom: 1.5rem; 
+  right: 1.5rem;
+  background-color: $black;
+  max-width: 16rem;
+  padding: 1rem;
+  z-index: 5000;
+}

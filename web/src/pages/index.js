@@ -14,6 +14,8 @@ import BlockContent from 'src/components/block-content'
 import Hero from 'src/components/hero'
 
 
+
+
 import { Heading, Rule } from 'src/components/typography'
 
 export const query = graphql`
@@ -119,6 +121,7 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
 
       <Hero heroImage={mainPage.heroImage}>
+        
         <section>
           
             <Heading 
@@ -153,7 +156,7 @@ const IndexPage = props => {
         </EmptyState> */}
         
       </Container>
-
+      
     </Layout>
   )
 }
