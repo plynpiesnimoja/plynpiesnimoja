@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Header from 'src/components/header'
 
 import Footer from 'src/components/footer'
-import { CookiePopup, CookieConsentProvider, useCookieConsentState, useCookieConsentDispatch  } from 'src/components/cookie'
+import CookiePopup from 'src/components/cookie'
 
 import { TextFormatter } from 'src/lib/string-utils'
 

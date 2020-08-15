@@ -10,8 +10,6 @@
   right: 0;
   max-width: 19rem;
   @media screen and (max-width: $layout-sm) {
-    bottom: 0; 
-    right: 0;
     max-width: 100%;
   }
   color: $white;
@@ -19,4 +17,7 @@
   box-shadow: 0 0.5rem 1rem 0.125rem rgba($black, 0.8);
   padding: 1rem;
   z-index: 5000;
+  p:first-of-type {
+    margin: 0;
+  }
 }
