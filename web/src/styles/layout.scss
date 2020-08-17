@@ -217,3 +217,16 @@ h6 {
 
 
 
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+::-webkit-scrollbar-track-piece  {
+  background-color: $black;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: $gray;
+}
