@@ -20,25 +20,21 @@ export default {
   name: 'youtube',
   title: 'Youtube Embed',
   type: 'object',
-  // options: {
-  //   hotspot: true
-  // },
   fields: [
     {
       title: 'Youtube ID',
       name: 'videoId',
       type: 'string',
-      validation: Rule => Rule.error('Musisz podać "id" filmu na Youtubie').required(),
+      validation: Rule => [
+        Rule.error('Musisz podać "id" filmu na Youtubie').required(),
+        // Rule.regex( /(.*?)(^|\/|v=)(.*)?/gim ).error("nie pasi")
+        Rule.regex( /([a-z0-9_-]{11})?/gim ).length(11).error('Użyty ID tego video nie jest poprawny, upewnij się, skopiuj i wklej ponownie.').required()
+        // Rule.regex( /(.*?)(^|\/|v=)([a-z0-9_-]{11})(.*)?/gim ).error("nie pasi")
+      ],
       options: {
         isHighlighted: true
       }
     },
-    // {
-    //   title: 'Url',
-    //   name: 'url',
-    //   type: 'url'
-    // }
-
   ],
   preview: {
     select: {
