@@ -77,9 +77,12 @@ const Header = ({ onHideNav, onShowNav, showNav }) => {
     <header className={styles.root}>
       <div className={styles.wrapper}>
         <div className={cn(styles.branding, 'logoBanner')}>
-          <Link to='/'>
+          <Anchor to='/' internal>
             <BandLogo extended />
-          </Link>
+          </Anchor>
+          {/* <Link to='/'>
+            <BandLogo extended />
+          </Link> */}
           <SkipNavLink />
         </div>
 

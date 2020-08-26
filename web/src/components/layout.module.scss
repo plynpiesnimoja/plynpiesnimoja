@@ -1,15 +1,11 @@
-@import '../styles/custom-media.css';
+@import '../styles/custom-media.scss';
 @import '../styles/custom-properties.scss';
 
 
 // TO-DO with min-height
 .content {
   //background: var(--color-white);
-  min-height: calc(100% - 73px - 120px);
-
-  @media (--media-min-small) {
-    min-height: calc(100% - 88px - 150px);
-  }
+  min-height: calc(100% + 10rem);
 }
 
 
@@ -18,10 +14,6 @@
   max-width: 960px;
   padding: 4.5em 1.5em 1.5em;
   margin: 0 auto;
-
-  // @media (--media-min-small) {
-  //   padding: 6em 2em 2em;
-  // }
 }
 
 .companyAddress {

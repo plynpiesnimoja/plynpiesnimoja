@@ -8,7 +8,8 @@ const Anchor = (props) => {
     to,
     url,
     children, 
-    ariaLabel, 
+    ariaLabel,
+    internal, 
     ...other
   } = props
   
@@ -20,7 +21,7 @@ const Anchor = (props) => {
   return(
     <a
       href={to} 
-      target={target} 
+      target={internal ? null : target} 
       rel={rel}
       aria-label={ariaLabel}
       {...other}

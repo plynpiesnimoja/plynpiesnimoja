@@ -19,13 +19,17 @@
     span {
       background-size: 100% 100%;
     }
+    img {
+      opacity: 0.75;
+    }
   }
 }
 
 .leadMediaThumb {
   position: relative;
   padding-bottom: 66.666%;
-  background-color: $dark-gray;
+  background-color: $black;
+  // background-color: $dark-gray;
 
   img {
     position: absolute;
@@ -34,6 +38,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 150ms ease;
   }
 }
 
