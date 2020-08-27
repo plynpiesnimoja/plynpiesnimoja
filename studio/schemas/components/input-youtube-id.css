@@ -1,0 +1,7 @@
+.InputYoutubeId {
+  display: flex;
+  flex-direction: column;
+}
+input.InputYoutubeId {
+  width: 100%;
+}
