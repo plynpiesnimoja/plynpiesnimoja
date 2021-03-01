@@ -6,15 +6,23 @@
 
 // You can delete this file if you're not using it
 
+
+// Docs: https://www.gatsbyjs.com/docs/add-offline-support-with-a-service-worker/
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
-    `This application has been updated. ` +
-      `Reload to display the latest version?`
+    `Strona została zaktualizowana i wymaga odświeżenia. ` +
+      `Odświeżyć stronę teraz?`
   )
   if (answer === true) {
     window.location.reload()
   }
+  // Automat na odświeżanie, ale...
+  // https://github.com/gatsbyjs/gatsby/issues/9087#issuecomment-459105021
+  
+  // window.location.reload(true)
 }
+
+
 
 // In case using custom sw, code registering in Gatsby
 // export const registerServiceWorker = () => true 
