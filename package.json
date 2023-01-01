@@ -23,7 +23,7 @@
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-manifest": "^2.4.20",
     "gatsby-plugin-offline": "^3.2.21",
-    "gatsby-plugin-sass": "^2.3.12",
+    "gatsby-plugin-sass": "^6.3.1",
     "get-youtube-id": "^1.0.1",
     "node-sass": "^4.14.1",
     "react-responsive": "^8.1.0"
